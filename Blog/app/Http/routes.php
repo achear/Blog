@@ -20,3 +20,6 @@ Route::resource('/admin/login','Admin\LoginController@login');
 Route::get('/admin/yzm','Admin\LoginController@yzm');
 //后台首页
 Route::get('/admin/index','Admin\LoginController@index');
+
+//前台首页
+Route::resource('/home/index','Home\IndexController');
