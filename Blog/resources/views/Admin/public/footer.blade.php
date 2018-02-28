@@ -1,3 +1,3 @@
-<div class="bottom_box">
-		CopyRight © 2015. Powered By <a href="http://www.itxdl.cn">http://www.itxdl.cn</a>.
-	</div>
+<div class="footer">
+        <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved</div>  
+</div>

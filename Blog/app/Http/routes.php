@@ -20,3 +20,9 @@ Route::resource('/admin/login','Admin\LoginController@login');
 Route::get('/admin/yzm','Admin\LoginController@yzm');
 //后台首页
 Route::get('/admin/index','Admin\LoginController@index');
+//后台欢迎页
+Route::get('/admin/welcome','Admin\LoginController@welcome');
+
+Route::group(['middleware' => 'login'],function(){
+	
+});

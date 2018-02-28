@@ -1,31 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-    <title>@yield('title')</title>
-	{{--样式文件--}}
-	@include('Admin.public.style')
-	{{--js文件--}}
-	@include('Admin.pulbic.script')
+	<meta charset="UTF-8">
+	<title>@yield('title')</title>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--CSS文件-->
+    @include('admin.public.style')
+    <!--CSS文件-->
+    
+    <!--JS文件-->
+    @include('admin.public.script')
+    <!--JS文件-->
 </head>
 <body>
-	{{--头部开始--}}	
-	@include('Admin.public.header')
-	{{--头部结束--}}
-	{{--左侧开始--}}	
-	@include('Admin.public.side')
-	{{--左侧结束--}}
-    <!--右侧开始-->
+    <!-- 顶部开始 -->
+    @include('admin.public.header')
+    <!-- 顶部结束 -->
+    <!-- 中部开始 -->
+    
+    <!-- 左侧菜单开始 -->
+    @include('admin.public.side')
+    <!-- 左侧菜单结束 -->
+    
+    <!-- 右侧主体开始 -->
     @section('content')
-    <!--右侧结束-->
-	<!--主体部分 开始-->
-	<div class="main_box">
-		<iframe src="info.html" frameborder="0" width="100%" height="100%" name="main"></iframe> 
-	</div>
-	<!--主体部分 结束-->
 
-	<!--底部 开始-->
-    @include('Admin.public.footer')
-	<!--底部 结束-->
+    @show
+    <!-- 右侧主体结束 -->
+    <!-- 中部结束 -->
+    <!-- 底部开始 -->
+    @include('admin.public.footer')
+    <!-- 底部结束 -->
+    @yield('script')
 </body>
 </html>
