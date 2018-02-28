@@ -1,2 +1,3 @@
-<link rel="stylesheet" href="/Admin/css/ch-ui.admin.css">
-<link rel="stylesheet" href="/Admin/font/css/font-awesome.min.css">
+<link rel="shortcut icon" href="/Admin/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/Admin/css/font.css">
+<link rel="stylesheet" href="/Admin/css/xadmin.css">

@@ -26,4 +26,9 @@ class LoginController extends Controller
         $code = new Code;
         return $code->make();
     }
+
+    public function welcome()
+    {
+        return view('Admin/welcome');
+    }
 }
