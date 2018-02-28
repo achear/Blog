@@ -1,142 +1,1791 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-<meta charset="UTF-8">
-<title>基于laravel的blog</title>
-<link rel="stylesheet" href="/Home/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/Home/css/default.css">
-<script src="/Home/bootstrap/js/jquery.js"></script>
-<script src="/Home/bootstrap/js/bootstrap.min.js"></script>
-{{--  {{HTML::style('Home/bootstrap/css/bootstrap.min.css')}}
-{{HTML::style('Home/css/default.css')}}
-{{HTML::script('Home/bootstrap/js/jquery.js')}}
-{{HTML::script('Home/bootstrap/js/bootstrap.min.js')}}  --}}
+  <title>博客首页</title>
 
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!--[if lt IE 9]>
+<script type="text/javascript" src="layout/plugins/html5.js"></script>
+<![endif]-->
+
+  <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
+  <link rel="stylesheet" href="/layout/style.css">
+  {{--  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />  --}}
+
+  <script type="text/javascript" src="layout/js/jquery.js"></script>
+
+  <!-- PrettyPhoto start -->
+  <link rel="stylesheet" href="layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
+  <script type="text/javascript" src="layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
+  <!-- PrettyPhoto end -->
+
+  <!-- jQuery tools start -->
+  <script type="text/javascript" src="layout/plugins/tools/jquery.tools.min.js"></script>
+  <!-- jQuery tools end -->
+
+  <!-- Calendar start -->
+  <link rel="stylesheet" href="layout/plugins/calendar/calendar.css" type="text/css" />
+  <script type="text/javascript" src="layout/plugins/calendar/calendar.js"></script>
+  <!-- Calendar end -->
+
+  <!-- ScrollTo start -->
+  <script type="text/javascript" src="layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
+  <!-- ScrollTo end -->
+
+  <!-- MediaElements start -->
+  <link rel="stylesheet" href="layout/plugins/video-audio/mediaelementplayer.css" />
+  <script src="layout/plugins/video-audio/mediaelement-and-player.js"></script>
+  <!-- MediaElements end -->
+
+  <!-- FlexSlider start -->
+  <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css" />
+  <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
+  <!-- FlexSlider end -->
+
+  <!-- iButtons start -->
+  <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
+  <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
+  <!-- iButtons end -->
+
+  <!-- jQuery Form Plugin start -->
+  <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
+  <!-- jQuery Form Plugin end -->
+
+  <script type="text/javascript" src="layout/js/main.js"></script>
+
+  <script type="text/javascript">
+    jQuery(function () {});
+  </script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
+
 <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-           <a class="navbar-brand" href="#">博客首页</a>
-           </div>
-           <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-             <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
+  <div class="wrapper sticky_footer">
+    <!-- HEADER BEGIN -->
+    <header>
+      <div id="header">
+        <section class="top">
+          <div class="inner">
+            <div class="fl">
+              <div class="block_top_menu">
+                <ul>
+                  <li class="current">
+                    <a href="index.html">首页</a>
+                  </li>
+                  <li>
+                    <a href="#">Site Map</a>
+                  </li>
+                  <li>
+                    <a href="typography.html">Typography</a>
+                  </li>
+                  <li>
+                    <a href="contact.html">Contact</a>
+                  </li>
+                </ul>
               </div>
-              <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-          </div><!--/.navbar-collapse -->
-         </div>
-      </nav>
+            </div>
 
-        <!--jumbotron-->
-        <div class="jumbotron red">
-          <div class="container">
-            <h1 class="text-center" >Lamp_198创造的博客系统。</h1>
-            <p  class="text-center">基于php的著名web框架-laravel开发的博客系统，你值得拥有！</p>
+            <div class="fr">
+              <div class="block_top_menu">
+                <ul>
+                  <li class="current">
+                    <a href="#login" class="open_popup">Login</a>
+                  </li>
+                  <li>
+                    <a href="registration.html">Registration</a>
+                  </li>
+                  <li>
+                    <a href="#">Subscribe</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="block_social_top">
+                <ul>
+                  <li>
+                    <a href="#" class="fb">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="#" class="tw">Twitter</a>
+                  </li>
+                  <li>
+                    <a href="#" class="rss">RSS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="clearboth"></div>
+          </div>
+        </section>
+
+        <section class="bottom">
+          <div class="inner">
+            <div id="logo_top">
+              <a href="index.html">
+                <img src="/Home/images/logo_top.png" alt="BusinessNews" title="BusinessNews" />
+              </a>
+            </div>
+
+            <div class="block_today_date">
+              <div class="num">
+                <p id="num_top" />
+              </div>
+              <div class="other">
+                <p class="month_year">
+                  <span id="month_top"></span>,
+                  <span id="year_top"></span>
+                </p>
+                <p id="day_top" class="day" />
+              </div>
+            </div>
+
+            <div class="fr">
+              <div class="block_languages">
+                <div class="text">
+                  <p>Language:</p>
+                </div>
+                <ul>
+                  <li class="current">
+                    <a href="#" class="eng">English</a>
+                  </li>
+                  <li>
+                    <a href="#" class="french">French</a>
+                  </li>
+                  <li>
+                    <a href="#" class="ger">German</a>
+                  </li>
+                </ul>
+
+                <div class="clearboth"></div>
+              </div>
+
+              <div class="block_search_top">
+                <form action="#" />
+                <div class="field">
+                  <input type="text" class="w_def_text" title="Enter Your Email Addres" />
+                </div>
+                <input type="submit" class="button" value="Search" />
+
+                <div class="clearboth"></div>
+                </form>
+              </div>
+            </div>
+
+            <div class="clearboth"></div>
+          </div>
+        </section>
+
+        <section class="section_main_menu">
+          <div class="inner">
+            <nav class="main_menu">
+              <ul>
+                <li class="current_page_item">
+                  <a href="index.html">Home</a>
+
+                  <ul>
+                    <li>
+                      <a href="index.html">Home Page Style 1</a>
+                    </li>
+                    <li>
+                      <a href="home_style_2.html">Home Page Style 2</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="big_dropdown" data-content="business">
+                  <a href="business.html">Business</a>
+                </li>
+                <li class="big_dropdown" data-content="technology">
+                  <a href="technology.html">Technology</a>
+                </li>
+                <li class="big_dropdown" data-content="education">
+                  <a href="education.html">Education</a>
+                </li>
+                <li>
+                  <a href="media.html">Media</a>
+
+                  <ul>
+                    <li>
+                      <a href="media.html">Media</a>
+                    </li>
+                    <li>
+                      <a href="media_item.html">Media Item Page</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Pages</a>
+
+                  <ul>
+                    <li>
+                      <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                      <a href="about_author.html">About Author Page</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">Contact Us</a>
+                    </li>
+                    <li>
+                      <a href="registration.html">Registration Page</a>
+                    </li>
+                    <li>
+                      <a href="main_news.html">Main News Page</a>
+                    </li>
+                    <li>
+                      <a href="news_post_w_slider.html">News Post With Slider</a>
+                    </li>
+                    <li>
+                      <a href="news_post_w_video.html">News Post With Video</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="blog.html">Blog</a>
+
+                  <ul>
+                    <li>
+                      <a href="blog.html">Our Blog Style 1</a>
+                    </li>
+                    <li>
+                      <a href="blog_style_2.html">Our Blog Style 2</a>
+                    </li>
+                    <li>
+                      <a href="blog_post.html">Blog Post Page</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_slider.html">Post With Slider</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_video.html">Post With Video</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="typography.html">Shortcodes</a>
+
+                  <ul>
+                    <li>
+                      <a href="accordion.html">Accordeon</a>
+                    </li>
+                    <li>
+                      <a href="blockquote.html">Blockquote</a>
+                    </li>
+                    <li>
+                      <a href="table.html">Table</a>
+                    </li>
+                    <li>
+                      <a href="columns.html">Columns</a>
+                    </li>
+                    <li>
+                      <a href="pricing_table.html">Pricing Table</a>
+                    </li>
+                    <li>
+                      <a href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li>
+                      <a href="boxes.html">Info Boxes</a>
+                    </li>
+                    <li>
+                      <a href="dropcaps.html">Dropcaps</a>
+                    </li>
+                    <li>
+                      <a href="tabs.html">Tabs</a>
+                    </li>
+                    <li>
+                      <a href="lists.html">List Slyle</a>
+                    </li>
+                    <li>
+                      <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                      <a href="video.html">Video</a>
+                    </li>
+                    <li>
+                      <a href="typography.html">Typography</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <section class="section_big_dropdown">
+          <div class="inner">
+            <div class="block_big_dropdown" data-menu="business">
+              <div class="content">
+                <div class="image">
+                  <a href="blog_post.html" class="pic">
+                    <img src="/Home/images/pic_big_drop_3.jpg" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">Embarrassing hidden in the middleany thing</a>
+                  </p>
+                </div>
+                <div class="line"></div>
+
+                <div class="image">
+                  <a href="blog_post.html" class="pic">
+                    <img src="/Home/images/pic_big_drop_4.jpg" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">Content of a page when looking.</a>
+                  </p>
+                </div>
+                <div class="line"></div>
+
+                <div class="popular_posts">
+                  <div class="title">
+                    <p>Popular Posts</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="blog_post.html">
+                        <span>11 July, 2012</span>Established fact that a reader.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_slider.html">
+                        <span>08 July, 2012</span>Editors now use as their default model text.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_video.html">
+                        <span>05 July, 2012</span>Embarrassing hidden in the middle.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post.html">
+                        <span>01 July, 2012</span>Anything embarrassing hidden in the middl.</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="line"></div>
+
+                <div class="more">
+                  <div class="title">
+                    <p>More In Business</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#">Business</a>
+                    </li>
+                    <li>
+                      <a href="#">Money</a>
+                    </li>
+                    <li>
+                      <a href="#">Isnvestor Programs</a>
+                    </li>
+                    <li>
+                      <a href="#">Banks</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="clearboth"></div>
+              </div>
+            </div>
+
+            <div class="block_big_dropdown" data-menu="technology">
+              <div class="content">
+                <div class="image">
+                  <a href="blog_post.html" class="pic">
+                    <img src="/Home/images/pic_big_drop_5.jpg" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">Simply dummy text of the printing.</a>
+                  </p>
+                </div>
+                <div class="line"></div>
+
+                <div class="image">
+                  <a href="blog_post.html" class="pic">
+                    <img src="/Home/images/pic_big_drop_6.jpg" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">Internet tend to repeat predefined chunks.</a>
+                  </p>
+                </div>
+                <div class="line"></div>
+
+                <div class="popular_posts">
+                  <div class="title">
+                    <p>Popular Posts</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="blog_post.html">
+                        <span>11 July, 2012</span>Publishing packages and web page</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_slider.html">
+                        <span>08 July, 2012</span>Generators on the Internet tend to repeat.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_video.html">
+                        <span>05 July, 2012</span>Anything embarrassing hidden in the middle.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post.html">
+                        <span>01 July, 2012</span>Words which don't look even slightly.</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="line"></div>
+
+                <div class="more">
+                  <div class="title">
+                    <p>More In Tech</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#">Web Development</a>
+                    </li>
+                    <li>
+                      <a href="#">Programming</a>
+                    </li>
+                    <li>
+                      <a href="#">Techique</a>
+                    </li>
+                    <li>
+                      <a href="#">Cars</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="clearboth"></div>
+              </div>
+            </div>
+
+            <div class="block_big_dropdown" data-menu="education">
+              <div class="content">
+                <div class="image">
+                  <a href="blog_post.html" class="pic">
+                    <img src="/Home/images/pic_big_drop_1.jpg" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">Many desktop packages and web page editors.</a>
+                  </p>
+                </div>
+                <div class="line"></div>
+
+                <div class="image">
+                  <a href="blog_post.html" class="pic">
+                    <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">There are many variations passages</a>
+                  </p>
+                </div>
+                <div class="line"></div>
+
+                <div class="popular_posts">
+                  <div class="title">
+                    <p>Popular Posts</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="blog_post.html">
+                        <span>11 July, 2012</span>Many desktop publishing packages and web page</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_slider.html">
+                        <span>08 July, 2012</span>Randomised words which don't look even.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post_w_video.html">
+                        <span>05 July, 2012</span>Anything embarrassing hidden in the middle.</a>
+                    </li>
+                    <li>
+                      <a href="blog_post.html">
+                        <span>01 July, 2012</span>Established fact that a reader.</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="line"></div>
+
+                <div class="more">
+                  <div class="title">
+                    <p>More In Education</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#">High school</a>
+                    </li>
+                    <li>
+                      <a href="#">Univercity</a>
+                    </li>
+                    <li>
+                      <a href="#">College</a>
+                    </li>
+                    <li>
+                      <a href="#">Students</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="clearboth"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section_secondary_menu">
+          <div class="inner">
+            <nav class="secondary_menu">
+              <ul>
+                <li>
+                  <a href="main_news_europe.html">Europe</a>
+                </li>
+                <li>
+                  <a href="main_news_usa.html">USA</a>
+                </li>
+                <li>
+                  <a href="main_news_m_east.html">Middle East</a>
+                </li>
+                <li>
+                  <a href="main_news_money.html">Money</a>
+                </li>
+                <li>
+                  <a href="main_news_science.html">Science and IT</a>
+                </li>
+                <li>
+                  <a href="main_news_culture.html">Culture</a>
+                </li>
+                <li>
+                  <a href="main_news_top.html">Top News</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="block_clock">
+              <p>Time:
+                <span id="time"></span>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
+    <!-- CONTENT BEGIN -->
+    <div id="content" class="right_sidebar">
+      <div class="inner">
+        <div class="general_content">
+          <div class="main_content">
+            <div class="block_special_topic">
+              <div class="type">
+                <p>Special topics</p>
+              </div>
+              <div class="title">
+                <p>
+                  <a href="#">long established fact that a reader be distracted.</a>
+                </p>
+              </div>
+            </div>
+            <div class="separator" style="height:17px;"></div>
+
+            <div class="block_home_slider">
+              <div id="home_slider" class="flexslider">
+                <ul class="slides">
+                  <li>
+                    <div class="slide">
+                      <img src="/Home/images/pic_home_slider_1.jpg" alt="" />
+                      <div class="caption">
+                        <p class="title">Many desktop publishing packages and web page.</p>
+                        <p>There are many variations of passages of available, but the majority have suffered alteration in
+                          some form, by injected humour, or randomised.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="slide">
+                      <img src="/Home/images/pic_home_slider_2.jpg" alt="" />
+                      <div class="caption">
+                        <p class="title">Many desktop publishing packages.</p>
+                        <p>There are many variations of passages of available, but the majority have suffered alteration in
+                          some form, by injected humour, or randomised.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="slide">
+                      <img src="/Home/images/pic_home_slider_3.jpg" alt="" />
+                      <div class="caption">
+                        <p class="title">Many desktop publishing packages and web page.</p>
+                        <p>There are many variations of passages of available, but the majority.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="slide">
+                      <img src="/Home/images/pic_home_slider_4.jpg" alt="" />
+                      <div class="caption">
+                        <p class="title">Many desktop publishing packages and web page.</p>
+                        <p>There are many variations of passages of available, but the majority have suffered alteration in
+                          some form, by injected humour, or randomised, but the majority have suffered alteration in some
+                          form, by injected humour, or randomised.</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <script type="text/javascript">
+                $(function () {
+                  $('#home_slider').flexslider({
+                    animation: 'slide',
+                    controlNav: true,
+                    directionNav: true,
+                    animationLoop: true,
+                    slideshow: false,
+                    useCSS: false
+                  });
+
+                });
+              </script>
+            </div>
+
+            <div class="line_2" style="margin:34px 0px 28px;"></div>
+
+            <div class="block_home_col_1">
+              <div class="block_home_post">
+                <div class="pic">
+                  <a href="news_post.html" class="w_hover">
+                    <img src="/Home/images/pic_home_news_1.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="news_post.html">There are many variations of of available, but the majority.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">56</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_3" style="margin:14px 0px 17px;"></div>
+
+              <div class="block_home_post">
+                <div class="pic">
+                  <a href="news_post.html" class="w_hover">
+                    <img src="/Home/images/pic_home_news_2.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="news_post.html">Variations of of available, but the majority have suffered.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">74</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_3" style="margin:14px 0px 17px;"></div>
+
+              <div class="block_home_post">
+                <div class="pic">
+                  <a href="news_post.html" class="w_hover">
+                    <img src="/Home/images/pic_home_news_3.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="news_post.html">Majority alteration in some form, by injected humour.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">88</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="block_home_col_2">
+              <div class="line_3 first" style="margin:14px 0px 17px;"></div>
+              <div class="block_home_post">
+                <div class="pic">
+                  <a href="news_post.html" class="w_hover">
+                    <img src="/Home/images/pic_home_news_4.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="news_post.html">Many variations of of available, but the majority.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">56</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_3" style="margin:14px 0px 17px;"></div>
+
+              <div class="block_home_post">
+                <div class="pic">
+                  <a href="news_post.html" class="w_hover">
+                    <img src="/Home/images/pic_home_news_5.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="news_post.html">Readable content of a page when looking readable content.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">74</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_3" style="margin:14px 0px 17px;"></div>
+
+              <div class="block_home_post">
+                <div class="pic">
+                  <a href="news_post.html" class="w_hover">
+                    <img src="/Home/images/pic_home_news_6.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="news_post.html">Randomised words which don't look even slightly believable.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">88</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="clearboth"></div>
+
+            <div class="line_3" style="margin:14px 0px 13px;"></div>
+            <a href="main_news.html" class="lnk_all_news fl">All News</a>
+            <div class="clearboth"></div>
+            <div class="line_3" style="margin:13px 0px 35px;"></div>
+
+            <h3 style="font-size:16px;">Main News</h3>
+            <div class="line_4" style="margin:-4px 0px 18px;"></div>
+
+            <div class="block_topic_news">
+              <article class="block_topic_post">
+                <p class="title">
+                  <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
+                </p>
+                <div class="f_pic">
+                  <a href="news_post.html" class="general_pic_hover scale">
+                    <img src="/Home/images/pic_home_main_news_1.jpg" alt="" />
+                  </a>
+                </div>
+                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
+                <div class="info">
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+
+                  <div class="r_part">
+                    <div class="category">
+                      <p>
+                        <a href="#">Business</a>
+                      </p>
+                    </div>
+                    <a href="#" class="views">183</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="block_topic_post">
+                <p class="title">
+                  <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
+                </p>
+                <div class="f_pic">
+                  <a href="news_post.html" class="general_pic_hover scale">
+                    <img src="/Home/images/pic_home_main_news_2.jpg" alt="" />
+                  </a>
+                </div>
+                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
+                <div class="info">
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+
+                  <div class="r_part">
+                    <div class="category">
+                      <p>
+                        <a href="#">Business</a>
+                      </p>
+                    </div>
+                    <a href="#" class="views">183</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="block_topic_post">
+                <p class="title">
+                  <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
+                </p>
+                <div class="f_pic">
+                  <a href="news_post.html" class="general_pic_hover scale">
+                    <img src="/Home/images/pic_home_main_news_3.jpg" alt="" />
+                  </a>
+                </div>
+                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
+                <div class="info">
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+
+                  <div class="r_part">
+                    <div class="category">
+                      <p>
+                        <a href="#">Business</a>
+                      </p>
+                    </div>
+                    <a href="#" class="views">183</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="block_topic_post">
+                <p class="title">
+                  <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
+                </p>
+                <div class="f_pic">
+                  <a href="news_post.html" class="general_pic_hover scale">
+                    <img src="/Home/images/pic_home_main_news_4.jpg" alt="" />
+                  </a>
+                </div>
+                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
+                <div class="info">
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+
+                  <div class="r_part">
+                    <div class="category">
+                      <p>
+                        <a href="#">Business</a>
+                      </p>
+                    </div>
+                    <a href="#" class="views">183</a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="line_3" style="margin:20px 0px 24px;"></div>
+
+            <div class="block_pager">
+              <a href="#" class="prev">Previous</a>
+              <a href="#" class="next">Next</a>
+
+              <div class="pages">
+                <ul>
+                  <li class="current">
+                    <a href="#">1</a>
+                  </li>
+                  <li>
+                    <a href="#">2</a>
+                  </li>
+                  <li>
+                    <a href="#">3</a>
+                  </li>
+                  <li>
+                    <a href="#">4</a>
+                  </li>
+                  <li>
+                    <a href="#">5</a>
+                  </li>
+                  <li>
+                    <a href="#">6</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="clearboth"></div>
+            </div>
+
+            <div class="line_2" style="margin:24px 0px 35px;"></div>
+
+            <h3 style="font-size:16px;">Best Materials</h3>
+            <div class="line_4" style="margin:-4px 0px 18px;"></div>
+
+            <div class="block_best_materials">
+              <div class="slider">
+                <div id="best_materials_slider" class="flexslider">
+                  <ul class="slides">
+                    <li>
+                      <div class="block_best_material_post">
+                        <div class="f_pic">
+                          <a href="news_post.html" class="w_hover">
+                            <img src="/Home/images/pic_home_best_materials_1.jpg" alt="" />
+                            <span></span>
+                          </a>
+                        </div>
+                        <p class="title">
+                          <a href="news_post.html">Publishing packages and web page editors their.</a>
+                        </p>
+                        <div class="info">
+                          <div class="date">
+                            <p>08 July, 2012</p>
+                          </div>
+                          <div class="category">
+                            <p>
+                              <a href="#">Business</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="block_best_material_post">
+                        <div class="f_pic">
+                          <a href="news_post.html" class="w_hover">
+                            <img src="/Home/images/pic_home_best_materials_2.jpg" alt="" />
+                            <span></span>
+                          </a>
+                        </div>
+                        <p class="title">
+                          <a href="news_post.html">Publishing packages and web page editors their.</a>
+                        </p>
+                        <div class="info">
+                          <div class="date">
+                            <p>08 July, 2012</p>
+                          </div>
+                          <div class="category">
+                            <p>
+                              <a href="#">People</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="block_best_material_post">
+                        <div class="f_pic">
+                          <a href="news_post.html" class="w_hover">
+                            <img src="/Home/images/pic_home_best_materials_3.jpg" alt="" />
+                            <span></span>
+                          </a>
+                        </div>
+                        <p class="title">
+                          <a href="news_post.html">Publishing packages and web page editors their.</a>
+                        </p>
+                        <div class="info">
+                          <div class="date">
+                            <p>08 July, 2012</p>
+                          </div>
+                          <div class="category">
+                            <p>
+                              <a href="#">Technology</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="block_best_material_post">
+                        <div class="f_pic">
+                          <a href="news_post.html" class="w_hover">
+                            <img src="/Home/images/pic_home_best_materials_4.jpg" alt="" />
+                            <span></span>
+                          </a>
+                        </div>
+                        <p class="title">
+                          <a href="news_post.html">Publishing packages and web page editors their.</a>
+                        </p>
+                        <div class="info">
+                          <div class="date">
+                            <p>08 July, 2012</p>
+                          </div>
+                          <div class="category">
+                            <p>
+                              <a href="#">Business</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="block_best_material_post">
+                        <div class="f_pic">
+                          <a href="news_post.html" class="w_hover">
+                            <img src="/Home/images/pic_home_best_materials_5.jpg" alt="" />
+                            <span></span>
+                          </a>
+                        </div>
+                        <p class="title">
+                          <a href="news_post.html">Publishing packages and web page editors their.</a>
+                        </p>
+                        <div class="info">
+                          <div class="date">
+                            <p>08 July, 2012</p>
+                          </div>
+                          <div class="category">
+                            <p>
+                              <a href="#">People</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="block_best_material_post">
+                        <div class="f_pic">
+                          <a href="news_post.html" class="w_hover">
+                            <img src="/Home/images/pic_home_best_materials_6.jpg" alt="" />
+                            <span></span>
+                          </a>
+                        </div>
+                        <p class="title">
+                          <a href="news_post.html">Publishing packages and web page editors their.</a>
+                        </p>
+                        <div class="info">
+                          <div class="date">
+                            <p>08 July, 2012</p>
+                          </div>
+                          <div class="category">
+                            <p>
+                              <a href="#">Technology</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <script type="text/javascript">
+                $(function () {
+                  $('#best_materials_slider').flexslider({
+                    animation: 'slide',
+                    controlNav: false,
+                    directionNav: true,
+                    animationLoop: false,
+                    slideshow: false,
+                    itemWidth: 213,
+                    itemMargin: 0,
+                    minItems: 1,
+                    maxItems: 3,
+                    move: 1,
+                    useCSS: false
+                  });
+                });
+              </script>
+            </div>
+
+            <div class="line_2" style="margin:20px 0px 0px;"></div>
 
           </div>
-        </div>
 
-<!--幻灯片面板-->
-                           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                             <!-- Indicators -->
-                             <ol class="carousel-indicators">
-                               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                               <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                             </ol>
+          <div class="sidebar">
+            <div class="block_subscribes_sidebar">
+              <div class="service">
+                <a href="#" class="rss">
+                  <span class="num">11 234</span>
+                  <span class="people">Subscribers</span>
+                </a>
+              </div>
 
-                             <!-- Wrapper for slides -->
-                             <div class="carousel-inner" role="listbox">
+              <div class="service">
+                <a href="#" class="tw">
+                  <span class="num">781</span>
+                  <span class="people">Followers</span>
+                </a>
+              </div>
 
-                               <div class="item active">
-                                 <img src="/Home/images/1.jpg" alt="...">
-                                 <div class="carousel-caption">
-                                 基于laravel开发
-                                 </div>
-                               </div>
-                               <div class="item">
-                                 <img src="/Home/images/2.jpg" alt="...">
-                                 <div class="carousel-caption">
-                                    流行的响应式设计
-                                 </div>
-                               </div>
-
-                                <div class="item">
-                                    <img src="/Home/images/3.jpg" alt="...">
-                                    <div class="carousel-caption">
-                                      完善的后台管理
-                                    </div>
-                                  </div>
-                                  <div class="item">
-                                      <img src="/Home/images/4.jpg" alt="...">
-                                      <div class="carousel-caption">
-                                         可扩展的多用户系统
-                                      </div>
-                                    </div>
-
-                             </div>
-
-                             <!-- Controls -->
-                             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                               <span class="sr-only">Previous</span>
-                             </a>
-                             <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                               <span class="sr-only">Next</span>
-                             </a>
-                           </div>
-                         <!--幻灯片面板-->
-
-
-        <div class="container brief">
-
-          <!-- Example row of columns -->
-          <div class="row">
-            <div class="col-md-4">
-              <h2>完整的后台管理</h2>
-              <p>完美实现后台文章列表，权限检测，文章分类管理，文章分类统计，文章标签管理，文章回车站，文章添加，文章编辑，文章恢复，文章删除，分类删除等常用操作环节，结合artdailog 和ajax操作，不一样的用户体验，轻松上手，博客编写不愁！<a href="/admin/login">后台登录</a></p>
+              <div class="service">
+                <a href="#" class="fb">
+                  <span class="num">341</span>
+                  <span class="people">Subscribers</span>
+                </a>
+              </div>
             </div>
-            <div class="col-md-4">
-              <h2>可扩展的多用户支持</h2>
-              <p>完美实现多用户注册、用户资料编辑、头像上传、密码修改以及基于登录用户的权限操作，文章管理，分类管理等功能，已经有多位小伙伴：
-              {{--  @foreach($users as $u)
-                <a href="/blog/{{$u->username}}"><img class="img-circle small" src="{{strlen($u->thumb)>0?$u->thumb :'/avatar/photo.jpg'}}"/></a>
-              @endforeach  --}}
-              <a href="/blog/"><img class="img-circle small" src="/Home/avatar/photo.jpg"/></a>
-              加入我们的博客系统啦，还等什么？<a href="/user/register">立刻加入</a> </p>
 
-           </div>
-            <div class="col-md-4">
-              <h2>流行的响应式设计</h2>
-              {{--  <p>采用流行的响应式,利用响应式框架bootstrap实现,满足了pc端和手机端的访问无缝对接！还等什么，看看下面的文章吧！
-              @foreach($articles as $v) <a href="/article/{{$v->id}}">{{$v->title}}</a>&nbsp; @endforeach
-              </p>  --}}
+            <div class="separator" style="height:31px;"></div>
+
+            <div class="block_popular_posts">
+              <h4>Popular Posts</h4>
+
+              <div class="article">
+                <div class="pic">
+                  <a href="#" class="w_hover">
+                    <img src="/Home/images/pic_popular_post_1.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="#">Packages and web page editors their default text.</a>
+                  </p>
+                  <div class="date">
+                    <p>11 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">41</a>
+                      </li>
+                      <li>
+                        <a href="#" class="comments">22</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_3"></div>
+
+              <div class="article">
+                <div class="pic">
+                  <a href="#" class="w_hover">
+                    <img src="/Home/images/pic_popular_post_2.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="#">Web page editors their default model text, and a search for.</a>
+                  </p>
+                  <div class="date">
+                    <p>07 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">24</a>
+                      </li>
+                      <li>
+                        <a href="#" class="comments">16</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_3"></div>
+
+              <div class="article">
+                <div class="pic">
+                  <a href="#" class="w_hover">
+                    <img src="/Home/images/pic_popular_post_3.jpg" alt="" />
+                    <span></span>
+                  </a>
+                </div>
+
+                <div class="text">
+                  <p class="title">
+                    <a href="#">Editors their default model text, and a search uncover.</a>
+                  </p>
+                  <div class="date">
+                    <p>05 July, 2012</p>
+                  </div>
+                  <div class="icons">
+                    <ul>
+                      <li>
+                        <a href="#" class="views">33</a>
+                      </li>
+                      <li>
+                        <a href="#" class="comments">25</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="line_2"></div>
+            </div>
+
+            <div class="separator" style="height:31px;"></div>
+
+            <div class="block_popular_stuff">
+              <h4>Popular Video</h4>
+
+              <div class="content">
+                <a href="#" class="view_all">Show all video</a>
+                <div class="media">
+                  <a href="http://www.youtube.com/watch?v=ySIvism2af8" class="general_pic_hover play no_fx" data-rel="prettyPhoto"
+                    title="Popular Video">
+                    <img src="/Home/images/pic_pop_video.jpg" alt="" />
+                  </a>
+                </div>
+                <p>
+                  <a href="blog_post_w_video.html">Publishing packages and web page editors their default model.</a>
+                  <img src="/Home/images/icon_video.gif" alt=""
+                  />
+                </p>
+                <p class="date">11 July, 2012</p>
+              </div>
+
+              <div class="info">
+                <ul>
+                  <li class="comments">
+                    <a href="#">115</a>
+                  </li>
+                  <li class="views">
+                    <a href="#">220</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="clearboth"></div>
+
+              <div class="line_2"></div>
+            </div>
+
+            <div class="separator" style="height:31px;"></div>
+
+            <div class="block_calendar">
+              <h4>Calendar</h4>
+
+              <div class="calendar" id="calendar_sidebar">
+              </div>
+
+              <script type="text/javascript">
+                var today = new Date();
+                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                $('#calendar_sidebar').DatePicker({
+                  flat: true,
+                  date: date,
+                  calendars: 1,
+                  starts: 1,
+                  locale: {
+                    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                      'October', 'November', 'December'
+                    ],
+                    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
+                      'Dec'
+                    ],
+                    weekMin: 'wk'
+                  }
+                });
+              </script>
+
+              <div class="line_2"></div>
+            </div>
+
+            <div class="separator" style="height:31px;"></div>
+
+            <div class="block_twitter_widget">
+              <h4>Twitter Widget</h4>
+              <div class="lnk_follow">
+                <a href="#" target="_blank">Follow on Twitter</a>
+              </div>
+
+              <div class="tweet">
+                <!-- <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script> -->
+                <script type="text/javascript" src="layout/plugins/tweet/tweet.widget.js"></script>
+                <script type="text/javascript">
+                  // ('YOUR USERNAME','NUMBER OF POSTS');
+                  // AddTweet('Web_Visions', 1);
+                </script>
+              </div>
+
+              <div class="line_2"></div>
+            </div>
+
+            <div class="separator" style="height:31px;"></div>
+
+            <div class="block_popular_stuff">
+              <h4>Popular Photo</h4>
+
+              <div class="content">
+                <a href="#" class="view_all">Show all photos</a>
+                <div class="media">
+                  <a href="/Home/images/pic_pop_photo_big.jpg" class="general_pic_hover zoom no_fx" data-rel="prettyPhoto" title="Popular Photo">
+                    <img src="/Home/images/pic_pop_photo.jpg" alt="" />
+                  </a>
+                </div>
+                <p>
+                  <a href="blog_post_w_slider.html">Editors their default model text, and a search for will uncover many.</a>
+                  <img src="/Home/images/icon_photo.gif"
+                    alt="" />
+                </p>
+                <p class="date">11 July, 2012</p>
+              </div>
+
+              <div class="info">
+                <ul>
+                  <li class="comments">
+                    <a href="#">100</a>
+                  </li>
+                  <li class="views">
+                    <a href="#">134</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="clearboth"></div>
+
+              <div class="line_2"></div>
+            </div>
+
+            <div class="separator" style="height:31px;"></div>
+
+            <div class="block_newsletter">
+              <h4>Newsletter</h4>
+
+              <form action="#" />
+              <div class="field">
+                <input type="text" class="w_def_text" title="Enter Your Email Addres" />
+              </div>
+              <input type="submit" class="button" value="Subscribe" />
+
+              <div class="clearboth"></div>
+              </form>
+            </div>
+
+          </div>
+
+          <div class="clearboth"></div>
+        </div>
+      </div>
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER BEGIN -->
+    <footer>
+      <div id="footer">
+        <section class="top">
+          <div class="inner">
+            <div id="logo_bottom">
+              <a href="index.html">
+                <img src="/Home/images/logo_bottom.png" alt="" />
+              </a>
+            </div>
+
+            <div class="block_to_top">
+              <a href="#">BACK TO TOP</a>
             </div>
           </div>
-          <hr>
+        </section>
+
+        <section class="middle">
+          <div class="inner">
+            <div class="line_1"></div>
+
+            <div class="block_footer_widgets">
+              <div class="column">
+                <h3>Photos on flickr</h3>
+
+                <div class="block_flickr_footer">
+                  <ul>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_1.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_2.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_3.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_4.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_5.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_6.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_7.png" alt="" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.flickr.com/" target="_blank">
+                        <img src="/Home/images/pic_flickr_8.png" alt="" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="column">
+                <h3>Tags</h3>
+
+                <div class="block_tags">
+                  <ul>
+                    <li>
+                      <a href="#">Business</a>
+                    </li>
+                    <li>
+                      <a href="#">Science</a>
+                    </li>
+                    <li>
+                      <a href="#">conferece</a>
+                    </li>
+                    <li>
+                      <a href="#">Photo</a>
+                    </li>
+                    <li>
+                      <a href="#">education</a>
+                    </li>
+                    <li>
+                      <a href="#">AI</a>
+                    </li>
+                    <li>
+                      <a href="#">Sport</a>
+                    </li>
+                    <li>
+                      <a href="#">mobile</a>
+                    </li>
+                    <li>
+                      <a href="#">Technology</a>
+                    </li>
+                    <li>
+                      <a href="#">computer</a>
+                    </li>
+                    <li>
+                      <a href="#">Video</a>
+                    </li>
+                    <li>
+                      <a href="#">apple</a>
+                    </li>
+                    <li>
+                      <a href="#">news</a>
+                    </li>
+                    <li>
+                      <a href="#">Euro</a>
+                    </li>
+                    <li>
+                      <a href="#">Culture</a>
+                    </li>
+                    <li>
+                      <a href="#">interior</a>
+                    </li>
+                    <li>
+                      <a href="#">Midle east</a>
+                    </li>
+                    <li>
+                      <a href="#">Design</a>
+                    </li>
+                    <li>
+                      <a href="#">euro 2012</a>
+                    </li>
+                    <li>
+                      <a href="#">flowers</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="column">
+                <h3>most read news</h3>
+
+                <div class="block_most_read_news">
+                  <div class="article">
+                    <div class="pic">
+                      <a href="news_post.html" class="w_hover">
+                        <img src="/Home/images/pic_most_read_1.png" alt="" />
+                        <span></span>
+                      </a>
+                    </div>
+
+                    <div class="text">
+                      <p class="title">
+                        <a href="news_post.html">Content of a page when randomised.</a>
+                      </p>
+                      <p class="date">08 July, 2012</p>
+                    </div>
+                  </div>
+                  <div class="line_1"></div>
+
+                  <div class="article">
+                    <div class="pic">
+                      <a href="news_post.html" class="w_hover">
+                        <img src="/Home/images/pic_most_read_2.png" alt="" />
+                        <span></span>
+                      </a>
+                    </div>
+
+                    <div class="text">
+                      <p class="title">
+                        <a href="news_post.html">Established fact that a will be distracted.</a>
+                      </p>
+                      <p class="date">08 July, 2012</p>
+                    </div>
+                  </div>
+                  <div class="line_1"></div>
+
+                  <div class="article">
+                    <div class="pic">
+                      <a href="news_post.html" class="w_hover">
+                        <img src="/Home/images/pic_most_read_3.png" alt="" />
+                        <span></span>
+                      </a>
+                    </div>
+
+                    <div class="text">
+                      <p class="title">
+                        <a href="news_post.html">Distracted by the readable content of a page.</a>
+                      </p>
+                      <p class="date">08 July, 2012</p>
+                    </div>
+                  </div>
+                  <div class="line_1"></div>
+
+                </div>
+              </div>
+
+              <div class="column">
+                <h3>contact widget</h3>
+
+                <div class="block_contact_footer">
+                  <form action="#" />
+                  <p class="text">Name:</p>
+                  <div class="field">
+                    <input type="text" />
+                  </div>
+
+                  <p class="text">Email:</p>
+                  <div class="field">
+                    <input type="text" />
+                  </div>
+
+                  <p class="text">Message:</p>
+                  <div class="textarea">
+                    <textarea cols="1" rows="1"></textarea>
+                  </div>
+
+                  <div class="clear_form">
+                    <input type="reset" value="Clear form" />
+                  </div>
+                  <div class="send">
+                    <input type="submit" class="general_button" value="Submit" />
+                  </div>
+
+                  <div class="clearboth"></div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="clearboth"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom">
+          <div class="inner">
+            <div class="line_1"></div>
+
+            <div class="fr">
+              <div class="block_menu_footer">
+                <ul>
+                  <li>
+                    <a href="business.html">Business</a>
+                  </li>
+                  <li>
+                    <a href="technology.html">Technology</a>
+                  </li>
+                  <li>
+                    <a href="education.html">Education</a>
+                  </li>
+                  <li>
+                    <a href="media.html">Media</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="block_social_footer">
+                <ul>
+                  <li>
+                    <a href="#" class="fb">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="#" class="tw">Twitter</a>
+                  </li>
+                  <li>
+                    <a href="#" class="rss">RSS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="block_copyrights">
+              <p>&copy; 2011 Business Press. All rights reserved.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </div>
+
+  <!-- POPUP BEGIN -->
+  <div id="overlay"></div>
+  <div id="login" class="block_popup">
+    <div class="popup">
+      <a href="#" class="close">Close</a>
+
+      <div class="content">
+        <div class="title">
+          <p>Enter the site</p>
         </div>
-        <!-- /container -->
-          <!--页脚 copyright-->
-          <footer>
-                 <p>All rights reserved by &copy; Company 2018  laravel blog project</p>
-          </footer>
-          <!--页脚-->
 
+        <div class="form">
+          <form action="#" />
+          <div class="column">
+            <p class="label">Login</p>
+            <div class="field">
+              <input type="text" />
+            </div>
+          </div>
 
+          <div class="column">
+            <p class="label">Password</p>
+            <div class="field">
+              <input type="password" />
+            </div>
+          </div>
+
+          <div class="column_2">
+            <div class="remember">
+              <div class="checkbox">
+                <input type="checkbox" />
+              </div>
+              <div class="remember_label">
+                <p>Remember me</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column_2">
+            <p class="forgot_pass">
+              <a href="#">Forgot password?</a>
+            </p>
+          </div>
+
+          <div class="column button">
+            <a href="#" class="enter">
+              <span>Login</span>
+            </a>
+          </div>
+
+          <div class="clearboth"></div>
+          </form>
+        </div>
+
+        <div class="subtitle">
+          <p>SIGN IN AS A USER</p>
+        </div>
+
+        <div class="fb_button">
+          <a href="#">
+            <img src="/layout/images/button_fb_login.png" alt="" />
+          </a>
+        </div>
+        <div class="text">
+          <p>Use your account on the social network Facebook, to create a profile on BusinessPress</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- POPUP END -->
+  <script>
+  // var webpack = require('webpack')
+
+// module.exports = {
+//   // ...
+//   plugins: [
+//     // ...
+//     new webpack.DefinePlugin({
+//       'process.env': {
+//         NODE_ENV: '"production"'
+//       }
+//     }),
+//     new webpack.optimize.UglifyJsPlugin({
+//       compress: {
+//         warnings: false
+//       }
+//     })
+// //   ]
+// // }
+  </script>
 </body>
+
 </html>

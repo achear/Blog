@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return View('home/index/index');
+// });
 //后台登陆
 Route::resource('/admin/login','Admin\LoginController@login');
 //获取验证码
@@ -23,7 +23,8 @@ Route::get('/admin/index','Admin\LoginController@index');
 
 
 //前台首页
-Route::resource('/home/index','Home\IndexController');
+Route::get('/','Home\IndexController@index');
+
 
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
