@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
   <title>博客首页</title>
+
 
   <meta name="keywords" content="" />
   <meta name="description" content="" />
 
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
+
 
   <!--[if lt IE 9]>
 <script type="text/javascript" src="layout/plugins/html5.js"></script>
 <![endif]-->
 
+
   <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
-  <link rel="stylesheet" href="/layout/style.css">
+  <link rel="stylesheet" href="{{ asset('layout/style.css') }}">
   {{--  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />  --}}
 
+
   <script type="text/javascript" src="layout/js/jquery.js"></script>
+
 
   <!-- PrettyPhoto start -->
   <link rel="stylesheet" href="layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
   <script type="text/javascript" src="layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
   <!-- PrettyPhoto end -->
 
+
   <!-- jQuery tools start -->
   <script type="text/javascript" src="layout/plugins/tools/jquery.tools.min.js"></script>
   <!-- jQuery tools end -->
+
 
   <!-- Calendar start -->
   <link rel="stylesheet" href="layout/plugins/calendar/calendar.css" type="text/css" />
   <script type="text/javascript" src="layout/plugins/calendar/calendar.js"></script>
   <!-- Calendar end -->
 
+
   <!-- ScrollTo start -->
   <script type="text/javascript" src="layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
   <!-- ScrollTo end -->
+
 
   <!-- MediaElements start -->
   <link rel="stylesheet" href="layout/plugins/video-audio/mediaelementplayer.css" />
   <script src="layout/plugins/video-audio/mediaelement-and-player.js"></script>
   <!-- MediaElements end -->
 
+
   <!-- FlexSlider start -->
   <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css" />
   <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
   <!-- FlexSlider end -->
+
 
   <!-- iButtons start -->
   <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
   <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
   <!-- iButtons end -->
 
+
   <!-- jQuery Form Plugin start -->
   <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
   <!-- jQuery Form Plugin end -->
 
+
   <script type="text/javascript" src="layout/js/main.js"></script>
+
 
   <script type="text/javascript">
     jQuery(function () {});
   </script>
 
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
+
 
 <body>
   <div class="wrapper sticky_footer">
@@ -397,7 +415,7 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_5.jpg" alt="" />
+                    <img src="{{asset('/Home/images/pic_big_drop_5.jpg')}}" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">简单的虚拟文本的印刷.</a>
@@ -446,16 +464,16 @@
                   </div>
                   <ul>
                     <li>
-                      <a href="#">Web Development</a>
+                      <a href="#">Web开发</a>
                     </li>
                     <li>
-                      <a href="#">Programming</a>
+                      <a href="#">程序设计</a>
                     </li>
                     <li>
-                      <a href="#">Techique</a>
+                      <a href="#">技术</a>
                     </li>
                     <li>
-                      <a href="#">Cars</a>
+                      <a href="#">汽车</a>
                     </li>
                   </ul>
                 </div>
@@ -468,10 +486,10 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_1.jpg" alt="" />
+                    <img src="{{asset('/Home/images/pic_big_drop_1.jpg')}}" alt="" />
                   </a>
                   <p>
-                    <a href="blog_post.html">Many desktop packages and web page editors.</a>
+                    <a href="blog_post.html">许多桌面软件包和网页编辑器.</a>
                   </p>
                 </div>
                 <div class="line"></div>
@@ -481,14 +499,14 @@
                     <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
                   </a>
                   <p>
-                    <a href="blog_post.html">There are many variations passages</a>
+                    <a href="blog_post.html">有很多变化的段落</a>
                   </p>
                 </div>
                 <div class="line"></div>
 
                 <div class="popular_posts">
                   <div class="title">
-                    <p>Popular Posts</p>
+                    <p>热门帖子</p>
                   </div>
                   <ul>
                     <li>
@@ -513,20 +531,20 @@
 
                 <div class="more">
                   <div class="title">
-                    <p>More In Education</p>
+                    <p>更多教育</p>
                   </div>
                   <ul>
                     <li>
-                      <a href="#">High school</a>
+                      <a href="#">中学</a>
                     </li>
                     <li>
                       <a href="#">Univercity</a>
                     </li>
                     <li>
-                      <a href="#">College</a>
+                      <a href="#">学院</a>
                     </li>
                     <li>
-                      <a href="#">Students</a>
+                      <a href="#">学生们</a>
                     </li>
                   </ul>
                 </div>
@@ -542,25 +560,25 @@
             <nav class="secondary_menu">
               <ul>
                 <li>
-                  <a href="main_news_europe.html">Europe</a>
+                  <a href="main_news_europe.html">欧洲</a>
                 </li>
                 <li>
-                  <a href="main_news_usa.html">USA</a>
+                  <a href="main_news_usa.html">美国</a>
                 </li>
                 <li>
-                  <a href="main_news_m_east.html">Middle East</a>
+                  <a href="main_news_m_east.html">中东</a>
                 </li>
                 <li>
-                  <a href="main_news_money.html">Money</a>
+                  <a href="main_news_money.html">钱</a>
                 </li>
                 <li>
-                  <a href="main_news_science.html">Science and IT</a>
+                  <a href="main_news_science.html">科学和IT</a>
                 </li>
                 <li>
-                  <a href="main_news_culture.html">Culture</a>
+                  <a href="main_news_culture.html">文化</a>
                 </li>
                 <li>
-                  <a href="main_news_top.html">Top News</a>
+                  <a href="main_news_top.html">热门新闻</a>
                 </li>
               </ul>
             </nav>
