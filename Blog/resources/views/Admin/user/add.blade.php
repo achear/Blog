@@ -23,26 +23,14 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" action="/admin/user" method="post">
+        <form class="layui-form">
         {{ csrf_field() }}
-          <div class="layui-form-item">
-              <label for="L_email" class="layui-form-label">
-                  <span class="x-red">*</span>邮箱
-              </label>
-              <div class="layui-input-inline">
-                  <input type="text" id="L_email" name="email" required="" lay-verify="email"
-                  autocomplete="off" class="layui-input">
-              </div>
-              <div class="layui-form-mid layui-word-aux">
-                  <span class="x-red">*</span>将会成为您唯一的登入名
-              </div>
-          </div>
           <div class="layui-form-item">
               <label for="L_username" class="layui-form-label">
                   <span class="x-red">*</span>昵称
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="L_username" name="username" required="" lay-verify="nikename"
+                  <input type="text" id="L_username" name="user_name" required="" lay-verify="nikename"
                   autocomplete="off" class="layui-input">
               </div>
           </div>
@@ -51,16 +39,16 @@
                   <span class="x-red">*</span>性别
               </label>
               <div class="layui-input-inline">
-                  <input type="text" name="sex" required="" lay-verify=""
+                  <input type="text" name="user_sex" required="" lay-verify=""
                   autocomplete="off" class="layui-input">
               </div>
           </div>
           <div class="layui-form-item">
               <label for="" class="layui-form-label">
-                  <span class="x-red">*</span>手机
+                  <span class="x-red">*</span>QQ
               </label>
               <div class="layui-input-inline">
-                  <input type="text" name="phone" required="" lay-verify="nikename"
+                  <input type="text" name="user_qq" required="" 
                   autocomplete="off" class="layui-input">
               </div>
           </div>
@@ -69,7 +57,7 @@
                   <span class="x-red">*</span>密码
               </label>
               <div class="layui-input-inline">
-                  <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                  <input type="password" id="L_pass" name="user_pwd" required="" lay-verify="pass"
                   autocomplete="off" class="layui-input">
               </div>
               <div class="layui-form-mid layui-word-aux">
@@ -117,15 +105,22 @@
 
           //监听提交
           form.on('submit(add)', function(data){
-            // console.log(data);
-            // //发异步，把数据提交给php
-            // layer.alert("增加成功", {icon: 6},function () {
-            //     // 获得frame索引
-            //     var index = parent.layer.getFrameIndex(window.name);
-            //     //关闭当前frame
-            //     parent.layer.close(index);
-            // });
-            //return false;
+                $.ajax({
+                    type : "POST", //提交方式
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url : '/admin/user',//路径
+                    data : data.field,//数据，这里使用的是Json格式进行传输
+                    dataType : "Json",
+                    success : function(result) {//返回数据根据结果进行相应的处理
+                        console.log(result);
+                        // 如果ajax的返回数据对象的status属性值是0，表示用户添加成功；弹添加成功的提示信息
+                    }
+                });
+              console.log(data);
+            //发异步，把数据提交给php
+            return false;
           });
           
           

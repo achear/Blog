@@ -18,8 +18,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $user = new Users;
+        //获取所有的用户数据
         $user = Users::all();
-        //$user = $request->all();
+        //导入到首页中
         return view('admin.user.list',['user'=>$user]);
     }
 
@@ -42,20 +43,28 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-    
+        //return $data;
         $user = new Users;
-        $user->username = $data['username'];
-        $user->email = $data['email'];
-        $user->password = $data['pass'];
-        $user->sex = $data['sex'];
-        $user->phone = $data['phone'];
-        //提交数据到用户表
+        $user->user_name = $data['user_name'];
+        $user->user_sex = $data['user_sex'];
+        $user->user_qq = $data['user_qq'];
+        $user->user_pwd = $data['user_pwd'];
+
         $res = $user->save();
+
         if ($res) {
-            return redirect('/admin/user');
+            $data = [
+                'status'=>0,
+                'msg'=>'添加成功'
+            ];
         } else {
-            return back();
+            $data = [
+                'status'=>1,
+                'msg'=>'添加失败'
+            ];
         }
+
+        return $data;
     }
 
     /**
