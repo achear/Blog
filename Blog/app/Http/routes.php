@@ -11,11 +11,16 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
+
+// Route::get('/', function () {
+//     return View('home/index/index');
+// });
 
 //后台登陆
 Route::resource('/admin/login','Admin\LoginController@login');
@@ -23,11 +28,16 @@ Route::resource('/admin/login','Admin\LoginController@login');
 Route::get('/admin/yzm','Admin\LoginController@yzm');
 //后台首页
 Route::get('/admin/index','Admin\LoginController@index');
+
+
+//前台首页
+Route::get('/','Home\IndexController@index');
+
+
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
 //用户模块路由
 Route::resource('/admin/user','Admin\UserController');
 //中间件
 Route::group(['middleware' => 'login'],function(){
-	
 });
