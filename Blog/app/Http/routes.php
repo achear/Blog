@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
 //后台登陆
 Route::resource('/admin/login','Admin\LoginController@login');
 //获取验证码
@@ -22,7 +25,9 @@ Route::get('/admin/yzm','Admin\LoginController@yzm');
 Route::get('/admin/index','Admin\LoginController@index');
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
-
+//用户模块路由
+Route::resource('/admin/user','Admin\UserController');
+//中间件
 Route::group(['middleware' => 'login'],function(){
 	
 });
