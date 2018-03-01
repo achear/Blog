@@ -18,8 +18,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $user = new Users;
+        //获取所有的用户数据
         $user = Users::all();
-        //$user = $request->all();
+        //导入到首页中
         return view('admin.user.list',['user'=>$user]);
     }
 
@@ -42,20 +43,28 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-    
+        //return $data;
         $user = new Users;
-        $user->username = $data['username'];
-        $user->email = $data['email'];
-        $user->password = $data['pass'];
-        $user->sex = $data['sex'];
-        $user->phone = $data['phone'];
-        //提交数据到用户表
+        $user->user_name = $data['user_name'];
+        $user->user_sex = $data['user_sex'];
+        $user->user_qq = $data['user_qq'];
+        $user->user_pwd = $data['user_pwd'];
+
         $res = $user->save();
+
         if ($res) {
-            return redirect('/admin/user');
+            $data = [
+                'status'=>0,
+                'msg'=>'添加成功'
+            ];
         } else {
-            return back();
+            $data = [
+                'status'=>1,
+                'msg'=>'添加失败'
+            ];
         }
+
+        return $data;
     }
 
     /**
@@ -77,10 +86,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = new Users;
-        $user = Users::where('id',$id)->first();
-        $data = $user;
-        return view('admin.user.edit',['data'=>$data]);
+        $user = Users::findOrFail($id);
+        return view('admin.user.edit')->with('user',$user);
     }
 
     /**
@@ -93,31 +100,29 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Users::find($id);
-        //将用户的相关属性修改为用户提交的值
+        //获取提交的数据
         $input = $request->all();
+        //到数据库执行修改
+        $user->user_name = $input['user_name'];
+        $user->user_sex = $input['user_sex'];
+        $user->user_qq = $input['user_qq'];
+        
 
-        $res = $user->update(['username'=>$input['username'],'email'=>$input['email'],'phone'=>$input['phone'],'sex'=>$input['sex']]);
+        $res = $user->save();
 
-        if($res){
+        if ($res) {
             $data = [
                 'status'=>0,
-                'msg'=>'修改成功'
+                'msg'=>'添加成功'
             ];
-        }else{
+        } else {
             $data = [
                 'status'=>1,
-                'msg'=>'修改失败'
+                'msg'=>'添加失败'
             ];
         }
 
         return $data;
-
-
-        // if ($res) {
-        //     return redirect('/admin/user');
-        // } else {
-        //     return back()->with('msg','修改失败');
-        // }
     }
 
     /**
