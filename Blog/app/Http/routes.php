@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 //后台登陆
 Route::resource('/admin/login','Admin\LoginController@login');
+Route::post('/admin/dologin','Admin\LoginController@doLogin');
 //获取验证码
 Route::get('/admin/yzm','Admin\LoginController@yzm');
 //后台首页
@@ -32,8 +33,11 @@ Route::get('/admin/index','Admin\LoginController@index');
 
 //前台首页
 Route::get('/','Home\IndexController@index');
-
-
+//修改用户状态路由
+Route::get('/admin/user/changestate','Admin\UserController@changeState');
+//批量删除用户路由
+Route::get('/admin/user/del','Admin\UserController@del');
+Route::resource('/admin/user','Admin\UserController');
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
 //用户模块路由
