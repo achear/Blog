@@ -88,9 +88,47 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        
+        $user = Users::find($id);
+        return view('admin.user.pass',['user'=>$user]);
     }
 
+    public function pass(Request $request,$id)
+    {
+        $user = Users::find($id);
+        $input = $request->all();
+        if ($input['oldpass'] != $user->user_pwd) {
+            $data = [
+                'status'=> 1,
+                'msg' => '原密码错误'
+            ];
+            return $data;
+        }
+
+        if ($input['newpass'] == $user->user_pwd) {
+            $data = [
+                'status'=> 1,
+                'msg' => '不能使用相同的密码'
+            ];
+            return $data;
+        }
+
+        $user->user_pwd = $input['newpass'];
+        $res = $user->save();
+
+        if ($res) {
+            $data = [
+                'status'=>0,
+                'msg'=>'修改密码成功'
+            ];
+        } else {
+            $data = [
+                'status'=>1,
+                'msg'=>'修改密码失败'
+            ];
+        }
+
+        return $data;
+    }
     /**
      * Show the form for editing the specified resource.
      *
