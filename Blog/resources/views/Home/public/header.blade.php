@@ -1,70 +1,90 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
   <title>博客首页</title>
+
 
   <meta name="keywords" content="" />
   <meta name="description" content="" />
 
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
+
 
   <!--[if lt IE 9]>
 <script type="text/javascript" src="layout/plugins/html5.js"></script>
 <![endif]-->
 
+
   <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
-  <link rel="stylesheet" href="/layout/style.css">
+  <link rel="stylesheet" href="{{ asset('layout/style.css') }}">
   {{--  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />  --}}
 
-  <script type="text/javascript" src="layout/js/jquery.js"></script>
 
-  <!-- PrettyPhoto start -->
-  <link rel="stylesheet" href="layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
+  <script type="text/javascript" src="{{asset('layout/js/jquery.js')}}"></script>
+
+
+  <!-- PrettyPhoto 图片 start -->
+  <link rel="stylesheet" href="{{asset('layout/plugins/prettyphoto/css/prettyPhoto.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/prettyphoto/jquery.prettyPhoto.js')}}"></script>
   <!-- PrettyPhoto end -->
 
-  <!-- jQuery tools start -->
-  <script type="text/javascript" src="layout/plugins/tools/jquery.tools.min.js"></script>
-  <!-- jQuery tools end -->
 
-  <!-- Calendar start -->
-  <link rel="stylesheet" href="layout/plugins/calendar/calendar.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/calendar/calendar.js"></script>
-  <!-- Calendar end -->
+  <!-- jQuery 工具 start -->
+  <script type="text/javascript" src="{{asset('layout/plugins/tools/jquery.tools.min.js')}}"></script>
+  <!-- jQuery 工具 end -->
+
+
+  <!-- 日历 start -->
+  <link rel="stylesheet" href="{{asset('layout/plugins/calendar/calendar.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/calendar/calendar.js')}}"></script>
+  <!--  日历 end -->
+
 
   <!-- ScrollTo start -->
-  <script type="text/javascript" src="layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
+  <script type="text/javascript" src="{{asset("layout/plugins/scrollto/jquery.scroll.to.min.js")}}"></script>
   <!-- ScrollTo end -->
 
+
   <!-- MediaElements start -->
-  <link rel="stylesheet" href="layout/plugins/video-audio/mediaelementplayer.css" />
-  <script src="layout/plugins/video-audio/mediaelement-and-player.js"></script>
+  <link rel="stylesheet" href="{{asset('layout/plugins/video-audio/mediaelementplayer.css')}}" />
+  <script src="{{asset('layout/plugins/video-audio/mediaelement-and-player.js')}}"></script>
   <!-- MediaElements end -->
 
+
   <!-- FlexSlider start -->
-  <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
+  <link rel="stylesheet" href="{{asset('layout/plugins/flexslider/flexslider.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
   <!-- FlexSlider end -->
 
+
   <!-- iButtons start -->
-  <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
+  <link rel="stylesheet" href="{{asset('layout/plugins/ibuttons/css/jquery.ibutton.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/ibuttons/lib/jquery.ibutton.min.js')}}"></script>
   <!-- iButtons end -->
 
-  <!-- jQuery Form Plugin start -->
-  <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
-  <!-- jQuery Form Plugin end -->
 
-  <script type="text/javascript" src="layout/js/main.js"></script>
+  <!-- jQuery 表单插件开始  -->
+  <script type="text/javascript" src="{{asset('layout/plugins/ajaxform/jquery.form.js')}}"></script>
+  <!-- jQuery表单插件结束 -->
+
+
+  <script type="text/javascript" src="{{asset('layout/js/main.js')}}"></script>
+
 
   <script type="text/javascript">
     jQuery(function () {});
   </script>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
@@ -132,7 +152,11 @@
           <div class="inner">
             <div id="logo_top">
               <a href="index.html">
+<<<<<<< HEAD
                 <img src="/Home/images/logo_top.png" alt="BusinessNews" title="BusinessNews" />
+=======
+                <img src="{{asset('Home/images/logo_top.png')}}" alt="BusinessNews" title="BusinessNews" />
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
               </a>
             </div>
 
@@ -326,7 +350,11 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
+<<<<<<< HEAD
                     <img src="/Home/images/pic_big_drop_3.jpg" alt="" />
+=======
+                    <img src="{{asset('Home/images/pic_big_drop_3.jpg')}}" alt="" />
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </a>
                   <p>
                     <a href="blog_post.html">隐藏在中间的尴尬东西</a>
@@ -336,7 +364,11 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
+<<<<<<< HEAD
                     <img src="/Home/images/pic_big_drop_4.jpg" alt="" />
+=======
+                    <img src="{{asset('Home/images/pic_big_drop_4.jpg')}}" alt="" />
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </a>
                   <p>
                     <a href="blog_post.html">查看时的页面内容.</a>
@@ -397,7 +429,11 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
+<<<<<<< HEAD
                     <img src="/Home/images/pic_big_drop_5.jpg" alt="" />
+=======
+                    <img src="{{asset('/Home/images/pic_big_drop_5.jpg')}}" alt="" />
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </a>
                   <p>
                     <a href="blog_post.html">简单的虚拟文本的印刷.</a>
@@ -407,7 +443,11 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
+<<<<<<< HEAD
                     <img src="/Home/images/pic_big_drop_6.jpg" alt="" />
+=======
+                    <img src="{{asset('Home/images/pic_big_drop_6.jpg')}}" alt="" />
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </a>
                   <p>
                     <a href="blog_post.html">互联网倾向于重复预定义的块.</a>
@@ -446,6 +486,7 @@
                   </div>
                   <ul>
                     <li>
+<<<<<<< HEAD
                       <a href="#">Web Development</a>
                     </li>
                     <li>
@@ -456,6 +497,18 @@
                     </li>
                     <li>
                       <a href="#">Cars</a>
+=======
+                      <a href="#">Web开发</a>
+                    </li>
+                    <li>
+                      <a href="#">程序设计</a>
+                    </li>
+                    <li>
+                      <a href="#">技术</a>
+                    </li>
+                    <li>
+                      <a href="#">汽车</a>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                     </li>
                   </ul>
                 </div>
@@ -468,27 +521,45 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
+<<<<<<< HEAD
                     <img src="/Home/images/pic_big_drop_1.jpg" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">Many desktop packages and web page editors.</a>
+=======
+                    <img src="{{asset('/Home/images/pic_big_drop_1.jpg')}}" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">许多桌面软件包和网页编辑器.</a>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </p>
                 </div>
                 <div class="line"></div>
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
+<<<<<<< HEAD
                     <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">There are many variations passages</a>
+=======
+                    <img src="{{asset('Home/images/pic_big_drop_2.jpg')}}" alt="" />
+                  </a>
+                  <p>
+                    <a href="blog_post.html">有很多变化的段落</a>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </p>
                 </div>
                 <div class="line"></div>
 
                 <div class="popular_posts">
                   <div class="title">
+<<<<<<< HEAD
                     <p>Popular Posts</p>
+=======
+                    <p>热门帖子</p>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </div>
                   <ul>
                     <li>
@@ -513,20 +584,35 @@
 
                 <div class="more">
                   <div class="title">
+<<<<<<< HEAD
                     <p>More In Education</p>
                   </div>
                   <ul>
                     <li>
                       <a href="#">High school</a>
+=======
+                    <p>更多教育</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#">中学</a>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                     </li>
                     <li>
                       <a href="#">Univercity</a>
                     </li>
                     <li>
+<<<<<<< HEAD
                       <a href="#">College</a>
                     </li>
                     <li>
                       <a href="#">Students</a>
+=======
+                      <a href="#">学院</a>
+                    </li>
+                    <li>
+                      <a href="#">学生们</a>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                     </li>
                   </ul>
                 </div>
@@ -542,6 +628,7 @@
             <nav class="secondary_menu">
               <ul>
                 <li>
+<<<<<<< HEAD
                   <a href="main_news_europe.html">Europe</a>
                 </li>
                 <li>
@@ -561,6 +648,27 @@
                 </li>
                 <li>
                   <a href="main_news_top.html">Top News</a>
+=======
+                  <a href="main_news_europe.html">欧洲</a>
+                </li>
+                <li>
+                  <a href="main_news_usa.html">美国</a>
+                </li>
+                <li>
+                  <a href="main_news_m_east.html">中东</a>
+                </li>
+                <li>
+                  <a href="main_news_money.html">钱</a>
+                </li>
+                <li>
+                  <a href="main_news_science.html">科学和IT</a>
+                </li>
+                <li>
+                  <a href="main_news_culture.html">文化</a>
+                </li>
+                <li>
+                  <a href="main_news_top.html">热门新闻</a>
+>>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                 </li>
               </ul>
             </nav>
