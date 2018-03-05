@@ -21,18 +21,19 @@
           <div class="block_home_slider">
             <div id="home_slider" class="flexslider">
               <ul class="slides">
+                {{--  遍历轮播图  --}}
+                @foreach($data as $v)
                 <li>
                   <div class="slide">
-                    <img src="/Home/images/pic_home_slider_1.jpg" alt="" />
+                    <img src="/Home/images/{{ $v->carousel_photo }}" alt="" />
                     <div class="caption">
-                      <p class="title">许多桌面出版软件包和网页.</p>
-                      <p>可用的段落有很多变化，但大部分变化都在
-                        一些形式，通过注入幽默，或随机.</p>
+                      <p class="title">{{ $v->carousel_title}}</p>
+                      <p>{{$v->carousel_content}}</p>
                     </div>
                   </div>
                 </li>
-
-                <li>
+                @endforeach
+                {{--  <li>
                   <div class="slide">
                     <img src="/Home/images/pic_home_slider_2.jpg" alt="" />
                     <div class="caption">
@@ -63,7 +64,7 @@
                         form, by injected humour, or randomised.</p>
                     </div>
                   </div>
-                </li>
+                </li>  --}}
               </ul>
             </div>
 

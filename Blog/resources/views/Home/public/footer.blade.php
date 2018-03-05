@@ -292,9 +292,9 @@
     </div>
 
     <div class="form">
-      <form action="#" />
+      <form action="#" / method="POST">
       <div class="column">
-        <p class="label">登录</p>
+        <p class="label">账号</p>
         <div class="field">
           <input type="text" />
         </div>
@@ -335,11 +335,11 @@
     </div>
 
     <div class="subtitle">
-      <p>SIGN IN AS A USER</p>
+      <p>以用户身份登录</p>
     </div>
 
     <div class="fb_button">
-      <a href="#">
+      <a href="javscript:;" style="pointer-events: none;">
         <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
       </a>
     </div>
@@ -349,6 +349,15 @@
   </div>
 </div>
 </div>
+{{--  <script>
+  // 登录验证
+  $(function (){
+    $(.column button).click(function(){
+      var 
+    })
+  })
+ 
+</script>  --}}
 <!-- POPUP END -->
 
 </body>

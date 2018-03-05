@@ -32,6 +32,14 @@ Route::get('/admin/index','Admin\LoginController@index');
 
 //前台首页
 Route::get('/','Home\IndexController@index');
+// 前台注册页
+Route::get('/home/index/registration','Home\LoginController@index');
+
+// 轮播图配置
+Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
 
 
 //后台欢迎页

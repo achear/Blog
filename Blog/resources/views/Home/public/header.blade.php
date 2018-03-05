@@ -115,13 +115,13 @@
               <div class="block_top_menu">
                 <ul>
                   <li class="current">
-                    <a href="#login" class="open_popup">Login</a>
+                    <a href="#login" class="open_popup">登录</a>
                   </li>
                   <li>
-                    <a href="registration.html">Registration</a>
+                    <a href="{{url('home/index/registration')}}">注册</a>
                   </li>
                   <li>
-                    <a href="#">Subscribe</a>
+                    <a href="#">订阅</a>
                   </li>
                 </ul>
               </div>

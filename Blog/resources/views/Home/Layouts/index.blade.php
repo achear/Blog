@@ -9,6 +9,12 @@
 {{--  @include('home.public.content')  --}}
  {{--  内容结束  --}}
 
+ {{--  注册开始  --}}
+@section('registered')
+
+@show
+{{--  注册结束  --}}
+
 {{-- 开始底部  --}}
 @include('home.public.footer')
 {{--  底部结束  --}}

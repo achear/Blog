@@ -129,6 +129,30 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe6b8;</i>
+                        <cite>前台配置</cite>
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a _href="{{url('admin/config')}}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>轮播图</cite>
+                                
+                            </a>
+                        </li >
+                        <li>
+                            <a _href="{{url('admin/user/create')}}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>前台配置</cite>
+                                
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
         </ul>
       </div>
     </div>
