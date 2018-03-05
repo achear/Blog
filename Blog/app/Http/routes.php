@@ -58,7 +58,8 @@ Route::get('/admin/config/upload','Admin\Controller@upload');
 
 //修改用户状态路由
 Route::get('/admin/user/changestate','Admin\UserController@changeState');
-
+//修改用户密码
+Route::get('/admin/user/pass/{id}','Admin\UserController@pass');
 //批量删除用户路由
 Route::get('/admin/user/del','Admin\UserController@del');
 Route::resource('/admin/user','Admin\UserController');
