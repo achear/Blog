@@ -41,3 +41,7 @@ Route::resource('/admin/user','Admin\UserController');
 //中间件
 Route::group(['middleware' => 'login'],function(){
 });
+
+//分类模块
+Route::resource('/admin/cate','Admin\CateController');
+Route::post('/admin/cate/changeorder','Admin\CateController@changeOrder');
