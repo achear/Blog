@@ -26,55 +26,55 @@
   <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />  --}}
 
 
-  <script type="text/javascript" src="layout/js/jquery.js"></script>
+  <script type="text/javascript" src="{{asset('layout/js/jquery.js')}}"></script>
 
 
-  <!-- PrettyPhoto start -->
-  <link rel="stylesheet" href="layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
+  <!-- PrettyPhoto 图片 start -->
+  <link rel="stylesheet" href="{{asset('layout/plugins/prettyphoto/css/prettyPhoto.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/prettyphoto/jquery.prettyPhoto.js')}}"></script>
   <!-- PrettyPhoto end -->
 
 
-  <!-- jQuery tools start -->
-  <script type="text/javascript" src="layout/plugins/tools/jquery.tools.min.js"></script>
-  <!-- jQuery tools end -->
+  <!-- jQuery 工具 start -->
+  <script type="text/javascript" src="{{asset('layout/plugins/tools/jquery.tools.min.js')}}"></script>
+  <!-- jQuery 工具 end -->
 
 
-  <!-- Calendar start -->
-  <link rel="stylesheet" href="layout/plugins/calendar/calendar.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/calendar/calendar.js"></script>
-  <!-- Calendar end -->
+  <!-- 日历 start -->
+  <link rel="stylesheet" href="{{asset('layout/plugins/calendar/calendar.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/calendar/calendar.js')}}"></script>
+  <!--  日历 end -->
 
 
   <!-- ScrollTo start -->
-  <script type="text/javascript" src="layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
+  <script type="text/javascript" src="{{asset("layout/plugins/scrollto/jquery.scroll.to.min.js")}}"></script>
   <!-- ScrollTo end -->
 
 
   <!-- MediaElements start -->
-  <link rel="stylesheet" href="layout/plugins/video-audio/mediaelementplayer.css" />
-  <script src="layout/plugins/video-audio/mediaelement-and-player.js"></script>
+  <link rel="stylesheet" href="{{asset('layout/plugins/video-audio/mediaelementplayer.css')}}" />
+  <script src="{{asset('layout/plugins/video-audio/mediaelement-and-player.js')}}"></script>
   <!-- MediaElements end -->
 
 
   <!-- FlexSlider start -->
-  <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
+  <link rel="stylesheet" href="{{asset('layout/plugins/flexslider/flexslider.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
   <!-- FlexSlider end -->
 
 
   <!-- iButtons start -->
-  <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
+  <link rel="stylesheet" href="{{asset('layout/plugins/ibuttons/css/jquery.ibutton.css')}}" type="text/css" />
+  <script type="text/javascript" src="{{asset('layout/plugins/ibuttons/lib/jquery.ibutton.min.js')}}"></script>
   <!-- iButtons end -->
 
 
-  <!-- jQuery Form Plugin start -->
-  <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
-  <!-- jQuery Form Plugin end -->
+  <!-- jQuery 表单插件开始  -->
+  <script type="text/javascript" src="{{asset('layout/plugins/ajaxform/jquery.form.js')}}"></script>
+  <!-- jQuery表单插件结束 -->
 
 
-  <script type="text/javascript" src="layout/js/main.js"></script>
+  <script type="text/javascript" src="{{asset('layout/js/main.js')}}"></script>
 
 
   <script type="text/javascript">
@@ -84,7 +84,6 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
-
 
 <body>
   <div class="wrapper sticky_footer">
@@ -116,13 +115,13 @@
               <div class="block_top_menu">
                 <ul>
                   <li class="current">
-                    <a href="#login" class="open_popup">Login</a>
+                    <a href="#login" class="open_popup">登录</a>
                   </li>
                   <li>
-                    <a href="registration.html">Registration</a>
+                    <a href="{{url('home/index/registration')}}">注册</a>
                   </li>
                   <li>
-                    <a href="#">Subscribe</a>
+                    <a href="#">订阅</a>
                   </li>
                 </ul>
               </div>
@@ -150,7 +149,7 @@
           <div class="inner">
             <div id="logo_top">
               <a href="index.html">
-                <img src="/Home/images/logo_top.png" alt="BusinessNews" title="BusinessNews" />
+                <img src="{{asset('Home/images/logo_top.png')}}" alt="BusinessNews" title="BusinessNews" />
               </a>
             </div>
 
@@ -344,7 +343,7 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_3.jpg" alt="" />
+                    <img src="{{asset('Home/images/pic_big_drop_3.jpg')}}" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">隐藏在中间的尴尬东西</a>
@@ -354,7 +353,7 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_4.jpg" alt="" />
+                    <img src="{{asset('Home/images/pic_big_drop_4.jpg')}}" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">查看时的页面内容.</a>
@@ -425,7 +424,7 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_6.jpg" alt="" />
+                    <img src="{{asset('Home/images/pic_big_drop_6.jpg')}}" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">互联网倾向于重复预定义的块.</a>
@@ -496,7 +495,7 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
+                    <img src="{{asset('Home/images/pic_big_drop_2.jpg')}}" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">有很多变化的段落</a>

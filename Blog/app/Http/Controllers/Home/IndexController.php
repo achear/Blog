@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
+use App\Model\Carousel;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,10 @@ class IndexController extends Controller
     public function index()
     {
         //
-        return View('home/index/index');
+        $data = Carousel::get();
+        
+    
+        return View('home/index/index',['data'=>$data]);
     }
 
  
