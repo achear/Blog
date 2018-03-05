@@ -51,6 +51,7 @@
                     <input type="text" id="" name="user_qq" value="{{$user->user_qq}}" required="" lay-verify="nikename" autocomplete="off" class="layui-input">
                 </div>
             </div>
+            
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                 </label>
