@@ -89,4 +89,41 @@ class ConfigController extends Controller
    
     }
 
+    public function PhotoUp()
+    {
+        // Storage::disk('local')->put('2.jpg',file_get_contents(public_path().'/1.jpg'));
+
+
+    }
+    
+    /*
+     * 文件上传处理
+     */
+    public function upload(Request $request)
+    {
+        //1.获取上传文件
+        $file = $request->file('file_upload');
+//        return $file;
+//        2.判断上传文件的有效性
+        if($file->isValid()){
+//            获取文件后缀名
+            $ext = $file->getClientOriginalExtension();    //文件拓展名
+
+            //生成新文件名
+
+            $newfilename = md5(date('YmdHis').rand(1000,9999).uniqid()).'.'.$ext;
+
+
+
+            //1.上传到本地服务器
+//            return $newfilename;
+           $res = $file->move(public_path().'/Home/images', $newfilename);
+
+
+            return $newfilename;
+
+        }
+    
+    }
+
 }

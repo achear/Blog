@@ -57,13 +57,67 @@
                     <input name="carousel_content" autocomplete="off" placeholder="{{$data[0]->carousel_content}}" class="layui-input" type="text">
                   </div>
                 </div> 
-                <div class="layui-form-item">
+                {{--  <div class="layui-form-item">
                     <label class="layui-form-label">图片</label>
                     <div class="layui-input-inline">
                       <input name="carousel_photo" autocomplete="off"  class="layui-input" type="file" >
                       
                     </div>
-                  </div> 
+                  </div>   --}}
+                  <div class="layui-form-item">
+                      <label for="L_art_editor" class="layui-form-label">
+                          <span class="x-red">*</span>缩略图
+                      </label>
+                      <div class="layui-input-inline">
+                          <input type="file" id="file_upload" name="file_upload" value="">
+                      </div>
+                      <script type="text/javascript">
+                        $(function () {
+                            $("#file_upload").change(function () {
+                                uploadImage();
+                            })
+                        })
+                        function uploadImage() {
+    //  判断是否有选择上传文件
+                            var imgPath = $("#file_upload").val();
+                            if (imgPath == "") {
+                                alert("请选择上传图片！");
+                                return;
+                            }
+                            //判断上传文件的后缀名
+                            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+                            if (strExtension != 'jpg' && strExtension != 'gif'
+                                && strExtension != 'png' && strExtension != 'bmp') {
+                                alert("请选择图片文件");
+                                return;
+                            }
+                            var formData = new FormData($('#art_form')[0]);
+                            $.ajax({
+                                type: "POST",
+                                url: "/admin/config/upload",
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                data: formData,
+                                contentType: false,
+                                processData: false,
+                                async:true,
+                                cache:false,
+                                success: function(data) {
+    
+                                    $('#thumb').attr('src',data);
+                                    //显示上传到OSS上的图片
+                                    // $('#thumb').attr('src','oss的域名'+data);
+                                    // $('#thumb').attr('src','{{ env('') }}'+data);
+                                    $('#art_thumb').val(data);
+                                },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                    alert("上传失败，请检查网络后重试");
+                                }
+                            });
+                        }
+                    </script>
+
                   <div class="layui-form-item">
                       <label class="layui-form-label">预览</label>
                       <div class="layui-input-block">
