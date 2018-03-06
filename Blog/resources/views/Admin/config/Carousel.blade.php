@@ -139,7 +139,7 @@
     <script>
         
 
-        $('#selec').click(function(){
+        $('#selec').change(function(){
           var val =  $("#selec").val()
           $.ajax({
                   type : "get", //提交方式
@@ -147,11 +147,11 @@
                   data : {"id":val},//数据，这里使用的是Json格式进行传输
                   dataType : "Json",
                   success : function(result) {//返回数据根据结果进行相应的处理
-                    location.reload();
+                        location.reload();
                     
                   }
               });
-         
+              
         })
         // $("#selec option").change(function () { 
         //   $.get("/admin/config/CaroEdit", 

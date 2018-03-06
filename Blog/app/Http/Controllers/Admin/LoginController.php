@@ -88,7 +88,7 @@ class LoginController extends Controller
     public function session()
     {
         //清空session
-        session()->flush();
+        //session()->flush();
     }
     
     public function yzm()
