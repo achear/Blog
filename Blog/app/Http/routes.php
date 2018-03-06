@@ -32,10 +32,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 
 });
 
+Route::get('/','Home\IndexController@index');
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],function(){
 
-    Route::get('/','Home\IndexController@index');
+    
     // 前台注册页
     Route::get('/home/index/registration','Home\LoginController@index');
     //后台首页

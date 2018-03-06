@@ -22,7 +22,7 @@
               <dd><a href="{{ url('admin/logout') }}">退出</a></dd>
             </dl>
           </li>
-          <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
+          <li class="layui-nav-item to-index"><a href="{{url('/')}}">前台首页</a></li>
         </ul>
         
     </div>
