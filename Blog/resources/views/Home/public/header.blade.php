@@ -110,7 +110,7 @@
                 </ul>
               </div>
             </div>
-
+            @if(1==1)
             <div class="fr">
               <div class="block_top_menu">
                 <ul>
@@ -125,6 +125,22 @@
                   </li>
                 </ul>
               </div>
+              @else
+              <div class="fr">
+                  <div class="block_top_menu">
+                    <ul>
+                      <li class="current">
+                        <a href="#login" class="open_popup">游客122</a>
+                      </li>
+                      <li>
+                        <a href="{{url('home/index/registration')}}">个人中心</a>
+                      </li>
+                      <li>
+                        <a href="#">空间</a>
+                      </li>
+                    </ul>
+                  </div>
+                  @endif
 
               <div class="block_social_top">
                 <ul>

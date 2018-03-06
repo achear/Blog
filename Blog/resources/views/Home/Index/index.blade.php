@@ -841,3 +841,137 @@
   </div>
   <!-- CONTENT END -->
 @endsection
+
+{{--  登录开始  --}}
+@section('popup')
+<!-- POPUP BEGIN -->
+<div id="overlay"></div>
+<div id="login" class="block_popup">
+<div class="popup">
+  <a href="#" class="close">关闭</a>
+
+  <div class="content">
+    <div class="title">
+      <p>进入网站</p>
+    </div>
+
+    <div class="form">
+      <form action="/home/index/DoLogin"  method="POST">
+        {{csrf_field()}}
+      <div class="column">
+        <p class="label">账号：<span><font color="red"></font></span></p>
+        <div class="field">
+          <input type="text" name="username" value=""/>
+        </div>
+      </div>
+
+      <div class="column">
+        <p class="label">密码：<span><font color="red"></font></span></p>
+        <div class="field">
+          <input type="password" name="password"/>
+        </div>
+      </div>
+
+      <div class="column_2">
+        <div class="remember">
+          <div class="checkbox">
+            <input type="checkbox" value="1"/>
+          </div>
+          <div class="remember_label">
+            <p>记住我</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column_2">
+        <p class="forgot_pass">
+          <a href="#">忘记密码？</a>
+        </p>
+      </div>
+
+      <div class="column button">
+        {{--  <a href="#" class="enter">  --}}
+          <input type="submit" value="登录">
+          {{--  <input type="button" value="登录">  --}}
+          {{--  <span>登录</span>  --}}
+        {{--  </a>  --}}
+      </div>
+
+      <div class="clearboth"></div>
+      </form>
+    </div>
+
+    <div class="subtitle">
+      <p>以用户身份登录</p>
+    </div>
+
+    <div class="fb_button">
+      <a href="javscript:;" style="pointer-events: none;">
+        <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
+      </a>
+    </div>
+    <div class="text">
+      <p>在社交网络Facebook上使用您的帐户，在Blog上创建个人资料</p>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+    $(function(){
+  
+     var ok1=false;
+     var ok2=false;
+    
+     // 验证用户名
+     $('input[name="username"]').focus(function(){
+      $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state2');
+     }).blur(function(){
+      if($(this).val().length >= 3 && $(this).val().length <=12 && $(this).val()!=''){
+       $(this).next().innerHTML('输入成功').removeClass('state1').addClass('state4');
+  
+       ok1=true;
+      }else{
+       $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state3');
+   
+      }
+       
+     });
+  
+     //验证密码
+     $('input[name="password"]').focus(function(){
+      $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state2');
+     }).blur(function(){
+      if($(this).val().length >= 6 && $(this).val().length <=20 && $(this).val()!=''){
+       $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+       ok2=true;
+      }else{
+       $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state3');
+      }
+       
+     });       
+     });
+  
+     //提交按钮,所有验证通过方可提交
+  
+     $('.submit').click(function(){
+      if(ok1 && ok2){
+       $('form').submit();
+      }else{
+       return false;
+      }
+     });
+      
+    });
+   </script>
+{{--  <script>
+  // 登录验证
+  $(function (){
+    $(.column button).click(function(){
+      var 
+    })
+  })
+ 
+</script>  --}}
+<!-- POPUP END -->
+
+@endsection
