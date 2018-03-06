@@ -139,7 +139,7 @@
     <script>
         
 
-        $('#selec').click(function(){
+        $('#selec').change(function(){
           var val =  $("#selec").val()
           $.ajax({
                   type : "get", //提交方式
