@@ -8,7 +8,7 @@
 
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
@@ -118,7 +118,7 @@
                     <a href="#login" class="open_popup">登录</a>
                   </li>
                   <li>
-                    <a href="{{url('home/index/registration')}}">注册</a>
+                    <a href="{{url('home/login/registration')}}">注册</a>
                   </li>
                   <li>
                     <a href="#">订阅</a>
