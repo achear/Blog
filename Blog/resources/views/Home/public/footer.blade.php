@@ -1,11 +1,10 @@
-
 <footer>
   <div id="footer">
     <section class="top">
       <div class="inner">
         <div id="logo_bottom">
           <a href="index.html">
-            <img src="{{ asset('Home/images/logo_bottom.png') }}" alt="" />
+            <img src="/Home/images/logo_bottom.png" alt="" />
           </a>
         </div>
 
@@ -27,42 +26,42 @@
               <ul>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_1.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_1.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_2.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_2.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_3.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_3.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_4.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_4.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_5.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_5.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_6.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_6.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_7.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_7.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_8.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_8.png" alt="" />
                   </a>
                 </li>
               </ul>
@@ -145,7 +144,7 @@
               <div class="article">
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
-                    <img src="{{ asset('Home/images/pic_most_read_1.png') }}" alt="" />
+                    <img src="/Home/images/pic_most_read_1.png" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -162,7 +161,7 @@
               <div class="article">
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
-                    <img src="{{ asset('Home/images/pic_most_read_2.png') }}" alt="" />
+                    <img src="/Home/images/pic_most_read_2.png" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -179,7 +178,7 @@
               <div class="article">
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
-                    <img src="{{ asset('Home/images/pic_most_read_3.png') }}" alt="" />
+                    <img src="/Home/images/pic_most_read_3.png" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -340,7 +339,7 @@
 
     <div class="fb_button">
       <a href="#">
-        <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
+        <img src="/layout/images/button_fb_login.png" alt="" />
       </a>
     </div>
     <div class="text">

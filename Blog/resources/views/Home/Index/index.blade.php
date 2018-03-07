@@ -74,13 +74,12 @@
                   controlNav: true,
                   directionNav: true,
                   animationLoop: true,
-                  slideshow: true,
-                  useCSS: true
+                  slideshow: false,
+                  useCSS: false
                 });
 
               });
             </script>
-            
           </div>
 
           <div class="line_2" style="margin:34px 0px 28px;"></div>
@@ -600,7 +599,7 @@
           <div class="separator" style="height:31px;"></div>
 
           <div class="block_popular_posts">
-            <h4>热门帖子</h4>
+            <h4>Popular Posts</h4>
 
             <div class="article">
               <div class="pic">
@@ -612,10 +611,10 @@
 
               <div class="text">
                 <p class="title">
-                  <a href="#">网页编辑他们的默认模型文本，并进行搜索.</a>
+                  <a href="#">Packages and web page editors their default text.</a>
                 </p>
                 <div class="date">
-                  <p>xxxx</p>
+                  <p>11 July, 2012</p>
                 </div>
                 <div class="icons">
                   <ul>
@@ -641,7 +640,7 @@
 
               <div class="text">
                 <p class="title">
-                  <a href="#">网页编辑他们的默认模型文本，并进行搜索.</a>
+                  <a href="#">Web page editors their default model text, and a search for.</a>
                 </p>
                 <div class="date">
                   <p>07 July, 2012</p>
@@ -730,7 +729,7 @@
           <div class="separator" style="height:31px;"></div>
 
           <div class="block_calendar">
-            <h4>日历</h4>
+            <h4>Calendar</h4>
 
             <div class="calendar" id="calendar_sidebar">
             </div>
