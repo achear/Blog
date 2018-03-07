@@ -52,4 +52,4 @@ Route::post('/admin/cate/changeorder','Admin\CateController@changeOrder');
 Route::post('/admin/article/uploads','Admin\ArticleController@upload');
 Route::resource('/admin/article','Admin\ArticleController');
 //访问的update方法的路由
-// Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
+Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');

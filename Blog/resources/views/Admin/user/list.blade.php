@@ -79,7 +79,7 @@
               <!-- <a title="编辑"  onclick="x_admin_show('编辑','{{url('admin/user/'.$v->id.'/edit')}}',600,400)" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
               </a> -->
-              <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
+              <a onclick="x_admin_show('修改密码','user/{{$v->user_id}}',600,400)" title="修改密码" href="javascript:;">
                 <i class="layui-icon">&#xe631;</i>
               </a>
               <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">

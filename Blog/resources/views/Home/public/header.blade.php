@@ -8,7 +8,7 @@
 
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
@@ -111,21 +111,37 @@
                 </ul>
               </div>
             </div>
-
+            @if(1==1)
             <div class="fr">
               <div class="block_top_menu">
                 <ul>
                   <li class="current">
-                    <a href="#login" class="open_popup">Login</a>
+                    <a href="#login" class="open_popup">登录</a>
                   </li>
                   <li>
-                    <a href="registration.html">Registration</a>
+                    <a href="{{url('home/login/registration')}}">注册</a>
                   </li>
                   <li>
-                    <a href="#">Subscribe</a>
+                    <a href="#">订阅</a>
                   </li>
                 </ul>
               </div>
+              @else
+              <div class="fr">
+                  <div class="block_top_menu">
+                    <ul>
+                      <li class="current">
+                        <a href="#login" class="open_popup">游客122</a>
+                      </li>
+                      <li>
+                        <a href="{{url('home/index/registration')}}">个人中心</a>
+                      </li>
+                      <li>
+                        <a href="#">空间</a>
+                      </li>
+                    </ul>
+                  </div>
+                  @endif
 
               <div class="block_social_top">
                 <ul>

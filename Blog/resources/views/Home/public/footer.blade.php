@@ -279,12 +279,8 @@
 <!-- FOOTER END -->
 </div>
 
-<!-- POPUP BEGIN -->
-<div id="overlay"></div>
-<div id="login" class="block_popup">
-<div class="popup">
-  <a href="#" class="close">关闭</a>
 
+<<<<<<< HEAD
   <div class="content">
     <div class="title">
       <p>进入网站</p>
@@ -349,6 +345,8 @@
 </div>
 </div>
 <!-- POPUP END -->
+=======
+>>>>>>> ed9e174050652204861954f7385b29f63c6d2bdb
 
 </body>
 

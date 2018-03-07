@@ -75,9 +75,47 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Users::find($id);
+        return view('admin.user.pass',['user'=>$user]);
     }
 
+    public function pass(Request $request,$id)
+    {
+        $user = Users::find($id);
+        $input = $request->all();
+        if ($input['oldpass'] != $user->user_pwd) {
+            $data = [
+                'status'=> 1,
+                'msg' => '原密码错误'
+            ];
+            return $data;
+        }
+
+        if ($input['newpass'] == $user->user_pwd) {
+            $data = [
+                'status'=> 1,
+                'msg' => '不能使用相同的密码'
+            ];
+            return $data;
+        }
+
+        $user->user_pwd = $input['newpass'];
+        $res = $user->save();
+
+        if ($res) {
+            $data = [
+                'status'=>0,
+                'msg'=>'修改密码成功'
+            ];
+        } else {
+            $data = [
+                'status'=>1,
+                'msg'=>'修改密码失败'
+            ];
+        }
+
+        return $data;
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -133,6 +171,77 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
         //
+=======
+        //        找到要删除的记录，并删除
+       $res =  Users::find($id)->delete();
+       if($res){
+           $data = [
+               'status'=>0,
+               'msg'=>'删除成功'
+           ];
+       }else{
+           $data = [
+               'status'=>1,
+               'msg'=>'删除失败'
+           ];
+       }
+
+       return $data;
+    }
+
+    //修改用户状态
+    public function changeState(Request $request)
+    {
+        $input = $request->all();
+        //dd($input);
+//        return $input;
+        //根据id获取要修改状态的用户
+        $user = Users::find($input['id']);
+        
+        $st = ($user->user_freeze == 0)? 1:0;
+        //更改状态
+        
+        $user->user_freeze = $st;
+        $res = $user->save();
+        
+        if($res){
+            $data = [
+                'status'=>0,
+                'msg'=>'添加成功'
+            ];
+        }else{
+            $data = [
+                'status'=>1,
+                'msg'=>'添加失败'
+            ];
+        }
+
+        return $data;
+    }
+
+    //批量删除用户
+    public function del(Request $request)
+    {
+        $input = $request->input('ids');
+        //return $input;
+//        return $input;
+        $res = Users::destroy($input);
+
+        if($res){
+            $data = [
+                'status'=>0,
+                'msg'=>'删除成功'
+            ];
+        }else{
+            $data = [
+                'status'=>1,
+                'msg'=>'删除失败'
+            ];
+        }
+
+        return $data;
+>>>>>>> ed9e174050652204861954f7385b29f63c6d2bdb
     }
 }
