@@ -32,6 +32,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 
 });
 
+Route::get('/','Home\IndexController@index');
 
 
 //前台首页
@@ -49,24 +50,39 @@ Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
 Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
 Route::post('/admin/config/upload','Admin\ConfigController@upload');
+// Route::get('/','Home\IndexController@index');
+// // 前台注册页
+Route::resource('/home/index','Home\IndexController');
+Route::resource('/home/login/registration','Home\LoginController');
+Route::resource('/home/login/DoLogin','Home\LoginController@DoLogin');
+//验证用户是否存在
+Route::controller('/home/user','Home\UserController');
 
-//修改用户状态路由
-Route::get('/admin/user/changestate','Admin\UserController@changeState');
-//修改用户密码
-Route::get('/admin/user/pass/{id}','Admin\UserController@pass');
-//批量删除用户路由
-Route::get('/admin/user/del','Admin\UserController@del');
-Route::resource('/admin/user','Admin\UserController');
-//后台欢迎页
-Route::get('/admin/welcome','Admin\LoginController@welcome');
-//用户模块路由
-Route::resource('/admin/user','Admin\UserController');
-//中间件
-Route::group(['middleware' => 'login'],function(){
-});
+
+// // 轮播图配置
+// Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+// Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
+// Route::get('/admin/config/upload','Admin\Controller@upload');
+
+// //修改用户状态路由
+// Route::get('/admin/user/changestate','Admin\UserController@changeState');
+// //修改用户密码
+// Route::get('/admin/user/pass/{id}','Admin\UserController@pass');
+// //批量删除用户路由
+// Route::get('/admin/user/del','Admin\UserController@del');
+// Route::resource('/admin/user','Admin\UserController');
+// //后台欢迎页
+// Route::get('/admin/welcome','Admin\LoginController@welcome');
+// //用户模块路由
+// Route::resource('/admin/user','Admin\UserController');
+// //中间件
+// Route::group(['middleware' => 'login'],function(){
+// });
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],function(){
 
-    Route::get('/','Home\IndexController@index');
+    
     // 前台注册页
     Route::get('/home/index/registration','Home\LoginController@index');
     //后台首页

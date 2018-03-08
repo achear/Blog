@@ -80,7 +80,7 @@ class LoginController extends Controller
         //如果登录成功，将登录用户信息保存到session中
 
         session()->put('user',$user);
-
+        //dd($res);
         return redirect('admin/index');
 
     }

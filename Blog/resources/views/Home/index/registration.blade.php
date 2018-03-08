@@ -20,31 +20,32 @@
                         <div class="separator" style="height:39px;"></div>
                         
                         <div class="block_registration">
-                        	<form action="#" class="w_validation" />
-                            	<div class="col_1">
+                        	<form action="{{url('/home/index')}}" method="post" class="w_validation" id="myform">
+                            {{ csrf_field() }}
+                                <div class="col_1">
                                 	<div class="label"><p>用户名<span>*</span>:</p></div>
-                                    <div class="field"><input type="text" class="req" /></div>
+                                    <div class="field"><input type="text" name="username" id="username" value="" class="req" /></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:14px;"></div>
                                     
                                     <div class="label"><p>邮箱<span>*</span>:</p></div>
-                                    <div class="field"><input type="text" class="req" /></div>
+                                    <div class="field"><input type="text" name="email" class="req" /></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
                                     
                                     <div class="label"><p>密码<span>*</span>:</p></div>
-                                    <div class="field"><input type="password" class="req" /></div>
+                                    <div class="field"><input type="password" name="password" class="req" /></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
                                     
                                     <div class="label"><p>确认密码<span>*</span>:</p></div>
-                                    <div class="field"><input type="password" class="req" /></div>
+                                    <div class="field"><input type="password" name="repassword" class="req" /></div>
                                     <div class="clearboth"></div>
                                 </div>
                                 
                                 <div class="col_2">
                                 	<div class="label"><p>名字:</p></div>
-                                    <div class="field"><input type="text" /></div>
+                                    <div class="field"><input type="text" name="username" /></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:14px;"></div>
                                     
@@ -56,6 +57,21 @@
                                     <div class="label"><p>性别:</p></div>
                                     <div class="checkbox"><input class="sliding_checkbox" type="checkbox" /></div>
                                     <script type="text/javascript">
+                                        $('#username').blur(function(){
+                                            var username = $('#username').val();
+                                            $.ajax({
+                                                type:"POST",
+                                                headers: {
+                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                },
+                                                url:'/home/user/index',
+                                                data:username,
+                                                dataType:"HTML",
+                                                success: function (result) {
+                                                    console.log(result);
+                                                }                                                
+                                            });
+                                        });
 										$(document).ready(function (){
 											$('.sliding_checkbox').iButton({
 												labelOn : '女',

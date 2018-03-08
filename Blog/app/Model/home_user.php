@@ -8,5 +8,8 @@ class home_user extends Model
 {
     //
     public $table = 'home_user';
-    
+
+    public $primaryKey = 'id';
+
+    public $timestamps = false;
 }
