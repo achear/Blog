@@ -15,6 +15,8 @@
 @show
 {{--  注册结束  --}}
 
+@include('home.public.list')
+
 {{-- 开始底部  --}}
 @include('home.public.footer')
 {{--  底部结束  --}}
