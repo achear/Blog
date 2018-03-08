@@ -45,7 +45,7 @@
                                 
                                 <div class="col_2">
                                 	<div class="label"><p>名字:</p></div>
-                                    <div class="field"><input type="text" name="username" /></div>
+                                    <div class="field" id="yanzheng"></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:14px;"></div>
                                     
@@ -66,9 +66,12 @@
                                                 },
                                                 url:'/home/user/index',
                                                 data:username,
-                                                dataType:"HTML",
+                                                dataType:"text",
                                                 success: function (result) {
-                                                    console.log(result);
+                                                    if (result) {
+                                                        $('#yanzheng').html('<span>用户名已存在</span>');
+                                                        console.log(11);
+                                                    } 
                                                 }                                                
                                             });
                                         });

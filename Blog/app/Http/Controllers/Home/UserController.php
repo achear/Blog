@@ -17,8 +17,14 @@ class UserController extends Controller
      */
     public function postIndex(Request $request)
     {
-        $data = $request->input('username');
-        return $data;
+        $data = $request->all();
+        $res = home_user::where('username',$data)->first();
+        if ($res) {
+            return 0;
+        } else {
+            return 1;
+        }
+        //return $res;
     }
 
     /**

@@ -44,7 +44,9 @@ Route::resource('/home/login/DoLogin','Home\LoginController@DoLogin');
 //验证用户是否存在
 Route::controller('/home/user','Home\UserController');
 
-
+//邮箱注册路由
+Route::get('emailregister','RegisterController@index');
+Route::post('register','RegisterController@email');
 // // 轮播图配置
 // Route::get('/admin/config','Admin\ConfigController@CaroEdit');
 // Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
