@@ -8,10 +8,9 @@
 
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-
-
+  <meta name="csrf-token" content="{{csrf_token()}}"/>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+  {{--  <meta name="viewport" content="width=device-width" />  --}}
 
 
   <!--[if lt IE 9]>
@@ -110,7 +109,7 @@
                 </ul>
               </div>
             </div>
-            @if(1==1)
+            @if(!session('users'))
             <div class="fr">
               <div class="block_top_menu">
                 <ul>
@@ -130,13 +129,13 @@
                   <div class="block_top_menu">
                     <ul>
                       <li class="current">
-                        <a href="#login" class="open_popup">游客122</a>
+                        <a href="#login" class="open_popup">{{session('users')['username']}}</a>
                       </li>
                       <li>
                         <a href="{{url('home/index/registration')}}">个人中心</a>
                       </li>
                       <li>
-                        <a href="#">空间</a>
+                        <a href="{{url('/home/index/loginout')}}">退出登录</a>
                       </li>
                     </ul>
                   </div>

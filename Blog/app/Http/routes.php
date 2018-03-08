@@ -39,6 +39,8 @@ Route::get('/','Home\IndexController@index');
 // 前台注册页
 Route::resource('/home/index/registration','Home\LoginController@index');
 Route::resource('/home/index/DoLogin','Home\LoginController@DoLogin');
+// 退出登录
+Route::resource('/home/index/loginout','Home\LoginController@loginout');
 
 
 // 轮播图配置
@@ -46,7 +48,7 @@ Route::get('/admin/config','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
 Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
-Route::get('/admin/config/upload','Admin\Controller@upload');
+Route::post('/admin/config/upload','Admin\ConfigController@upload');
 
 //修改用户状态路由
 Route::get('/admin/user/changestate','Admin\UserController@changeState');
