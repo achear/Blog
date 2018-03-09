@@ -28,11 +28,14 @@ Route::resource('/admin/login','Admin\LoginController@login');
 Route::get('/admin/yzm','Admin\LoginController@yzm');
 //后台首页
 Route::get('/admin/index','Admin\LoginController@index');
+<<<<<<< HEAD
 
 
 //前台首页
 Route::get('/','Home\IndexController@index');
 
+=======
+>>>>>>> 03228153583e1580f139c31eacb13166aba25c14
 
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
@@ -47,6 +50,7 @@ Route::resource('/admin/cate','Admin\CateController');
 Route::post('/admin/cate/changeorder','Admin\CateController@changeOrder');
 //前台首页
 Route::get('/','Home\IndexController@index');
+<<<<<<< HEAD
 // 前台注册页
 Route::resource('/home/index/registration','Home\LoginController@index');
 Route::resource('/home/index/DoLogin','Home\LoginController@DoLogin');
@@ -54,6 +58,26 @@ Route::resource('/home/index/DoLogin','Home\LoginController@DoLogin');
 Route::resource('/home/index/loginout','Home\LoginController@loginout');
 
 
+=======
+
+
+//后台欢迎页
+Route::get('/admin/welcome','Admin\LoginController@welcome');
+//用户模块路由
+Route::resource('/admin/user','Admin\UserController');
+//中间件
+Route::group(['middleware' => 'login'],function(){
+});
+//前台首页
+Route::get('/','Home\IndexController@index');
+// 前台注册页
+Route::resource('/home/index/registration','Home\LoginController@index');
+Route::resource('/home/index/DoLogin','Home\LoginController@DoLogin');
+// 退出登录
+Route::resource('/home/index/loginout','Home\LoginController@loginout');
+
+
+>>>>>>> 03228153583e1580f139c31eacb13166aba25c14
 // 轮播图配置
 Route::get('/admin/config','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
@@ -79,4 +103,8 @@ Route::post('/admin/cate/changeorder','Admin\CateController@changeOrder');
 Route::post('/admin/article/uploads','Admin\ArticleController@upload');
 Route::resource('/admin/article','Admin\ArticleController');
 //访问的update方法的路由
+<<<<<<< HEAD
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
+=======
+Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
+>>>>>>> 03228153583e1580f139c31eacb13166aba25c14
