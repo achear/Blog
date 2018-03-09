@@ -51,11 +51,11 @@ Route::resource('/home/index/loginout','Home\LoginController@loginout');
 
 
 // 轮播图配置
-Route::get('/admin/config','Admin\ConfigController@CaroEdit');
-Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
-Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
-Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
-Route::post('/admin/config/upload','Admin\ConfigController@upload');
+// Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+// Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
+// Route::post('/admin/config/upload','Admin\ConfigController@upload');
 // Route::get('/','Home\IndexController@index');
 // // 前台注册页
 Route::resource('/home/index','Home\IndexController');
@@ -64,6 +64,61 @@ Route::resource('/home/login/DoLogin','Home\LoginController@DoLogin');
 //验证用户是否存在
 Route::controller('/home/user','Home\UserController');
 
+//邮箱注册路由
+Route::get('emailregister','RegisterController@index');
+Route::post('register','RegisterController@email');
+//邮箱激活路由
+Route::get('active','RegisterController@active');
+// // 轮播图配置
+// Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+// Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
+// Route::get('/admin/config/upload','Admin\Controller@upload');
+
+// //修改用户状态路由
+// Route::get('/admin/user/changestate','Admin\UserController@changeState');
+// //修改用户密码
+// Route::get('/admin/user/pass/{id}','Admin\UserController@pass');
+// //批量删除用户路由
+// Route::get('/admin/user/del','Admin\UserController@del');
+// Route::resource('/admin/user','Admin\UserController');
+// //后台欢迎页
+// Route::get('/admin/welcome','Admin\LoginController@welcome');
+// //用户模块路由
+// Route::resource('/admin/user','Admin\UserController');
+// //中间件
+// Route::group(['middleware' => 'login'],function(){
+// });
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],function(){
+
+    
+    // 前台注册页
+    Route::get('/home/index/registration','Home\LoginController@index');
+    //后台首页
+    Route::get('/index','LoginController@index');
+    // 轮播图配置
+    Route::get('/config','ConfigController@CaroEdit');
+    Route::get('/config/CarUpdata','ConfigController@CarUpdata');
+    Route::get('/config/CaroEdit','ConfigController@CaroEdit');
+    Route::get('/config/CarChange','ConfigController@CarChange');
+    Route::get('/config/upload','Controller@upload');
+    
+    //修改用户状态路由
+    Route::get('/user/changestate','UserController@changeState');
+    //修改用户密码
+    Route::get('/user/pass/{id}','UserController@pass');
+    //批量删除用户路由
+    Route::get('/user/del','UserController@del');
+    Route::resource('/user','UserController');
+    //后台欢迎页
+    Route::get('/welcome','LoginController@welcome');
+    //用户模块路由
+    Route::resource('/user','UserController');
+    //后台退出登录
+    Route::get('logout','LoginController@logout');
+    
+ });
 
 //分类模块
 Route::resource('/admin/cate','Admin\CateController');

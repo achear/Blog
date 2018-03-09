@@ -11,5 +11,7 @@ class home_user extends Model
 
     public $primaryKey = 'id';
 
+    public $fillable = ['username', 'email', 'password','id'];
+
     public $timestamps = false;
 }

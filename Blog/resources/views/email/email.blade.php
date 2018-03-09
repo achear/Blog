@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <link rel="shortcut icon" href="/Admin/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/Admin/css/font.css">
 	<link rel="stylesheet" href="/Admin/css/xadmin.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -19,16 +19,40 @@
 <body class="login-bg">
     
     <div class="login">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @if(is_object($errors))
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @else
+                        <li>{{ $errors }}</li>
+                    @endif
+                </ul>
+            </div>
+        @endif
+
+        {{--@if (!empty(session('msg')))--}}
+            {{--<div class="alert alert-danger">--}}
+                {{--<ul>--}}
+                        {{--<li>{{ session('msg') }}</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--@endif--}}
         <div class="message">x-admin2.0-管理登录</div>
         <div id="darkbannerwrap"></div>
         
-        <form method="post" class="layui-form" >
+        <form action="{{url('/register')}}" method="post" class="layui-form" >
+        {{ csrf_field() }}
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input name="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
             <hr class="hr15">
+            <input name="email" placeholder="邮箱"  type="text" lay-verify="required" class="layui-input" >
+            <hr class="hr15">
             <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
-			<hr class="hr15">
-			<input name="code" lay-verify="required" placeholder="验证码"  type="text" class="layui-input" style="width:150px;float:left">
-            <img src="{{url('admin/yzm')}}" alt="" style="width:150px;float:right;height:50px;curosr:pointer;" onclick="this.src='{{url('admin/yzm')}}?'+Math.random()">
+            <hr class="hr15">
+            <input name="repassword" placeholder="确认密码"  type="password" lay-verify="required" class="layui-input" >
             <hr class="hr15">
             <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
             <hr class="hr20" >
@@ -45,21 +69,15 @@
               //监听提交
               form.on('submit(login)', function(data){
                 // alert(888)
-                layer.msg(JSON.stringify(data.field),function(){
-                    location.href='index';
-                });
-                return false;
+                // layer.msg(JSON.stringify(data.field),function(){
+                //     location.href='index.html'
+                // });
+                //return false;
               });
             });
         })
 
         
-    <script type="text/javascript">
-        function re_captcha() {
-            $url = "{{ URL('/code/captcha') }}";
-            $url = $url + "/" + Math.random();
-            document.getElementById('127ddf0de5a04167a9e427d883690ff6').src = $url;
-        }
     </script>
 
     
