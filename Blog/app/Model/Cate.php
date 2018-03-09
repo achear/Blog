@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cate extends Model
 {
     //关联的表名
-    public $table = 'category';
+    public $table = 'blog_category';
     public $primaryKey = 'cate_id';
     public $guarded = [];
 //  public $fillable=['cate_name','cate_title','cate_keywords'];

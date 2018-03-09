@@ -22,13 +22,20 @@ Route::get('/', function () {
 //     return View('home/index/index');
 // });
 
-//后台登陆
-Route::resource('/admin/login','Admin\LoginController@login');
+// //后台登陆
+// Route::resource('/admin/login','Admin\LoginController@login');
+// //获取验证码
+// Route::get('/admin/yzm','Admin\LoginController@yzm');
+// //后台首页
+// Route::get('/admin/index','Admin\LoginController@index');
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
+    //后台登录
+    Route::get('login','LoginController@login')->name('admin.login');
 //获取验证码
-Route::get('/admin/yzm','Admin\LoginController@yzm');
-//后台首页
-Route::get('/admin/index','Admin\LoginController@index');
-
+    Route::get('yzm','LoginController@yzm');
+    //提交后台登录处理逻辑
+    Route::post('dologin','LoginController@doLogin');
+});
 
 //前台首页
 Route::get('/','Home\IndexController@index');
@@ -51,12 +58,12 @@ Route::resource('/home/index/loginout','Home\LoginController@loginout');
 
 
 // 轮播图配置
-// Route::get('/admin/config','Admin\ConfigController@CaroEdit');
-// Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
-// Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
-// Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
-// Route::post('/admin/config/upload','Admin\ConfigController@upload');
-// Route::get('/','Home\IndexController@index');
+Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
+Route::post('/admin/config/upload','Admin\ConfigController@upload');
+Route::get('/','Home\IndexController@index');
 // // 前台注册页
 Route::resource('/home/index','Home\IndexController');
 Route::resource('/home/login/registration','Home\LoginController');
@@ -98,11 +105,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
     //后台首页
     Route::get('/index','LoginController@index');
     // 轮播图配置
-    Route::get('/config','ConfigController@CaroEdit');
-    Route::get('/config/CarUpdata','ConfigController@CarUpdata');
-    Route::get('/config/CaroEdit','ConfigController@CaroEdit');
-    Route::get('/config/CarChange','ConfigController@CarChange');
-    Route::get('/config/upload','Controller@upload');
+    // Route::get('/config','ConfigController@CaroEdit');
+    // Route::get('/config/CarUpdata','ConfigController@CarUpdata');
+    // Route::get('/config/CaroEdit','ConfigController@CaroEdit');
+    // Route::get('/config/CarChange','ConfigController@CarChange');
+    // Route::get('/config/upload','Controller@upload');
     
     //修改用户状态路由
     Route::get('/user/changestate','UserController@changeState');
