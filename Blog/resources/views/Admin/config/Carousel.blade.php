@@ -12,8 +12,10 @@
       <link rel="stylesheet" href="{{ asset('admin/css/font.css') }}">
       <link rel="stylesheet" href="{{ asset('admin/css/xadmin.css') }}">
       <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="{{asset('Admin/css/layui.css')}}" media="all">
       <script src="{{ asset('admin/lib/layui/layui.js') }}" charset="utf-8"></script>
-      <script type="text/javascript" src="{{ asset('admin/js/xadmin.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('admin/js/xadmin.js') }}"></script> 
+      <script type="text/javascript" src="{{ asset('Admin/lib/layui/lay/modules/upload.js') }}"></script> 
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -22,11 +24,14 @@
   </head>
   
   <body>
-    <div>
+    <div class="alert alert-danger">
         {{--判断是否添加错误的提示信息--}}
+     
         @if(!empty(session('msg')))
-        <p>{{ session('msg') }}</p>
+        <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">{{ session('msg') }}</button>
         @endif
+       
+   
     </div>
     
     <div class="x-body">
@@ -57,71 +62,56 @@
                     <input name="carousel_content" autocomplete="off" placeholder="{{$data[0]->carousel_content}}" class="layui-input" type="text">
                   </div>
                 </div> 
-                {{--  <div class="layui-form-item">
-                    <label class="layui-form-label">图片</label>
-                    <div class="layui-input-inline">
-                      <input name="carousel_photo" autocomplete="off"  class="layui-input" type="file" >
-                      
-                    </div>
-                  </div>   --}}
+               
                   <div class="layui-form-item">
                       <label for="L_art_editor" class="layui-form-label">
                           <span class="x-red">*</span>缩略图
+                          <input type="hidden" name="carousel_photo" id="carousel_photo">
                       </label>
-                      <div class="layui-input-inline">
-                          <input type="file" id="file_upload" name="file_upload" value="">
-                      </div>
+                      <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="test1">上传图片</button>
+                            <div class="layui-upload-list">
+                              <img class="layui-upload-img" id="demo1">
+                              <p id="demoText"></p>
+                            </div>
+                          </div> 
                       <script type="text/javascript">
-                        $(function () {
-                            $("#file_upload").change(function () {
-                                uploadImage();
-                            })
-                        })
-                        function uploadImage() {
-    //  判断是否有选择上传文件
-                            var imgPath = $("#file_upload").val();
-                            if (imgPath == "") {
-                                alert("请选择上传图片！");
-                                return;
-                            }
-                            //判断上传文件的后缀名
-                            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
-                            if (strExtension != 'jpg' && strExtension != 'gif'
-                                && strExtension != 'png' && strExtension != 'bmp') {
-                                alert("请选择图片文件");
-                                return;
-                            }
-                            var formData = new FormData($('#art_form')[0]);
-                            $.ajax({
-                                type: "POST",
-                                url: "/admin/config/upload",
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                },
-                                data: formData,
-                                contentType: false,
-                                processData: false,
-                                async:true,
-                                cache:false,
-                                success: function(data) {
-    
-                                    $('#thumb').attr('src',data);
-                                    //显示上传到OSS上的图片
-                                    // $('#thumb').attr('src','oss的域名'+data);
-                                    // $('#thumb').attr('src','{{ env('') }}'+data);
-                                    $('#art_thumb').val(data);
-                                },
-                                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                                    alert("上传失败，请检查网络后重试");
+                        layui.use('upload', function(){
+                            var $ = layui.jquery
+                            ,upload = layui.upload;
+                            
+                            
+                            //普通图片上传
+                            var uploadInst = upload.render({
+                                elem: '#test1'
+                                ,url: '/admin/config/upload'
+                             
+                                ,before: function(obj){
+                                //预读本地文件示例，不支持ie8
+                                obj.preview(function(index, file, result){
+                                    
+                                    $('#demo1').attr('src', result); //图片链接（base64）
+                                });
                                 }
+                                ,done: function(res){
+                                //如果上传失败
+                                if(res.code > 0){
+                                    return layer.msg('上传失败');
+                                }
+                                $('#carousel_photo').val(res);
+                                // demoText.html();
+                                
+                                //上传成功
+                                }
+                           
                             });
-                        }
+                        });
                     </script>
 
                   <div class="layui-form-item">
                       <label class="layui-form-label">预览</label>
                       <div class="layui-input-block">
-                          <img src="/Home/images/{{$data[0]->carousel_photo}}" alt="" width="200px">
+                          <img src="/Home/img/{{$data[0]->carousel_photo}}" alt="" width="200px">
                       </div>
                     </div> 
                  

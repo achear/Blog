@@ -10,6 +10,5 @@ class Article extends Model
     public $primaryKey = 'art_id';
     public $guarded = [];
 //  public $fillable=['cate_name','cate_title','cate_keywords'];
-
     public $timestamps = false;
 }

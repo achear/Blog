@@ -25,7 +25,7 @@
                 @foreach($data as $v)
                 <li>
                   <div class="slide">
-                    <img src="/Home/images/{{ $v->carousel_photo }}" alt="" />
+                    <img src="/Home/img/{{ $v->carousel_photo }}" style="width:610px;height:292px;" alt="" />
                     <div class="caption">
                       <p class="title">{{ $v->carousel_title}}</p>
                       <p>{{$v->carousel_content}}</p>
@@ -33,38 +33,7 @@
                   </div>
                 </li>
                 @endforeach
-                {{--  <li>
-                  <div class="slide">
-                    <img src="/Home/images/pic_home_slider_2.jpg" alt="" />
-                    <div class="caption">
-                      <p class="title">Many desktop publishing packages.</p>
-                      <p>There are many variations of passages of available, but the majority have suffered alteration in
-                        some form, by injected humour, or randomised.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="slide">
-                    <img src="/Home/images/pic_home_slider_3.jpg" alt="" />
-                    <div class="caption">
-                      <p class="title">Many desktop publishing packages and web page.</p>
-                      <p>There are many variations of passages of available, but the majority.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="slide">
-                    <img src="/Home/images/pic_home_slider_4.jpg" alt="" />
-                    <div class="caption">
-                      <p class="title">Many desktop publishing packages and web page.</p>
-                      <p>There are many variations of passages of available, but the majority have suffered alteration in
-                        some form, by injected humour, or randomised, but the majority have suffered alteration in some
-                        form, by injected humour, or randomised.</p>
-                    </div>
-                  </div>
-                </li>  --}}
+       
               </ul>
             </div>
 
@@ -838,6 +807,7 @@
       </div>
     </div>
   </div>
+       
   <!-- CONTENT END -->
 @endsection
 
@@ -853,9 +823,14 @@
     <div class="title">
       <p>进入网站</p>
     </div>
+    {{--  @if(count($errors)>0)  
+    @foreach($errors->all() as $value  
+        {{$value}}  
+    @endforeach  
+@endif   --}}
 
     <div class="form">
-      <form action="/home/index/DoLogin"  method="POST">
+      <form action="/home/index/DoLogin" id="addForm" method="POST">
         {{csrf_field()}}
       <div class="column">
         <p class="label">账号：<span><font color="red"></font></span></p>
@@ -889,8 +864,9 @@
       </div>
 
       <div class="column button">
+          <button type="button" id="submitAdd">确认</button>
         {{--  <a href="#" class="enter">  --}}
-          <input type="submit" value="登录">
+          {{--  <input type="submit" value="登录">  --}}
           {{--  <input type="button" value="登录">  --}}
           {{--  <span>登录</span>  --}}
         {{--  </a>  --}}
@@ -916,51 +892,75 @@
 </div>
 </div>
 <script>
-    $(function(){
-  
-     var ok1=false;
-     var ok2=false;
+   $("#submitAdd").click(function(){
     
-     // 验证用户名
-     $('input[name="username"]').focus(function(){
-      $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state2');
-     }).blur(function(){
-      if($(this).val().length >= 3 && $(this).val().length <=12 && $(this).val()!=''){
-       $(this).next().innerHTML('输入成功').removeClass('state1').addClass('state4');
-  
-       ok1=true;
-      }else{
-       $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state3');
-   
-      }
-       
-     });
-  
-     //验证密码
-     $('input[name="password"]').focus(function(){
-      $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state2');
-     }).blur(function(){
-      if($(this).val().length >= 6 && $(this).val().length <=20 && $(this).val()!=''){
-       $(this).next().text('输入成功').removeClass('state1').addClass('state4');
-       ok2=true;
-      }else{
-       $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state3');
-      }
-       
-     });       
-     });
-  
-     //提交按钮,所有验证通过方可提交
-  
-     $('.submit').click(function(){
-      if(ok1 && ok2){
-       $('form').submit();
-      }else{
+    var targetUrl = $("#addForm").attr("action");    
+    var data = new FormData($( "#addForm" )[0]);     
+     $.ajax({ 
+    headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  },
+      type:'post',  
+      url:'/home/index/DoLogin', 
+      cache: false,    //上传文件不需缓存
+      processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+      contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
+      data:data,
+      dataType:'json', 
+      success:function(data){      
+        alert('登录成功');
+        location.reload();
+      },
+      error:function(){ 
+       alert("账号或密码有误")
        return false;
-      }
-     });
       
-    });
+       
+      }
+     })
+     
+  })
+          // $.ajax({
+          //         type : "POST", //提交方式
+          //         headers: {
+          //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          //         },
+          //         url : '/home/index/DoLogin',//路径
+          //         data : data.field,//数据，这里使用的是Json格式进行传输
+          //         dataType : "Json",
+          //         success : function(result) {//返回数据根据结果进行相应的处理
+          //            console.log(result);
+                      // 如果ajax的返回数据对象的status属性值是0，表示用户添加成功；弹添加成功的提示信息
+          //            if(result.status == 0){
+          //                layer.alert(result.msg, {icon: 6},function () {
+                              // 获得frame索引
+                              // var index = parent.layer.getFrameIndex(window.name);
+                              //关闭当前frame
+                              // parent.layer.close(index);
+
+                              //刷新父页面
+          //                    parent.location.reload();
+          //                });
+          //            }else{
+          //                layer.alert(result.msg, {icon: 6},function () {
+                             // 获得frame索引
+                             // var index = parent.layer.getFrameIndex(window.name);
+                              //关闭当前frame
+                             // parent.layer.close(index);
+
+          //                    parent.location.reload();
+          //                });
+          //            }
+          //         }
+          //     });
+
+
+
+          //     console.log(data);
+          //   //发异步，把数据提交给php
+
+          //   return false;
+          // });
    </script>
 {{--  <script>
   // 登录验证

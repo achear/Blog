@@ -41,6 +41,29 @@ Route::resource('/admin/user','Admin\UserController');
 //中间件
 Route::group(['middleware' => 'login'],function(){
 });
+//前台首页
+Route::get('/','Home\IndexController@index');
+// 前台注册页
+Route::resource('/home/index/registration','Home\LoginController@index');
+Route::resource('/home/index/DoLogin','Home\LoginController@DoLogin');
+// 退出登录
+Route::resource('/home/index/loginout','Home\LoginController@loginout');
+
+
+// 轮播图配置
+Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
+Route::post('/admin/config/upload','Admin\ConfigController@upload');
+// Route::get('/','Home\IndexController@index');
+// // 前台注册页
+Route::resource('/home/index','Home\IndexController');
+Route::resource('/home/login/registration','Home\LoginController');
+Route::resource('/home/login/DoLogin','Home\LoginController@DoLogin');
+//验证用户是否存在
+Route::controller('/home/user','Home\UserController');
+
 
 //分类模块
 Route::resource('/admin/cate','Admin\CateController');
