@@ -1,11 +1,10 @@
-
 <footer>
   <div id="footer">
     <section class="top">
       <div class="inner">
         <div id="logo_bottom">
           <a href="index.html">
-            <img src="{{ asset('Home/images/logo_bottom.png') }}" alt="" />
+            <img src="/Home/images/logo_bottom.png" alt="" />
           </a>
         </div>
 
@@ -27,42 +26,42 @@
               <ul>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_1.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_1.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_2.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_2.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_3.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_3.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_4.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_4.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_5.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_5.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_6.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_6.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_7.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_7.png" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
-                    <img src="{{ asset('Home/images/pic_flickr_8.png') }}" alt="" />
+                    <img src="/Home/images/pic_flickr_8.png" alt="" />
                   </a>
                 </li>
               </ul>
@@ -145,7 +144,7 @@
               <div class="article">
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
-                    <img src="{{ asset('Home/images/pic_most_read_1.png') }}" alt="" />
+                    <img src="/Home/images/pic_most_read_1.png" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -162,7 +161,7 @@
               <div class="article">
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
-                    <img src="{{ asset('Home/images/pic_most_read_2.png') }}" alt="" />
+                    <img src="/Home/images/pic_most_read_2.png" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -179,7 +178,7 @@
               <div class="article">
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
-                    <img src="{{ asset('Home/images/pic_most_read_3.png') }}" alt="" />
+                    <img src="/Home/images/pic_most_read_3.png" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -280,85 +279,7 @@
 <!-- FOOTER END -->
 </div>
 
-<!-- POPUP BEGIN -->
-<div id="overlay"></div>
-<div id="login" class="block_popup">
-<div class="popup">
-  <a href="#" class="close">关闭</a>
 
-  <div class="content">
-    <div class="title">
-      <p>进入网站</p>
-    </div>
-
-    <div class="form">
-      <form action="#" / method="POST">
-      <div class="column">
-        <p class="label">账号</p>
-        <div class="field">
-          <input type="text" />
-        </div>
-      </div>
-
-      <div class="column">
-        <p class="label">密码</p>
-        <div class="field">
-          <input type="password" />
-        </div>
-      </div>
-
-      <div class="column_2">
-        <div class="remember">
-          <div class="checkbox">
-            <input type="checkbox" />
-          </div>
-          <div class="remember_label">
-            <p>记住我</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column_2">
-        <p class="forgot_pass">
-          <a href="#">忘记密码？</a>
-        </p>
-      </div>
-
-      <div class="column button">
-        <a href="#" class="enter">
-          <span>登录</span>
-        </a>
-      </div>
-
-      <div class="clearboth"></div>
-      </form>
-    </div>
-
-    <div class="subtitle">
-      <p>以用户身份登录</p>
-    </div>
-
-    <div class="fb_button">
-      <a href="javscript:;" style="pointer-events: none;">
-        <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
-      </a>
-    </div>
-    <div class="text">
-      <p>在社交网络Facebook上使用您的帐户，在Blog上创建个人资料</p>
-    </div>
-  </div>
-</div>
-</div>
-{{--  <script>
-  // 登录验证
-  $(function (){
-    $(.column button).click(function(){
-      var 
-    })
-  })
- 
-</script>  --}}
-<!-- POPUP END -->
 
 </body>
 

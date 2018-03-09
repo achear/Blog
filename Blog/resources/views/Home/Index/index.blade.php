@@ -25,7 +25,7 @@
                 @foreach($data as $v)
                 <li>
                   <div class="slide">
-                    <img src="/Home/images/{{ $v->carousel_photo }}" alt="" />
+                    <img src="/Home/img/{{ $v->carousel_photo }}" style="width:610px;height:292px;" alt="" />
                     <div class="caption">
                       <p class="title">{{ $v->carousel_title}}</p>
                       <p>{{$v->carousel_content}}</p>
@@ -33,38 +33,7 @@
                   </div>
                 </li>
                 @endforeach
-                {{--  <li>
-                  <div class="slide">
-                    <img src="/Home/images/pic_home_slider_2.jpg" alt="" />
-                    <div class="caption">
-                      <p class="title">Many desktop publishing packages.</p>
-                      <p>There are many variations of passages of available, but the majority have suffered alteration in
-                        some form, by injected humour, or randomised.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="slide">
-                    <img src="/Home/images/pic_home_slider_3.jpg" alt="" />
-                    <div class="caption">
-                      <p class="title">Many desktop publishing packages and web page.</p>
-                      <p>There are many variations of passages of available, but the majority.</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="slide">
-                    <img src="/Home/images/pic_home_slider_4.jpg" alt="" />
-                    <div class="caption">
-                      <p class="title">Many desktop publishing packages and web page.</p>
-                      <p>There are many variations of passages of available, but the majority have suffered alteration in
-                        some form, by injected humour, or randomised, but the majority have suffered alteration in some
-                        form, by injected humour, or randomised.</p>
-                    </div>
-                  </div>
-                </li>  --}}
+       
               </ul>
             </div>
 
@@ -75,13 +44,12 @@
                   controlNav: true,
                   directionNav: true,
                   animationLoop: true,
-                  slideshow: true,
-                  useCSS: true
+                  slideshow: false,
+                  useCSS: false
                 });
 
               });
             </script>
-            
           </div>
 
           <div class="line_2" style="margin:34px 0px 28px;"></div>
@@ -574,270 +542,170 @@
 
         </div>
 
-        <div class="sidebar">
-          <div class="block_subscribes_sidebar">
-            <div class="service">
-              <a href="#" class="rss">
-                <span class="num">11 234</span>
-                <span class="people">用户</span>
-              </a>
-            </div>
+      
+  <!-- CONTENT END -->
+@endsection
 
-            <div class="service">
-              <a href="#" class="tw">
-                <span class="num">781</span>
-                <span class="people">用户</span>
-              </a>
-            </div>
+{{--  登录开始  --}}
+@section('popup')
+<!-- POPUP BEGIN -->
+<div id="overlay"></div>
+<div id="login" class="block_popup">
+<div class="popup">
+  <a href="#" class="close">关闭</a>
 
-            <div class="service">
-              <a href="#" class="fb">
-                <span class="num">341</span>
-                <span class="people">用户</span>
-              </a>
-            </div>
-          </div>
+  <div class="content">
+    <div class="title">
+      <p>进入网站</p>
+    </div>
+    {{--  @if(count($errors)>0)  
+    @foreach($errors->all() as $value  
+        {{$value}}  
+    @endforeach  
+@endif   --}}
 
-          <div class="separator" style="height:31px;"></div>
-
-          <div class="block_popular_posts">
-            <h4>热门帖子</h4>
-
-            <div class="article">
-              <div class="pic">
-                <a href="#" class="w_hover">
-                  <img src="/Home/images/pic_popular_post_1.jpg" alt="" />
-                  <span></span>
-                </a>
-              </div>
-
-              <div class="text">
-                <p class="title">
-                  <a href="#">网页编辑他们的默认模型文本，并进行搜索.</a>
-                </p>
-                <div class="date">
-                  <p>xxxx</p>
-                </div>
-                <div class="icons">
-                  <ul>
-                    <li>
-                      <a href="#" class="views">41</a>
-                    </li>
-                    <li>
-                      <a href="#" class="comments">22</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="line_3"></div>
-
-            <div class="article">
-              <div class="pic">
-                <a href="#" class="w_hover">
-                  <img src="/Home/images/pic_popular_post_2.jpg" alt="" />
-                  <span></span>
-                </a>
-              </div>
-
-              <div class="text">
-                <p class="title">
-                  <a href="#">网页编辑他们的默认模型文本，并进行搜索.</a>
-                </p>
-                <div class="date">
-                  <p>07 July, 2012</p>
-                </div>
-                <div class="icons">
-                  <ul>
-                    <li>
-                      <a href="#" class="views">24</a>
-                    </li>
-                    <li>
-                      <a href="#" class="comments">16</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="line_3"></div>
-
-            <div class="article">
-              <div class="pic">
-                <a href="#" class="w_hover">
-                  <img src="/Home/images/pic_popular_post_3.jpg" alt="" />
-                  <span></span>
-                </a>
-              </div>
-
-              <div class="text">
-                <p class="title">
-                  <a href="#">Editors their default model text, and a search uncover.</a>
-                </p>
-                <div class="date">
-                  <p>05 July, 2012</p>
-                </div>
-                <div class="icons">
-                  <ul>
-                    <li>
-                      <a href="#" class="views">33</a>
-                    </li>
-                    <li>
-                      <a href="#" class="comments">25</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="line_2"></div>
-          </div>
-
-          <div class="separator" style="height:31px;"></div>
-
-          <div class="block_popular_stuff">
-            <h4>Popular Video</h4>
-
-            <div class="content">
-              <a href="#" class="view_all">Show all video</a>
-              <div class="media">
-                <a href="http://www.youtube.com/watch?v=ySIvism2af8" class="general_pic_hover play no_fx" data-rel="prettyPhoto"
-                  title="Popular Video">
-                  <img src="/Home/images/pic_pop_video.jpg" alt="" />
-                </a>
-              </div>
-              <p>
-                <a href="blog_post_w_video.html">Publishing packages and web page editors their default model.</a>
-                <img src="/Home/images/icon_video.gif" alt=""
-                />
-              </p>
-              <p class="date">11 July, 2012</p>
-            </div>
-
-            <div class="info">
-              <ul>
-                <li class="comments">
-                  <a href="#">115</a>
-                </li>
-                <li class="views">
-                  <a href="#">220</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="clearboth"></div>
-
-            <div class="line_2"></div>
-          </div>
-
-          <div class="separator" style="height:31px;"></div>
-
-          <div class="block_calendar">
-            <h4>日历</h4>
-
-            <div class="calendar" id="calendar_sidebar">
-            </div>
-
-            <script type="text/javascript">
-              var today = new Date();
-              var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-              $('#calendar_sidebar').DatePicker({
-                flat: true,
-                date: date,
-                calendars: 1,
-                starts: 1,
-                locale: {
-                  days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                  daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                  daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
-                  months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
-                    'October', 'November', 'December'
-                  ],
-                  monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
-                    'Dec'
-                  ],
-                  weekMin: 'wk'
-                }
-              });
-            </script>
-
-            <div class="line_2"></div>
-          </div>
-
-          <div class="separator" style="height:31px;"></div>
-
-          <div class="block_twitter_widget">
-            <h4>Twitter Widget</h4>
-            <div class="lnk_follow">
-              <a href="#" target="_blank">Follow on Twitter</a>
-            </div>
-
-            <div class="tweet">
-              <!-- <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script> -->
-              <script type="text/javascript" src="layout/plugins/tweet/tweet.widget.js"></script>
-              <script type="text/javascript">
-                // ('YOUR USERNAME','NUMBER OF POSTS');
-                // AddTweet('Web_Visions', 1);
-              </script>
-            </div>
-
-            <div class="line_2"></div>
-          </div>
-
-          <div class="separator" style="height:31px;"></div>
-
-          <div class="block_popular_stuff">
-            <h4>Popular Photo</h4>
-
-            <div class="content">
-              <a href="#" class="view_all">Show all photos</a>
-              <div class="media">
-                <a href="/Home/images/pic_pop_photo_big.jpg" class="general_pic_hover zoom no_fx" data-rel="prettyPhoto" title="Popular Photo">
-                  <img src="/Home/images/pic_pop_photo.jpg" alt="" />
-                </a>
-              </div>
-              <p>
-                <a href="blog_post_w_slider.html">Editors their default model text, and a search for will uncover many.</a>
-                <img src="/Home/images/icon_photo.gif"
-                  alt="" />
-              </p>
-              <p class="date">11 July, 2012</p>
-            </div>
-
-            <div class="info">
-              <ul>
-                <li class="comments">
-                  <a href="#">100</a>
-                </li>
-                <li class="views">
-                  <a href="#">134</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="clearboth"></div>
-
-            <div class="line_2"></div>
-          </div>
-
-          <div class="separator" style="height:31px;"></div>
-
-          <div class="block_newsletter">
-            <h4>Newsletter</h4>
-
-            <form action="#" />
-            <div class="field">
-              <input type="text" class="w_def_text" title="Enter Your Email Addres" />
-            </div>
-            <input type="submit" class="button" value="Subscribe" />
-
-            <div class="clearboth"></div>
-            </form>
-          </div>
-
+    <div class="form">
+      <form action="/home/index/DoLogin" id="addForm" method="POST">
+        {{csrf_field()}}
+      <div class="column">
+        <p class="label">账号：<span><font color="red"></font></span></p>
+        <div class="field">
+          <input type="text" name="username" value=""/>
         </div>
-
-        <div class="clearboth"></div>
       </div>
+
+      <div class="column">
+        <p class="label">密码：<span><font color="red"></font></span></p>
+        <div class="field">
+          <input type="password" name="password"/>
+        </div>
+      </div>
+
+      <div class="column_2">
+        <div class="remember">
+          <div class="checkbox">
+            <input type="checkbox" value="1"/>
+          </div>
+          <div class="remember_label">
+            <p>记住我</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column_2">
+        <p class="forgot_pass">
+          <a href="#">忘记密码？</a>
+        </p>
+      </div>
+
+      <div class="column button">
+          <button type="button" id="submitAdd">确认</button>
+        {{--  <a href="#" class="enter">  --}}
+          {{--  <input type="submit" value="登录">  --}}
+          {{--  <input type="button" value="登录">  --}}
+          {{--  <span>登录</span>  --}}
+        {{--  </a>  --}}
+      </div>
+
+      <div class="clearboth"></div>
+      </form>
+    </div>
+
+    <div class="subtitle">
+      <p>以用户身份登录</p>
+    </div>
+
+    <div class="fb_button">
+      <a href="javscript:;" style="pointer-events: none;">
+        <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
+      </a>
+    </div>
+    <div class="text">
+      <p>在社交网络Facebook上使用您的帐户，在Blog上创建个人资料</p>
     </div>
   </div>
-  <!-- CONTENT END -->
+</div>
+</div>
+<script>
+   $("#submitAdd").click(function(){
+    
+    var targetUrl = $("#addForm").attr("action");    
+    var data = new FormData($( "#addForm" )[0]);     
+     $.ajax({ 
+    headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  },
+      type:'post',  
+      url:'/home/index/DoLogin', 
+      cache: false,    //上传文件不需缓存
+      processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+      contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
+      data:data,
+      dataType:'json', 
+      success:function(data){      
+        alert('登录成功');
+        location.reload();
+      },
+      error:function(){ 
+       alert("账号或密码有误")
+       return false;
+      
+       
+      }
+     })
+     
+  })
+          // $.ajax({
+          //         type : "POST", //提交方式
+          //         headers: {
+          //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          //         },
+          //         url : '/home/index/DoLogin',//路径
+          //         data : data.field,//数据，这里使用的是Json格式进行传输
+          //         dataType : "Json",
+          //         success : function(result) {//返回数据根据结果进行相应的处理
+          //            console.log(result);
+                      // 如果ajax的返回数据对象的status属性值是0，表示用户添加成功；弹添加成功的提示信息
+          //            if(result.status == 0){
+          //                layer.alert(result.msg, {icon: 6},function () {
+                              // 获得frame索引
+                              // var index = parent.layer.getFrameIndex(window.name);
+                              //关闭当前frame
+                              // parent.layer.close(index);
+
+                              //刷新父页面
+          //                    parent.location.reload();
+          //                });
+          //            }else{
+          //                layer.alert(result.msg, {icon: 6},function () {
+                             // 获得frame索引
+                             // var index = parent.layer.getFrameIndex(window.name);
+                              //关闭当前frame
+                             // parent.layer.close(index);
+
+          //                    parent.location.reload();
+          //                });
+          //            }
+          //         }
+          //     });
+
+
+
+          //     console.log(data);
+          //   //发异步，把数据提交给php
+
+          //   return false;
+          // });
+   </script>
+{{--  <script>
+  // 登录验证
+  $(function (){
+    $(.column button).click(function(){
+      var 
+    })
+  })
+ 
+</script>  --}}
+<!-- POPUP END -->
+
 @endsection

@@ -208,7 +208,6 @@
                   location.reload(true);
               }
           })
-
         // layer.confirm('确认要删除吗？'+data,function(index){
         //     //捉到所有被选中的，发异步进行删除
 

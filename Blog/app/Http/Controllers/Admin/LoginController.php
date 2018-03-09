@@ -2,22 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use App\Org\code\Code;
 require_once app_path().'/Org/code/Code.class.php';
-use App\Http\Controllers\Controller;
-
-use Gregwar\Captcha\CaptchaBuilder;
-use Gregwar\Captcha\PhraseBuilder;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
-use App\Model\users;
 
 class LoginController extends Controller
 {
@@ -80,7 +70,7 @@ class LoginController extends Controller
         //如果登录成功，将登录用户信息保存到session中
 
         session()->put('user',$user);
-
+        //dd($res);
         return redirect('admin/index');
 
     }
@@ -88,7 +78,7 @@ class LoginController extends Controller
     public function session()
     {
         //清空session
-        session()->flush();
+        //session()->flush();
     }
     
     public function yzm()

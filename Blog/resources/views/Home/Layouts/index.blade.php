@@ -15,6 +15,14 @@
 @show
 {{--  注册结束  --}}
 
+@include('home.public.list')
+
 {{-- 开始底部  --}}
 @include('home.public.footer')
 {{--  底部结束  --}}
+
+{{--  登录    --}}
+@section('popup')
+
+@show
+{{--  登录结束  --}}
