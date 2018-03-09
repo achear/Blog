@@ -54,6 +54,12 @@
         })
 
         
+    <script type="text/javascript">
+        function re_captcha() {
+            $url = "{{ URL('/code/captcha') }}";
+            $url = $url + "/" + Math.random();
+            document.getElementById('127ddf0de5a04167a9e427d883690ff6').src = $url;
+        }
     </script>
 
     

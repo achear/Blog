@@ -6,17 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cate extends Model
 {
-    public $table = 'blog_category';
+    //关联的表名
+    public $table = 'category';
     public $primaryKey = 'cate_id';
     public $guarded = [];
-   public $fillable = ['cate_name','cate_title','cate_keywords'];
+//  public $fillable=['cate_name','cate_title','cate_keywords'];
 
     public $timestamps = false;
+
 
     //返回格式化的分类数据
     public function getTree()
     {
         $cates = $this->orderBy('cate_order','asc')->get();
+       // Cate::orderBy('cate_id','asc')->paginate($request->input('num', 5));
         return $this->tree($cates);
     }
 
@@ -26,8 +29,8 @@ class Cate extends Model
     {
         //1.声明一个空数组存放格式化后的分类数据
         $arr = [];
-//        2.获取所有的一级类
-//        每获取一个一级类，接着获取此一级类下的二级类
+        //2.获取所有的一级类
+        //每获取一个一级类，接着获取此一级类下的二级类
         foreach($Category as $v){
             //        找一级类
             if($v['cate_pid'] == $pid){
@@ -38,7 +41,7 @@ class Cate extends Model
                     //获取此一级类下的二级类
                     if($m['cate_pid'] == $v['cate_id']){
                         //如果是二级类，在分类名称前添加几个空格
-                        $m['cate_names'] = '|----'.$m['cate_name'];
+                        $m['cate_names'] = '├── '.$m['cate_name'];
                         $arr[] = $m;
                     }
                 }
@@ -47,7 +50,7 @@ class Cate extends Model
 
 
 
-//        3. 返回格式化后的数据，即返回$arr;
+        //3. 返回格式化后的数据，即返回$arr;
         return $arr;
     }
 }
