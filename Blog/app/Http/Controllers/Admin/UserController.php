@@ -17,24 +17,11 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $user = Users::orderBy('user_id','asc')
-            ->where(function($query) use($request){
-                //检测关键字
-                $username = $request->input('keywords1');
-                $email = $request->input('keywords2');
-
-                //如果用户名不为空
-                if(!empty($username)) {
-                    $query->where('user_name','like','%'.$username.'%');
-                }
-                //如果邮箱不为空
-                if(!empty($email)) {
-                    $query->where('user_email','like','%'.$email.'%');
-                }
-            })
-            ->paginate($request->input('num', 5));
-            //如果用户选择了每页显示多少条，那就按照传过来的参数显示，如果没有，那就默认一页两条
-        return view('admin.user.list',['user'=>$user, 'request'=> $request]);
+        $user = new Users;
+        //获取所有的用户数据
+        $user = Users::all();
+        //导入到首页中
+        return view('admin.user.list',['user'=>$user]);
     }
 
     /**
@@ -164,12 +151,12 @@ class UserController extends Controller
         if ($res) {
             $data = [
                 'status'=>0,
-                'msg'=>'修改成功'
+                'msg'=>'添加成功'
             ];
         } else {
             $data = [
                 'status'=>1,
-                'msg'=>'修改失败'
+                'msg'=>'添加失败'
             ];
         }
 

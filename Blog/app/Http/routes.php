@@ -22,19 +22,25 @@ Route::get('/', function () {
 //     return View('home/index/index');
 // });
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
-    //后台登录
-    Route::get('login','LoginController@login')->name('admin.login');
+//后台登陆
+Route::resource('/admin/login','Admin\LoginController@login');
 //获取验证码
-    Route::get('yzm','LoginController@yzm');
-    //提交后台登录处理逻辑
-    Route::post('dologin','LoginController@doLogin');
+Route::get('/admin/yzm','Admin\LoginController@yzm');
+//后台首页
+Route::get('/admin/index','Admin\LoginController@index');
 
-});
 
+//前台首页
 Route::get('/','Home\IndexController@index');
 
 
+//后台欢迎页
+Route::get('/admin/welcome','Admin\LoginController@welcome');
+//用户模块路由
+Route::resource('/admin/user','Admin\UserController');
+//中间件
+Route::group(['middleware' => 'login'],function(){
+});
 //前台首页
 Route::get('/','Home\IndexController@index');
 // 前台注册页
@@ -113,3 +119,15 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
     Route::get('logout','LoginController@logout');
     
  });
+
+//分类模块
+Route::resource('/admin/cate','Admin\CateController');
+Route::post('/admin/cate/changeorder','Admin\CateController@changeOrder');
+
+//文章模块
+
+//文件上传
+Route::post('/admin/article/uploads','Admin\ArticleController@upload');
+Route::resource('/admin/article','Admin\ArticleController');
+//访问的update方法的路由
+Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');

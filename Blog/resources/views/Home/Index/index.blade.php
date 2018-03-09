@@ -44,13 +44,12 @@
                   controlNav: true,
                   directionNav: true,
                   animationLoop: true,
-                  slideshow: true,
-                  useCSS: true
+                  slideshow: false,
+                  useCSS: false
                 });
 
               });
             </script>
-            
           </div>
 
           <div class="line_2" style="margin:34px 0px 28px;"></div>
@@ -543,7 +542,7 @@
 
         </div>
 
-       
+      
   <!-- CONTENT END -->
 @endsection
 
