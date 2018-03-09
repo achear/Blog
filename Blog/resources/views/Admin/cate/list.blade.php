@@ -24,16 +24,17 @@
 
     <div class="x-body">
       <div class="layui-row">
-
       </div>
-      <xblock>
-        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-        <button class="layui-btn" onclick="x_admin_show('添加用户','{{ url('admin/cate/create') }}',600,400)"><i class="layui-icon"></i>添加</button>
-        {{--<span class="x-right" style="line-height:40px">共有数据：88 条</span>--}}
-      </xblock>
+      <!-- <xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()">分类列表</button>
+        <button class="layui-btn" onclick="x_admin_show('添加分类','{{url('/admin/cate/create')}}',600,400)"><i class="layui-icon"></i>添加</button>
+      </xblock> -->
       <table class="layui-table">
         <thead>
           <tr>
+          <!-- <th>
+               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+            </th> -->
             <th>
               排序
             </th>
@@ -44,8 +45,11 @@
             <th>操作</th></tr>
         </thead>
         <tbody>
-        @foreach($cates as $v)
+        @foreach($cates as $k=>$v)
           <tr>
+          <!-- <th>
+          <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{{$v->cate_id}}'><i class="layui-icon">&#xe605;</i></div>
+            </th> -->
             <td>
               <div class="layui-input-inline">
                 <input onchange="changeOrder(this,{{ $v->cate_id }})" style="width: 40px;" type="text" id="L_cate_name" name="cate_order" value="{{ $v->cate_order }}" class="layui-input">
@@ -62,7 +66,7 @@
                 <i class="layui-icon">&#xe642;</i>
               </a>
 
-              <a title="删除" href="/admin/cate/edit/{{$v['id']}}vascript:;">
+              <a title="删除" onclick="member_del(this,'{{$v->cate_id}}')" href="javascript:;">
                 <i class="layui-icon">&#xe640;</i>
               </a>
             </td>
@@ -70,7 +74,6 @@
         @endforeach
         </tbody>
       </table>
-
 
     </div>
     <script>
@@ -110,11 +113,11 @@
           $.post('/admin/cate/changeorder',{'order':order,'id':id,'_token':"{{ csrf_token() }}"},function(data){
               if(data.status == 0){
                   // 修改成功
-                  layer.msg(data.msg,{icon: 6,time:1000});
+                  layer.msg(data.msg,{icon:6});
                   // 刷新页面
                   location.reload();
               }else{
-                  layer.msg(data.msg,{icon: 5,time:1000});
+                  layer.msg(data.msg,{icon:5});
               }
           });
       }
@@ -164,7 +167,7 @@
           });
       }
 
-      /*用户-删除*/
+      /*分类-删除*/
       function member_del(obj,id){
           layer.confirm('确认要删除吗？',function(index){
               //发异步删除数据
@@ -179,7 +182,6 @@
                       location.reload(true);
                   }
               });
-
           });
       }
 
@@ -189,10 +191,10 @@
 
         //var data = tableCheck.getData();
         //   获取选中的记录,获取记录的id
-        var ids =   [];
+        var ids = [];
 
           $('.layui-form-checked').not('.header').each(function(i,v){
-             ids.push($(v).attr('data-id'));
+            ids.push($(v).attr('data-id'));
           })
         console.log(ids);
 
@@ -206,12 +208,12 @@
                   location.reload(true);
               }
           })
-  
+
         // layer.confirm('确认要删除吗？'+data,function(index){
         //     //捉到所有被选中的，发异步进行删除
 
         // });
-      }
+        }
     </script>
     <script>var _hmt = _hmt || []; (function() {
         var hm = document.createElement("script");

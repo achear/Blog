@@ -19,6 +19,7 @@ class Cate extends Model
     public function getTree()
     {
         $cates = $this->orderBy('cate_order','asc')->get();
+       // Cate::orderBy('cate_id','asc')->paginate($request->input('num', 5));
         return $this->tree($cates);
     }
 
@@ -40,7 +41,7 @@ class Cate extends Model
                     //获取此一级类下的二级类
                     if($m['cate_pid'] == $v['cate_id']){
                         //如果是二级类，在分类名称前添加几个空格
-                        $m['cate_names'] = '|----'.$m['cate_name'];
+                        $m['cate_names'] = '├── '.$m['cate_name'];
                         $arr[] = $m;
                     }
                 }

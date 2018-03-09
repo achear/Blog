@@ -235,7 +235,7 @@ class UserController extends Controller
     public function del(Request $request)
     {
         $input = $request->input('ids');
-        return $input;
+        //return $input;
 //        return $input;
         $res = Users::destroy($input);
 

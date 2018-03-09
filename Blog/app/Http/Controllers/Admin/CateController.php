@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Cate;
-use DB;
 class CateController extends Controller
 {
     /**
@@ -44,14 +43,15 @@ class CateController extends Controller
         //获取分类数据
         //$cates = Cate::get();
         $cates = (new Cate())->getTree();
-        // 数据格式化（排序、缩进）
-        //dd($cates);
+        //              dd($cates);
+        //数据格式化（排序、缩进）
+
         return view('admin.cate.list',compact('cates'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * 添加分类
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -70,17 +70,17 @@ class CateController extends Controller
      */
     public function store(Request $request)
     {
-        //1. 获取提交的分类数据
+    //        1 获取提交的分类数据
         $input = $request->except('_token');
-       //var_dump($input);
-        //2.添加到数据库
-        $res = Cate::create($input);
-        //3.判断添加是否成功
+    //        2. 添加到数据库
+        $res =  Cate::create($input);
+    //        3.判断添加是否成功
         if($res){
             return redirect('admin/cate')->with('msg','添加成功');
         }else{
             return back()->with('msg','添加失败');
-        }    
+        }
+   
     }
 
     /**
@@ -92,6 +92,8 @@ class CateController extends Controller
     public function show($id)
     {
         //
+         $cate = Cate::find($id);
+         return view('admin.cate.list',['cate'=>$cate]);
     }
 
     /**
@@ -100,20 +102,11 @@ class CateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($cate_id)
     {
-        // 检测当前分类下面是否有子分类
-        $child_data = DB::table('category')->where('pid',$id)->first();
-        if(!empty($child_data)){
-            return back()->with('error','当前分类下面有子类，不允许删除');
-            exit;
-        }
-        $res = DB::table('category')->where('id',$id)->delete();
-        if($res){
-            return redirect('/admin/cate/index')->with('success','删除成功');
-        }else{
-            return back()->with('error','删除失败');
-        }
+        $field = Cate::find($cate_id);
+        $cateone = Cate::where('cate_pid',0)->get();
+        return view('admin.cate.edit',compact('field','cateone'));
     }
 
     /**
@@ -123,9 +116,35 @@ class CateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)   //更新分类
     {
-        //
+        
+        //获取提交的数据
+        $cate = Cate::find($id);
+        $input = $request->except(['_token']);
+        $cate->cate_name = $input['cate_name'];
+        $cate->cate_title = $input['cate_title'];
+        $cate->cate_keywords = $input['cate_keywords'];
+        $cate->cate_description  = $input['cate_description'];
+        
+
+        $res = $cate->save();
+
+        if ($res) {
+            $data = [
+                'status'=>0,
+                'msg'=>'修改成功'
+            ];
+        } else {
+            $data = [
+                'status'=>1,
+                'msg'=>'修改失败'
+            ];
+        }
+
+        return $data;
+
+
     }
 
     /**
@@ -136,6 +155,56 @@ class CateController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+      // 是否有二级类
+       $count =  Cate::where('cate_pid',$id)->count();
+       $res =  Cate::find($id);
+       if($res->cate_pid == 0 && $count){
+            $data = [
+               'status'=>2,
+               'msg'=>'一级分类不允许删除'
+           ];
+           return $data;
+         }
+
+    //        找到要删除的记录，并删除
+        $result =  Cate::find($id)->delete();
+            if($result){
+                $data = [
+                    'status'=>0,
+                    'msg'=>'删除成功'
+                ];
+            }else{
+                $data = [
+                    'status'=>1,
+                    'msg'=>'删除失败'
+                ];
+            }
+    
+            return $data;
+        }
+
+
+    //批量删除用户
+    // public function del(Request $request)
+    // {
+    //     $input = $request->input('ids');
+    // //  return $input;
+    // //        return $input;
+    //     $res = Cate::destroy($input);
+
+    //     if($res){
+    //         $data = [
+    //             'status'=>0,
+    //             'msg'=>'删除成功'
+    //         ];
+    //     }else{
+    //         $data = [
+    //             'status'=>1,
+    //             'msg'=>'删除失败'
+    //         ];
+    //     }
+
+    //     return $data;
+    // }
+ 
 }
