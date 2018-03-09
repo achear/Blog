@@ -45,11 +45,11 @@ Route::resource('/home/index/loginout','Home\LoginController@loginout');
 
 
 // 轮播图配置
-Route::get('/admin/config','Admin\ConfigController@CaroEdit');
-Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
-Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
-Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
-Route::post('/admin/config/upload','Admin\ConfigController@upload');
+// Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
+// Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
+// Route::post('/admin/config/upload','Admin\ConfigController@upload');
 // Route::get('/','Home\IndexController@index');
 // // 前台注册页
 Route::resource('/home/index','Home\IndexController');
@@ -61,6 +61,8 @@ Route::controller('/home/user','Home\UserController');
 //邮箱注册路由
 Route::get('emailregister','RegisterController@index');
 Route::post('register','RegisterController@email');
+//邮箱激活路由
+Route::get('active','RegisterController@active');
 // // 轮播图配置
 // Route::get('/admin/config','Admin\ConfigController@CaroEdit');
 // Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');

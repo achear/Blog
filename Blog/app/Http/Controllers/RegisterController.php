@@ -11,11 +11,26 @@ use App\Model\home_user;
 
 class RegisterController extends Controller
 {
+    //加载邮箱注册页面
     public function index()
     {
         return view('email.email');
     }
+    //注册邮箱激活
+    public function active()
+    {
 
+    }
+
+    public function doRegister(Request $request)
+    {
+        //获取用户提交信息
+        $input = $request->except('_token');
+        //向用户的注册邮箱发送激活邮件
+        //Mail::send('email.active',)
+    }
+
+    //邮箱注册处理
     public function email(Request $request)
     {
         $data = $request->except('_token');
