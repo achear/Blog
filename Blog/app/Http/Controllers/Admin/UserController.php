@@ -171,9 +171,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-<<<<<<< HEAD
-        //
-=======
         //        找到要删除的记录，并删除
        $res =  Users::find($id)->delete();
        if($res){
@@ -242,6 +239,5 @@ class UserController extends Controller
         }
 
         return $data;
->>>>>>> ed9e174050652204861954f7385b29f63c6d2bdb
     }
 }

@@ -21,8 +21,6 @@ class LoginController extends Controller
         return view('Admin/login');
     }
 
-<<<<<<< HEAD
-=======
     //处理用户登录逻辑
     public function doLogin(Request $request)
     {
@@ -83,7 +81,6 @@ class LoginController extends Controller
         //session()->flush();
     }
     
->>>>>>> ed9e174050652204861954f7385b29f63c6d2bdb
     public function yzm()
     {
         $code = new Code;

@@ -107,84 +107,40 @@
 
       });
 
-      //修改排序
-      /*
-      * @param obj 当前的文本框元素
-      * @param id  当前分类记录的ID
-      * */
-      function changeOrder(obj,id) {
-          // 文本框的值，也就是排序值
-          var order = $(obj).val();
-          //通过ajax 修改记录的排序
-          $.post('/admin/cate/changeorder',{'order':order,'id':id,'_token':"{{ csrf_token() }}"},function(data){
-              if(data.status == 0){
-                  // 修改成功
-                  layer.msg(data.msg,{icon: 6,time:1000});
-                  // 刷新页面
-                  location.reload();
-              }else{
-                  layer.msg(data.msg,{icon: 5,time:1000});
-              }
-          });
-      }
-      
-       /*用户-停用*/
-      function member_stop(obj,id){
+ 
 
-          // 获取当前用户状态
-          var status = $(obj).attr('data-id');
-          layer.confirm('确认要停用吗？',function(index){
+      // // 删除文章
+      // function delArt(art_id){
+      //   layer.confirm('确定要删除这篇文章吗？',{
+      //   btn:['确定','取消']
+      //   });
+      // }
+        // },function(){
+          // $post("{{ url('admin/article') }}/"+art_id,{'_method':'delect','_token':"{{ csrf_token() }}"},function(data){
+          //   if(data.status == 0){
+          //     location.href = location.href;
+          //     layer.msg(data.msg,{icon:6});
+          //   }else{
+          //     layer.msg(data.msg,{icon:5});              
+          //   }
+          // });
+        // },function(){
 
-
-              if($(obj).attr('title')=='启用'){
-
-                //发异步把用户状态进行更改
-                  $.ajax({
-                      type : "GET", //提交方式
-                      url : '/admin/user/changestate',//路径
-                      data : {"id":id,"status":status},//数据，这里使用的是Json格式进行传输
-                      dataType : "Json",
-                      success : function(result) {//返回数据根据结果进行相应的处理
-                        if(result.status == 0){
-                            $(obj).attr('title','停用')
-                            $(obj).find('i').html('&#xe62f;');
-
-                            $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                            layer.msg('已停用!',{icon: 5,time:1000});
-                        }else{
-                            layer.msg('状态修改失败!',{icon: 5,time:1000});
-                        }
-
-                      }
-                  });
-              }else{
-                  if(result.status == 0){
-                      $(obj).attr('title','启用')
-                      $(obj).find('i').html('&#xe601;');
-
-                      $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                      layer.msg('已启用!',{icon: 5,time:1000});
-                  }else{
-                      layer.msg('状态修改失败!',{icon: 5,time:1000});
-                  }
-
-              }
-              
-          });
-      }
-
-      /*用户-删除*/
-      function article_del(obj,id){
-          layer.confirm('确认要删除吗？',function(index){
+      //   });
+      // };
+  /*用户-删除*/
+  function delArt($id){
+    // alert(1);
+          layer.confirm('确认要删除吗？',function(article){
               //发异步删除数据
               // $.post('URL地址'.'携带的参数',成功后的闭包函数)
-              $.post('{{ url('admin/article/') }}/'+id,{"_token":"{{csrf_token()}}","_method":"delete","id":id},function(data){
+              $.post('{{ url('admin/article/') }}/'+$id,{"_token":"{{csrf_token()}}","_method":"delete","id":$id},function(data){
                   if(data.status == 0){
-                      $(obj).parents("tr").remove();
-                      layer.msg('已删除!',{icon:1,time:1000});
+                      $($id).parents("tr").remove();
+                      layer.msg('已删除!',{icon:5,time:5000});
                       location.reload(true);
                   }else{
-                      layer.msg('删除失败!',{icon:1,time:1000});
+                      layer.msg('删除失败!',{icon:6,time:3000});
                       location.reload(true);
                   }
               });
@@ -193,34 +149,8 @@
       }
 
 
-
-      function delAll (argument) {
-
-        //var data = tableCheck.getData();
-        //   获取选中的记录,获取记录的id
-        var ids =   [];
-
-          $('.layui-form-checked').not('.header').each(function(i,v){
-             ids.push($(v).attr('data-id'));
-          })
-        console.log(ids);
-
-          $.get('/admin/user/del',{"ids":ids},function(data){
-              if(data.status == 0){
-                  layer.msg('删除成功', {icon: 1});
-                  $(".layui-form-checked").not('.header').parents('tr').remove();
-                  location.reload(true);
-              }else{
-                  layer.msg('删除失败', {icon: 1});
-                  location.reload(true);
-              }
-          })
-  
-        // layer.confirm('确认要删除吗？'+data,function(index){
-        //     //捉到所有被选中的，发异步进行删除
-
-        // });
-      }
+   
+      // }
     </script>
     <script>var _hmt = _hmt || []; (function() {
         var hm = document.createElement("script");
