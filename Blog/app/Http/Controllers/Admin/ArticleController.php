@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\Model\Cate;
 use App\Model\Article;
@@ -43,8 +44,14 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //获取文章分类数据
+        // if ($cate_id) {
+        //     $articles = Article::where('cate_id',$id)->get();
+        // } else {
+            
+        // }
         $articles = Article::get();
+        //获取文章分类数据
+        
         return view('admin.article.list',compact('articles'));
     }
 
@@ -70,6 +77,9 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $input = $request->except('_token','file_upload');
+        $user = session::get('user');
+        //dd($user['user_id']);
+        $input['user_id'] = $user['user_id'];
         $res = Article::create($input);
         if($res){
             return redirect('admin/article');
@@ -86,7 +96,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $articles = Article::where('cate_id',$id)->get();
+        
+        return view('admin.article.list',compact('articles'));
     }
 
     /**

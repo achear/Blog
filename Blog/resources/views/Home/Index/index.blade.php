@@ -44,7 +44,7 @@
                   controlNav: true,
                   directionNav: true,
                   animationLoop: true,
-                  slideshow: false,
+                  slideshow: true,
                   useCSS: false
                 });
 
