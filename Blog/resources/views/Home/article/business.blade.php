@@ -61,7 +61,7 @@
                                 </div>
                             </article>
                             
-                            {{--  <article class="block_topic_post">
+                            <article class="block_topic_post">
                             	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
                                 <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_2.jpg" alt="" /></a></div>
                                 <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
@@ -159,7 +159,7 @@
                                 </div>
                             </article>
                         </div>
-                          --}}
+                        
                         <div class="line_2" style="margin:25px 0px 25px;"></div>
                         
                         <div class="block_pager">
