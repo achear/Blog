@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Model\Carousel;
 use App\Model\home_user;
+use App\Model\Article;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -20,9 +21,9 @@ class IndexController extends Controller
     {
         //
         $data = Carousel::get();
-        
+        $text = Article::take(3)->get();
     
-        return View('home/index/index',['data'=>$data]);
+        return View('home/index/index',['data'=>$data,'text'=>$text]);
     }
 
     public function store(Request $request)

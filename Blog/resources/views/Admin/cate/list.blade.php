@@ -65,7 +65,9 @@
               <a title="编辑"  onclick="x_admin_show('编辑','{{url('admin/cate/'.$v->cate_id.'/edit')}}',600,400)" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-
+              <a title="查看文章"  onclick="x_admin_show('查看文章','{{url('admin/'.$v->cate_id.'/article')}}',600,400)" href="javascript:;">
+                <i class="layui-icon">&#xe641;</i>
+              </a>
               <a title="删除" onclick="member_del(this,'{{$v->cate_id}}')" href="javascript:;">
                 <i class="layui-icon">&#xe640;</i>
               </a>

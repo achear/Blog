@@ -53,4 +53,9 @@ class Cate extends Model
         //3. 返回格式化后的数据，即返回$arr;
         return $arr;
     }
+
+    public function c_article()
+    {
+        return $this->hasOne('App\Model\Article','cate_id');
+    }
 }

@@ -1,5 +1,5 @@
 @extends('home.layouts.index')
-
+{{--  文章列表  --}}
 @section('business')
 
         <!-- CONTENT BEGIN -->
@@ -11,13 +11,13 @@
                         	<div class="text"><p>You are here:</p></div>
                             
                             <ul>
-                            	<li><a href="index.html">Home</a></li>
-                                <li>Business</li>
+                            	<li><a href="index.html">首页</a></li>
+                                <li>商业</li>
                             </ul>
                         </div>
                         <div class="separator" style="height:30px;"></div>
                         
-                        <h2>Business</h2>
+                        <h2>商业</h2>
                         
                         <p class="general_subtitle">Eestablished fact that a reader will be distracted by the readable content of a page when looking at its layout are many variations of passages have suffered alteration.</p>
                         
@@ -61,7 +61,7 @@
                                 </div>
                             </article>
                             
-                            <article class="block_topic_post">
+                            {{--  <article class="block_topic_post">
                             	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
                                 <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_2.jpg" alt="" /></a></div>
                                 <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
@@ -159,7 +159,7 @@
                                 </div>
                             </article>
                         </div>
-                        
+                          --}}
                         <div class="line_2" style="margin:25px 0px 25px;"></div>
                         
                         <div class="block_pager">

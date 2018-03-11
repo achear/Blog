@@ -12,4 +12,9 @@ class users extends Model
     public $primaryKey = 'user_id';
 
     public $timestamps = false;
+
+    public function u_artucle()
+    {
+        return $this->hasOne('Article','user_id');
+    }
 }

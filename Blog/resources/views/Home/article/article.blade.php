@@ -11,40 +11,38 @@
                         	<div class="text"><p>You are here:</p></div>
                             
                             <ul>
-                            	<li><a href="index.html">Home</a></li>
-                                <li><a href="business.html">Business News</a></li>
-                                <li>333333333333333333333333333333333333333333333333333333333333333333333333333</li>
+                            	<li><a href="index.html">首页</a></li>
+                                <li><a href="business.html">文章列表</a></li>
+                                <li>文章详情</li>
                             </ul>
                         </div>
                         <div class="separator" style="height:30px;"></div>
                         
                         <article class="block_single_news">
                         	<div class="f_pic"><a href="#"><img src="images/pic_news_post_1.jpg" alt="" /></a></div>
-                          <p class="title"><a href="#">Words which don't look even slightly.</a></p>
-                            <p class="subtitle">Many variations of passages of available, but the majority have suffered alteration in some form. Humour, or randomised words which don't look even slightly believable.</p>
+                        <p class="title"><a href="#">{{$data['c_article']['art_title']}}</a></p>
+                            <p class="subtitle">{{$data['c_article']['art_description']}}</p>
                             
                             <div class="info">
-                                <div class="date"><p>15 July, 2012</p></div>
-                                <div class="author"><p>By: <a href="#">John Doe</a></p></div>
+                                <div class="date"><p>{{$data['c_article']['art_time']}}</p></div>
+                                <div class="author"><p>作者: <a href="#">{{$data['c_article']['art_editor']}}</a></p></div>
                                     
                             	<div class="r_part">
-                                	<div class="category"><p><a href="#">Life</a></p></div>
+                                	<div class="category"><p><a href="#">查看</a></p></div>
                                     <a href="#" class="views">220</a>
                                     <a href="#" class="comments">25</a>
                                 </div>
                             </div>
                             
                             <div class="content">
-                            	<p>There are many variations of passages of available, but the majority have suffered alteration in some form, by injected humour, or <b>randomised words</b> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't <a href="#" class="lnk_blue"><b>anything embarrassing hidden</b></a> in the middle of text. All the generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over words, combined with a handful of model sentence structures, to generate which looks reasonable. Theherefore <b>always free from repetition</b>, injected humour words etc.</p>
-                                <blockquote class="full">Going to use a passage you need to be sure there isn't anything embarrassing hidden in the middle of text. established fact that a reader will be distracted by the readable content.</blockquote>
-                                <p>Available, but the majority have suffered alteration.By injected humour, or randomised words which don't look even slightly believable. If you are <a href="#"><b>going to use a passage</b></a> of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. Established fact that a reader will be distracted by the readable content of a page when <b>looking at its layout</b>. The point of using Lorem Ipsum is that it has a more-or-less.</p>
+                            	<p>{!!$data['c_article']['art_content']!!} 
                             </div>
                         </article>
                         
                         <div class="separator" style="height:4px;"></div>
                         
                         <div class="block_post_tags">
-                        	<p>Tags: <a href="#">business,</a><a href="#">stock market</a></p>
+                        	<p>描述: <a href="#">{{$data['c_article']['art_tag']}}</a></p>
                         </div>
                         
                         <div class="block_post_social">
