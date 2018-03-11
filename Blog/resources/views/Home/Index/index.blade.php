@@ -44,8 +44,8 @@
                   controlNav: true,
                   directionNav: true,
                   animationLoop: true,
-                  slideshow: false,
-                  useCSS: false
+                  slideshow: true,
+                  useCSS: true
                 });
 
               });
@@ -57,7 +57,7 @@
           <div class="block_home_col_1">
             <div class="block_home_post">
               <div class="pic">
-                <a href="news_post.html" class="w_hover">
+                <a href="{{asset('home/article/index')}}" class="w_hover">
                   <img src="/Home/images/pic_home_news_1.jpg" alt="" />
                   <span></span>
                 </a>
@@ -65,7 +65,7 @@
 
               <div class="text">
                 <p class="title">
-                  <a href="news_post.html">There are many variations of of available, but the majority.</a>
+                  <a href="{{asset('home/article/index')}}">There are many variations of of available, but the majority.</a>
                 </p>
                 <div class="date">
                   <p>11 July, 2012</p>
@@ -83,7 +83,7 @@
 
             <div class="block_home_post">
               <div class="pic">
-                <a href="news_post.html" class="w_hover">
+                <a href="{{asset('home/article/index')}}" class="w_hover">
                   <img src="/Home/images/pic_home_news_2.jpg" alt="" />
                   <span></span>
                 </a>
@@ -91,7 +91,7 @@
 
               <div class="text">
                 <p class="title">
-                  <a href="news_post.html">Variations of of available, but the majority have suffered.</a>
+                  <a href="{{asset('home/article/index')}}">Variations of of available, but the majority have suffered.</a>
                 </p>
                 <div class="date">
                   <p>11 July, 2012</p>
@@ -109,7 +109,7 @@
 
             <div class="block_home_post">
               <div class="pic">
-                <a href="news_post.html" class="w_hover">
+                <a href="{{asset('home/article/index')}}l" class="w_hover">
                   <img src="/Home/images/pic_home_news_3.jpg" alt="" />
                   <span></span>
                 </a>
@@ -117,7 +117,7 @@
 
               <div class="text">
                 <p class="title">
-                  <a href="news_post.html">Majority alteration in some form, by injected humour.</a>
+                  <a href="{{asset('home/article/index')}}">Majority alteration in some form, by injected humour.</a>
                 </p>
                 <div class="date">
                   <p>11 July, 2012</p>
@@ -138,7 +138,7 @@
             <div class="line_3 first" style="margin:14px 0px 17px;"></div>
             <div class="block_home_post">
               <div class="pic">
-                <a href="news_post.html" class="w_hover">
+                <a href="{{asset('home/article/index')}}" class="w_hover">
                   <img src="/Home/images/pic_home_news_4.jpg" alt="" />
                   <span></span>
                 </a>
@@ -146,7 +146,7 @@
 
               <div class="text">
                 <p class="title">
-                  <a href="news_post.html">Many variations of of available, but the majority.</a>
+                  <a href="{{asset('home/article/index')}}">Many variations of of available, but the majority.</a>
                 </p>
                 <div class="date">
                   <p>11 July, 2012</p>
