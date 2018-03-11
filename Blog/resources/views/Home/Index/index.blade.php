@@ -223,35 +223,36 @@
 
           <h3 style="font-size:16px;">Main News</h3>
           <div class="line_4" style="margin:-4px 0px 18px;"></div>
-
+          
           <div class="block_topic_news">
-            <article class="block_topic_post">
-              <p class="title">
-                <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
-              </p>
-              <div class="f_pic">
-                <a href="news_post.html" class="general_pic_hover scale">
-                  <img src="/Home/images/pic_home_main_news_1.jpg" alt="" />
-                </a>
-              </div>
-              <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-              <div class="info">
-                <div class="date">
-                  <p>11 July, 2012</p>
+              <article class="block_topic_post">
+                <p class="title">
+                  <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
+                </p>
+                <div class="f_pic">
+                  <a href="news_post.html" class="general_pic_hover scale">
+                    <img src="/Home/images/pic_home_main_news_1.jpg" alt="" />
+                  </a>
                 </div>
-
-                <div class="r_part">
-                  <div class="category">
-                    <p>
-                      <a href="#">Business</a>
-                    </p>
+                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
+                <div class="info">
+                  <div class="date">
+                    <p>11 July, 2012</p>
                   </div>
-                  <a href="#" class="views">183</a>
-                </div>
-              </div>
-            </article>
 
-            <article class="block_topic_post">
+                  <div class="r_part">
+                    <div class="category">
+                      <p>
+                        <a href="#">Business</a>
+                      </p>
+                    </div>
+                    <a href="#" class="views">183</a>
+                  </div>
+                </div>
+              </article>
+
+
+            <!-- <article class="block_topic_post">
               <p class="title">
                 <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
               </p>
@@ -276,7 +277,6 @@
                 </div>
               </div>
             </article>
-
             <article class="block_topic_post">
               <p class="title">
                 <a href="news_post.html">Many desktop publishing packages and web page editors now use.</a>
@@ -327,7 +327,7 @@
                   <a href="#" class="views">183</a>
                 </div>
               </div>
-            </article>
+            </article> -->
 
           </div>
 
