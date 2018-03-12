@@ -47,10 +47,11 @@
                         <div class="line_2" style="margin:21px 0px 21px;"></div>
                         
                         <div class="block_topic_news">
+                            @foreach($data as $v)
                         	<article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_1.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
+                            	<p class="title"><a href="{{url('/home/article/'.$v->art_id.'/info')}}">{{$v->art_title}}</a></p>
+                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 256px; height: 121.86px;"/></a></div>
+                                <p class="text" style="height: 30px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{$v->art_content}}</p>
                                 <div class="info">
                                 	<div class="date"><p>11 July, 2012</p></div>
                                     
@@ -60,104 +61,7 @@
                                     </div>
                                 </div>
                             </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_2.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_3.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_4.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_5.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_6.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_7.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
-                            
-                            <article class="block_topic_post">
-                            	<p class="title"><a href="news_post.html">Many desktop publishing packages and web page editors now use.</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_8.jpg" alt="" /></a></div>
-                                <p class="text">There are many variations of passages of available, but the majority have alteration.</p>
-                                <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
-                                    
-                                    <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-                                    </div>
-                                </div>
-                            </article>
+                            @endforeach
                         </div>
                         
                         <div class="line_2" style="margin:25px 0px 25px;"></div>
@@ -167,14 +71,10 @@
                             <a href="#" class="next">Next</a>
                             
                             <div class="pages">
-                            	<ul>
-                                	<li class="current"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">6</a></li>
-                                </ul>
+                                
+                                    {!! $data->render() !!}
+                                
+                            	
                             </div>
                             
                             <div class="clearboth"></div>

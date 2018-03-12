@@ -34,13 +34,33 @@ class ArticleController extends Controller
      *  前台文章列表页
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list($id)
     {
-        //
-        
+        // $data = Cate::first();
+        // // return $data;
+        // $data->c_article;
+        // $v = json_decode($data,true);
+        $data = Article::where('cate_id',$id)->paginate(2);
+        //dd($data);
 
-        return View('home.article.business');
+        return View('home.article.business',['data'=>$data]);
 
+    }
+
+    public function search(Request $request)
+    {
+        // $input = implode('',$request->only('search'));
+        // dd($input);
+        $data = Article::where(function($query) use($request){
+            //将传过来的数组转换成字符串
+            $search = implode('',$request->only('search'));
+
+            if (!empty($search)) {
+                $query->where('art_title','like','%'.$search.'%');
+            }
+        })->paginate(2);
+
+        return view('home.article.business',['data'=>$data]);
     }
 
     /**
@@ -62,7 +82,10 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Article::find($id);
+        //dd($data);
+        //$v = json_decode($data,true);
+        return view('home.article.info',['data'=>$data]);
     }
 
     /**
