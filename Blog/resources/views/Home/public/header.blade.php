@@ -26,55 +26,55 @@
   <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />  --}}
 
 
-  <script type="text/javascript" src="layout/js/jquery.js"></script>
+  <script type="text/javascript" src="/Home/layout/js/jquery.js"></script>
 
 
   <!-- PrettyPhoto start -->
-  <link rel="stylesheet" href="layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
+  <link rel="stylesheet" href="/Home/layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
+  <script type="text/javascript" src="/Home/layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
   <!-- PrettyPhoto end -->
 
 
   <!-- jQuery tools start -->
-  <script type="text/javascript" src="layout/plugins/tools/jquery.tools.min.js"></script>
+  <script type="text/javascript" src="/Home/layout/plugins/tools/jquery.tools.min.js"></script>
   <!-- jQuery tools end -->
 
 
   <!-- Calendar start -->
-  <link rel="stylesheet" href="layout/plugins/calendar/calendar.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/calendar/calendar.js"></script>
+  <link rel="stylesheet" href="/Home/layout/plugins/calendar/calendar.css" type="text/css" />
+  <script type="text/javascript" src="/Home/layout/plugins/calendar/calendar.js"></script>
   <!-- Calendar end -->
 
 
   <!-- ScrollTo start -->
-  <script type="text/javascript" src="layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
+  <script type="text/javascript" src="/Home/layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
   <!-- ScrollTo end -->
 
 
   <!-- MediaElements start -->
-  <link rel="stylesheet" href="layout/plugins/video-audio/mediaelementplayer.css" />
-  <script src="layout/plugins/video-audio/mediaelement-and-player.js"></script>
+  <link rel="stylesheet" href="/Home/layout/plugins/video-audio/mediaelementplayer.css" />
+  <script src="/Home/layout/plugins/video-audio/mediaelement-and-player.js"></script>
   <!-- MediaElements end -->
 
 
   <!-- FlexSlider start -->
-  <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
+  <link rel="stylesheet" href="/Home/layout/plugins/flexslider/flexslider.css" type="text/css" />
+  <script type="text/javascript" src="/Home/layout/plugins/flexslider/jquery.flexslider-min.js"></script>
   <!-- FlexSlider end -->
 
 
   <!-- iButtons start -->
-  <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
-  <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
+  <link rel="stylesheet" href="/Home/layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
+  <script type="text/javascript" src="/Home/layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
   <!-- iButtons end -->
 
 
   <!-- jQuery Form Plugin start -->
-  <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
+  <script type="text/javascript" src="/Home/layout/plugins/ajaxform/jquery.form.js"></script>
   <!-- jQuery Form Plugin end -->
 
 
-  <script type="text/javascript" src="layout/js/main.js"></script>
+  <script type="text/javascript" src="/Home/layout/js/main.js"></script>
 
 
   <script type="text/javascript">
@@ -204,9 +204,9 @@
               </div>
 
               <div class="block_search_top">
-                <form action="#" />
+                <form action="{{url('/home/article/search')}}" method="get">
                 <div class="field">
-                  <input type="text" class="w_def_text" title="Enter Your Email Addres" />
+                  <input type="text" name="search" value="" class="w_def_text" title="Enter Your Email Addres" />
                 </div>
                 <input type="submit" class="button" value="Search" />
 

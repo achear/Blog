@@ -118,10 +118,10 @@
   <div class="separator" style="height:31px;"></div>
 
   <div class="block_popular_stuff">
-    <h4>Popular Video</h4>
+    <h4>流行视频</h4>
 
     <div class="content">
-      <a href="#" class="view_all">Show all video</a>
+      <a href="#" class="view_all">显示所有视频</a>
       <div class="media">
         <a href="http://www.youtube.com/watch?v=ySIvism2af8" class="general_pic_hover play no_fx" data-rel="prettyPhoto"
           title="Popular Video">
@@ -129,11 +129,11 @@
         </a>
       </div>
       <p>
-        <a href="blog_post_w_video.html">Publishing packages and web page editors their default model.</a>
+        <a href="blog_post_w_video.html">发布软件包和网页编辑器的默认模型。</a>
         <img src="/Home/images/icon_video.gif" alt=""
         />
       </p>
-      <p class="date">11 July, 2012</p>
+      <p class="date">2012年7月11日</p>
     </div>
 
     <div class="info">
@@ -189,14 +189,14 @@
   <div class="separator" style="height:31px;"></div>
 
   <div class="block_twitter_widget">
-    <h4>Twitter Widget</h4>
+    <h4>推特小工具</h4>
     <div class="lnk_follow">
-      <a href="#" target="_blank">Follow on Twitter</a>
+      <a href="#" target="_blank">在Twitter上关注</a>
     </div>
 
     <div class="tweet">
       <!-- <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script> -->
-      <script type="text/javascript" src="layout/plugins/tweet/tweet.widget.js"></script>
+      <script type="text/javascript" src="/Home/layout/plugins/tweet/tweet.widget.js"></script>
       <script type="text/javascript">
         // ('YOUR USERNAME','NUMBER OF POSTS');
         // AddTweet('Web_Visions', 1);
@@ -209,17 +209,17 @@
   <div class="separator" style="height:31px;"></div>
 
   <div class="block_popular_stuff">
-    <h4>Popular Photo</h4>
+    <h4>流行照片</h4>
 
     <div class="content">
-      <a href="#" class="view_all">Show all photos</a>
+      <a href="#" class="view_all">显示所有照片</a>
       <div class="media">
         <a href="/Home/images/pic_pop_photo_big.jpg" class="general_pic_hover zoom no_fx" data-rel="prettyPhoto" title="Popular Photo">
           <img src="/Home/images/pic_pop_photo.jpg" alt="" />
         </a>
       </div>
       <p>
-        <a href="blog_post_w_slider.html">Editors their default model text, and a search for will uncover many.</a>
+        <a href="blog_post_w_slider.html">编辑他们的默认模型文本，搜索将显示许多。</a>
         <img src="/Home/images/icon_photo.gif"
           alt="" />
       </p>

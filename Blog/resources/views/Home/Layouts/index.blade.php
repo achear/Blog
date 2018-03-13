@@ -15,6 +15,17 @@
 @show
 {{--  注册结束  --}}
 
+{{--  文章列表  --}}
+@section('business')
+
+@show
+{{--  列表结束  --}}
+
+{{--  文章详情  --}}
+@section('article')
+
+@show
+{{--  详情结束  --}}
 @include('home.public.list')
 
 {{-- 开始底部  --}}

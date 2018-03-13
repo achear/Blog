@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Carousel;
 use App\Model\home_user;
 use App\Model\Article;
+use App\Model\Cate;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -21,9 +22,12 @@ class IndexController extends Controller
     {
         //
         $data = Carousel::get();
-        $text = Article::take(3)->get();
-    
-        return View('home/index/index',['data'=>$data,'text'=>$text]);
+        //$text = Article::take(3)->get();
+        $article = Article::paginate(4);
+        //dd($article);
+        $cate = Cate::where('cate_pid','0')->get();
+        //dd($cate);
+        return View('home/index/index',['data'=>$data,'article'=>$article,'cate'=>$cate]);
     }
 
     public function store(Request $request)

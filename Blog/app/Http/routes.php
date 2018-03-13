@@ -40,6 +40,11 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 //前台首页
 Route::get('/','Home\IndexController@index');
 
+// 前台文章页
+Route::get('home/article/index','Home\ArticleController@index');
+Route::get('home/article/{id}/info','Home\ArticleController@show');
+Route::get('home/article/{id}/list','Home\ArticleController@list');
+Route::get('home/article/search','Home\ArticleController@search');
 
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
