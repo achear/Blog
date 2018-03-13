@@ -56,6 +56,8 @@ Route::resource('/admin/user','Admin\UserController');
 Route::get('/admin/welcome','Admin\LoginController@welcome');
 //用户模块路由
 Route::resource('/admin/user','Admin\UserController');
+//配置模块路由
+Route::resource('/admin/config','Admin\ConfigController');
 //中间件
 Route::group(['middleware' => 'login'],function(){
 });

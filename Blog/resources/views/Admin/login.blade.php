@@ -33,13 +33,7 @@
             </div>
         @endif
 
-        {{--@if (!empty(session('msg')))--}}
-            {{--<div class="alert alert-danger">--}}
-                {{--<ul>--}}
-                        {{--<li>{{ session('msg') }}</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--@endif--}}
+        
         <div class="message">x-admin2.0-管理登录</div>
         <div id="darkbannerwrap"></div>
         

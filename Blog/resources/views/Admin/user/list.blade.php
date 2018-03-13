@@ -148,7 +148,7 @@
                           $(obj).attr('title','停用')
                           $(obj).find('i').html('&#xe62f;');
 
-                          $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+                          y$(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
                           layer.msg('已停用!',{icon: 5,time:1000});
                       }else{
                           layer.msg('状态修改失败!',{icon: 5,time:1000});
