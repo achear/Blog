@@ -130,6 +130,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
 //分类模块
 Route::resource('/admin/cate','Admin\CateController');
 Route::post('/admin/cate/changeorder','Admin\CateController@changeOrder');
+//分类文件上传
+Route::post('/admin/cate/uploads','Admin\CateController@upload');
 
 //文章模块
 Route::resource('/admin/article','Admin\ArticleController');
