@@ -14,12 +14,22 @@
 
 @show
 {{--  注册结束  --}}
+{{--  个人中心  --}}
+@section('personal')
+
+@show
+
+{{--  发表文章  --}}
+@section('publish')
+
+@show
 
 {{--  文章列表  --}}
 @section('business')
 
 @show
 {{--  列表结束  --}}
+
 
 {{--  文章详情  --}}
 @section('article')
@@ -28,12 +38,10 @@
 {{--  详情结束  --}}
 @include('home.public.list')
 
+
+
 {{-- 开始底部  --}}
 @include('home.public.footer')
 {{--  底部结束  --}}
 
-{{--  登录    --}}
-@section('popup')
 
-@show
-{{--  登录结束  --}}
