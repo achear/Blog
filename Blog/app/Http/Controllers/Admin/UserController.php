@@ -18,23 +18,22 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $user = Users::orderBy('user_id','asc')
-            ->where(function($query) use($request){
-                //检测关键字
-                $username = $request->input('keywords1');
-                $email = $request->input('keywords2');
-
-                //如果用户名不为空
-                if(!empty($username)) {
-                    $query->where('user_name','like','%'.$username.'%');
-                }
-                //如果邮箱不为空
-                if(!empty($email)) {
-                    $query->where('user_email','like','%'.$email.'%');
-                }
-            })
-            ->paginate($request->input('num', 5));
-            //如果用户选择了每页显示多少条，那就按照传过来的参数显示，如果没有，那就默认一页两条
-        return view('admin.user.list',['user'=>$user, 'request'=> $request]);
+        ->where(function($query) use($request){
+            //检测关键字
+            $username = $request->input('keywords1');
+            $email = $request->input('keywords2');
+            //如果用户名不为空
+            if(!empty($username)) {
+                $query->where('user_name','like','%'.$username.'%');
+            }
+            //如果邮箱不为空
+            if(!empty($email)) {
+                $query->where('user_email','like','%'.$email.'%');
+            }
+        })
+        ->paginate($request->input('num', 5));
+        //如果用户选择了每页显示多少条，那就按照传过来的参数显示，如果没有，那就默认一页两条
+         return view('admin.user.list',['user'=>$user, 'request'=> $request]);
     }
 
     /**
@@ -88,9 +87,47 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        
+        $user = Users::find($id);
+        return view('admin.user.pass',['user'=>$user]);
     }
 
+    public function pass(Request $request,$id)
+    {
+        $user = Users::find($id);
+        $input = $request->all();
+        if ($input['oldpass'] != $user->user_pwd) {
+            $data = [
+                'status'=> 1,
+                'msg' => '原密码错误'
+            ];
+            return $data;
+        }
+
+        if ($input['newpass'] == $user->user_pwd) {
+            $data = [
+                'status'=> 1,
+                'msg' => '不能使用相同的密码'
+            ];
+            return $data;
+        }
+
+        $user->user_pwd = $input['newpass'];
+        $res = $user->save();
+
+        if ($res) {
+            $data = [
+                'status'=>0,
+                'msg'=>'修改密码成功'
+            ];
+        } else {
+            $data = [
+                'status'=>1,
+                'msg'=>'修改密码失败'
+            ];
+        }
+
+        return $data;
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -126,12 +163,12 @@ class UserController extends Controller
         if ($res) {
             $data = [
                 'status'=>0,
-                'msg'=>'修改成功'
+                'msg'=>'添加成功'
             ];
         } else {
             $data = [
                 'status'=>1,
-                'msg'=>'修改失败'
+                'msg'=>'添加失败'
             ];
         }
 
@@ -197,7 +234,7 @@ class UserController extends Controller
     public function del(Request $request)
     {
         $input = $request->input('ids');
-        return $input;
+        //return $input;
 //        return $input;
         $res = Users::destroy($input);
 
@@ -214,11 +251,5 @@ class UserController extends Controller
         }
 
         return $data;
-    }
-
-    //修改用户密码
-    public function xgmm($id)
-    {
-        return $id;
     }
 }

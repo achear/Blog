@@ -4,7 +4,7 @@
       <div class="inner">
         <div id="logo_bottom">
           <a href="index.html">
-            <img src="{{ asset('Home/images/logo_bottom.png') }}" alt="" />
+            <img src="/Home/images/logo_bottom.png" alt="" />
           </a>
         </div>
 
@@ -27,73 +27,105 @@
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_1.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_1.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_1.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_2.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_2.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_2.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_3.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_3.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_3.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_4.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_4.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_4.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_5.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_5.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_5.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_6.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_6.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_6.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_7.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_7.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_7.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
                 <li>
                   <a href="http://www.flickr.com/" target="_blank">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/Home/images/pic_flickr_8.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_flickr_8.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_flickr_8.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                   </a>
                 </li>
               </ul>
@@ -177,10 +209,14 @@
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/Home/images/pic_most_read_1.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_most_read_1.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_most_read_1.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                     <span></span>
                   </a>
                 </div>
@@ -198,10 +234,14 @@
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/Home/images/pic_most_read_2.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_most_read_2.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_most_read_2.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                     <span></span>
                   </a>
                 </div>
@@ -219,10 +259,14 @@
                 <div class="pic">
                   <a href="news_post.html" class="w_hover">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <img src="/Home/images/pic_most_read_3.png" alt="" />
 =======
                     <img src="{{ asset('Home/images/pic_most_read_3.png') }}" alt="" />
 >>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
+=======
+                    <img src="/Home/images/pic_most_read_3.png" alt="" />
+>>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
                     <span></span>
                   </a>
                 </div>
@@ -323,55 +367,6 @@
 <!-- FOOTER END -->
 </div>
 
-<!-- POPUP BEGIN -->
-<div id="overlay"></div>
-<div id="login" class="block_popup">
-<div class="popup">
-  <a href="#" class="close">关闭</a>
-
-  <div class="content">
-    <div class="title">
-      <p>进入网站</p>
-    </div>
-
-    <div class="form">
-      <form action="#" />
-      <div class="column">
-        <p class="label">登录</p>
-        <div class="field">
-          <input type="text" />
-        </div>
-      </div>
-
-      <div class="column">
-        <p class="label">密码</p>
-        <div class="field">
-          <input type="password" />
-        </div>
-      </div>
-
-      <div class="column_2">
-        <div class="remember">
-          <div class="checkbox">
-            <input type="checkbox" />
-          </div>
-          <div class="remember_label">
-            <p>记住我</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column_2">
-        <p class="forgot_pass">
-          <a href="#">忘记密码？</a>
-        </p>
-      </div>
-
-      <div class="column button">
-        <a href="#" class="enter">
-          <span>登录</span>
-        </a>
-      </div>
 
       <div class="clearboth"></div>
       </form>
@@ -383,11 +378,7 @@
 
     <div class="fb_button">
       <a href="#">
-<<<<<<< HEAD
-        <img src="/layout/images/button_fb_login.png" alt="" />
-=======
         <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
       </a>
     </div>
     <div class="text">
