@@ -75,16 +75,23 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
-                    <cite>订单管理</cite>
+                    <cite>友情链接</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="order-list.html">
+                        <a _href="{{url('admin/links')}}">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>订单列表</cite>
+                            <cite>友情链接列表</cite>
                         </a>
                     </li >
+                    <li>
+                        <a _href="{{url('admin/links/create')}}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加友情链接</cite>
+                            
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li>

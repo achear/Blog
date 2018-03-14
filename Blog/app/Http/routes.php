@@ -45,6 +45,15 @@ Route::get('home/article/index','Home\ArticleController@index');
 Route::get('home/article/{id}/info','Home\ArticleController@show');
 Route::get('home/article/{id}/list','Home\ArticleController@list');
 Route::get('home/article/search','Home\ArticleController@search');
+// 测试文章页发表
+Route::get('home/article/style','Home\ArticleController@style2');
+// 文章发表
+Route::get('home/article/publish','Home\ArticleController@publish');
+// 文章修改页
+Route::post('home/article/update','Home\ArticleController@update');
+// 前台文章添加
+Route::post('home/article/addarti','Home\ArticleController@addarti');
+
 //前台评论
 Route::post('home/comment','Home\CommentController@create');
 //后台欢迎页
@@ -61,6 +70,12 @@ Route::resource('/home/index/registration','Home\LoginController@index');
 Route::resource('/home/index/DoLogin','Home\LoginController@DoLogin');
 // 退出登录
 Route::resource('/home/index/loginout','Home\LoginController@loginout');
+// 个人中心页
+Route::get('/home/index/personal','Home\ChangeController@personal');
+Route::post('/home/index/modify_password','Home\ChangeController@modify_password');
+// Route::post('/home/index/changepass','Home\IndexController@changepass');
+// 修改密码
+Route::post('/home/index/changepass','Home\IndexController@changepass');
 
 
 // 轮播图配置
@@ -147,3 +162,7 @@ Route::post('/admin/article/uploads','Admin\ArticleController@upload');
 
 //访问的update方法的路由
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
+
+//友情链接
+Route::resource('admin/links','Admin\LinksController');
+Route::post('/admin/links/changeorder','Admin\LinksController@changeOrder');

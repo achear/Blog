@@ -7,7 +7,7 @@ use App\Model\Carousel;
 use App\Model\home_user;
 use App\Model\Article;
 use App\Model\Cate;
-
+use \Illuminate\Support\Facades\Crypt;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -77,10 +77,12 @@ class IndexController extends Controller
 
     public function store(Request $request)
     {
+
+      
         $data = $request->except('_token');
         $user = new home_user;
         $user->username = $data['username'];
-        $user->password = $data['password'];
+        $user->password = Crypt::encrypt($data['password']);
 
         $res = $user->save();
         if ($res) {
@@ -92,7 +94,20 @@ class IndexController extends Controller
 
     public function show()
     {
-        echo 456;
+        
+        return view('home.index.personal');
     }
+
+    /**
+     * 个人中心页
+     */
+    public function personal()
+    {
+      
+        return view('home.index.personal');
+    }    
+
+
+   
  
 }

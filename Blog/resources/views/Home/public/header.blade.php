@@ -128,20 +128,20 @@
               </div>
               @else
               <div class="fr">
-                <div class="block_top_menu">
-                  <ul>
-                    <li class="current">
-                      <a href="#login" class="open_popup">{{session('users')['username']}}</a>
-                    </li>
-                    <li>
-                      <a href="{{url('home/index/registration')}}">个人中心</a>
-                    </li>
-                    <li>
-                      <a href="{{url('/home/index/loginout')}}">退出登录</a>
-                    </li>
-                  </ul>
-                </div>
-                @endif
+                  <div class="block_top_menu">
+                    <ul>
+                      <li class="current">
+                        <a href="#login" class="open_popup">{{session('users')['username']}}</a>
+                      </li>
+                      <li>
+                        <a href="{{url('home/index/personal')}}">个人中心</a>
+                      </li>
+                      <li>
+                        <a href="{{url('/home/index/loginout')}}">退出登录</a>
+                      </li>
+                    </ul>
+                  </div>
+                  @endif
 
                 <div class="block_social_top">
                   <ul>
