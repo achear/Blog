@@ -49,21 +49,21 @@
                         	<h4><span>B</span></h4>
                             
                             <section class="rating">
-                            	<p class="title"><span>Rating</span></p>
+                            	<p class="title"><span>评分</span></p>
                                 
                                 <ul>
-                                	<li><span>1024</span>views</li>
-                                    <li><span>4</span>comments</li>
+                                	<li><span>1024</span>视图</li>
+                                    <li><span>4</span>评论</li>
                                 </ul>
                             </section>
                             
                             <section class="subscribe">
-                            	<p class="title"><span>Subscribe</span></p>
-                                <a href="#">Subscribe to comments</a>
+                            	<p class="title"><span>订阅</span></p>
+                                <a href="#">订阅评论</a>
                             </section>
                             
                             <section class="recommend">
-                            	<p class="title"><span>recommend to friends</span></p>
+                            	<p class="title"><span>推荐给朋友</span></p>
                                 
                                 <ul>
                                 	<li><a href="http://www.facebook.com/share.php?u=http://google.com" target="_blank"><img src="images/button_social_1.png" alt="" /></a></li>
@@ -79,7 +79,7 @@
                         <div class="line_2" style="margin:22px 0px 29px;"></div>
                         
                         <div class="block_related_posts">
-                        	<h3>Related Posts</h3>
+                        	<h3>相关文章</h3>
                             
                             <div class="block_main_news">
                             	<article class="block_news_post">
@@ -137,8 +137,8 @@
                         <div class="line_2" style="margin:5px 0px 30px;"></div>
                         
                         <div class="block_comments_type_2">
-                        	<h3>3 Comments</h3>
-                            <a href="#" class="add_new">Add new comment</a>
+                        	<h3>3 个评论</h3>
+                            <a href="#" class="add_new">添加新评论</a>
                             
                             <div class="comment">
                             	<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>
@@ -187,20 +187,20 @@
                         <div class="separator" style="height:30px;"></div>
                         
                         <div class="block_leave_reply">
-                        	<h3>Leave a Reply</h3>
-                        	<p class="text">Your email address will not be published. Required fields are marked <span>*</span></p>
+                        	<h3>发布评论</h3>
+                        	<p class="text">您的电子邮件地址不会被公开。必填项已标记 <span>*</span></p>
                             
                         	<form class="w_validation" action="#" />
-                            	<p>Name<span>*</span></p>
+                            	<p>姓名<span>*</span></p>
                             	<div class="field"><input type="text" class="req" /></div>
                                 
-                                <p>E-mail<span>*</span></p>
+                                <p>电子邮件<span>*</span></p>
                             	<div class="field"><input type="text" class="req" /></div>
                                 
-                                <p>Comment</p>
+                                <p>评论内容</p>
                                 <div class="textarea"><textarea cols="1" rows="1"></textarea></div>
                                 
-                                <input type="submit" class="general_button" value="Post comment" />
+                                <input type="submit" class="general_button" value="发布评论" />
                             </form>
                         </div>
                         

@@ -62,7 +62,7 @@
             <div class="block_home_post">
               <div class="pic">
                 <a href="{{asset('home/article/index')}}" class="w_hover">
-                  <img src="/Home/images/pic_home_news_1.jpg" alt="" />
+                  <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                   <span></span>
                 </a>
               </div>
@@ -72,16 +72,14 @@
                   <a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                 </p>
                 <div class="date">
-                  <p>11 July, 2012</p>
+                  <p>2012年11月</p>
                 </div>
                 <div class="icons">
                   <ul>
                     <li>
                       <a href="#" class="views">56</a>
-                    </li>
-                  </ul>
+                      <a href="#" class="views">{{$v->cate_view}}</a>
                 </div>
-              </div>
             </div>
             <div class="line_3" style="margin:14px 0px 17px;"></div>
           </div>
@@ -92,7 +90,7 @@
               <div class="block_home_post">
                 <div class="pic">
                   <a href="{{asset('home/article/index')}}" class="w_hover">
-                    <img src="/Home/images/pic_home_news_1.jpg" alt="" />
+                    <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -102,12 +100,12 @@
                     <a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                   </p>
                   <div class="date">
-                    <p>11 July, 2012</p>
+                    <p>2012年11月</p>
                   </div>
                   <div class="icons">
                     <ul>
                       <li>
-                        <a href="#" class="views">56</a>
+                        <a href="#" class="views">{{$v->cate_view}}</a>
                       </li>
                     </ul>
                   </div>

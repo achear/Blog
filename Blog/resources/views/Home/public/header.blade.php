@@ -81,10 +81,6 @@
     jQuery(function () {});
   </script>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
@@ -100,16 +96,16 @@
               <div class="block_top_menu">
                 <ul>
                   <li class="current">
-                    <a href="index.html">首页</a>
+                    <a href="/">首页</a>
                   </li>
                   <li>
-                    <a href="#">Site Map</a>
+                    <a href="#">网站地图</a>
                   </li>
                   <li>
-                    <a href="typography.html">Typography</a>
+                    <a href="typography.html">活版印刷</a>
                   </li>
                   <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html">接触</a>
                   </li>
                 </ul>
               </div>
@@ -169,15 +165,9 @@
           <div class="inner">
             <div id="logo_top">
               <a href="index.html">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <img src="/Home/images/logo_top.png" alt="BusinessNews" title="BusinessNews" />
-=======
                 <img src="{{asset('Home/images/logo_top.png')}}" alt="BusinessNews" title="BusinessNews" />
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
-=======
                 <img src="/Home/images/logo_top.png" alt="BusinessNews" title="BusinessNews" />
->>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
+                <img src="/Home/images/logo_top.png" alt="BusinessNews" title="BusinessNews" />
               </a>
             </div>
 
@@ -217,7 +207,7 @@
               <div class="block_search_top">
                 <form action="{{url('/home/article/search')}}" method="get">
                 <div class="field">
-                  <input type="text" name="search" value="" class="w_def_text" title="Enter Your Email Addres" />
+                  <input type="text" name="search" value="" class="w_def_text" title="在这里搜索文章" />
                 </div>
                 <input type="submit" class="button" value="Search" />
 
@@ -235,7 +225,7 @@
             <nav class="main_menu">
               <ul>
                 <li class="current_page_item">
-                  <a href="index.html">首页</a>
+                  <a href="/">首页</a>
 
                   <ul>
                     <li>
@@ -372,8 +362,6 @@
                 <div class="image">
                   <a href="blog_post.html" class="pic">
                     <img src="/Home/images/pic_big_drop_3.jpg" alt="" />
-                    <img src="{{asset('Home/images/pic_big_drop_3.jpg')}}" alt="" />
-                    <img src="/Home/images/pic_big_drop_3.jpg" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">隐藏在中间的尴尬东西</a>
@@ -383,8 +371,6 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-                    <img src="/Home/images/pic_big_drop_4.jpg" alt="" />
-                    <img src="{{asset('Home/images/pic_big_drop_4.jpg')}}" alt="" />
                     <img src="/Home/images/pic_big_drop_4.jpg" alt="" />
                   </a>
                   <p>
@@ -456,7 +442,7 @@
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-
+                    <img src="/Home/images/pic_big_drop_6.jpg" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">互联网倾向于重复预定义的块.</a>
@@ -495,18 +481,6 @@
                   </div>
                   <ul>
                     <li>
-<<<<<<< HEAD
-                      <a href="#">Web Development</a>
-                    </li>
-                    <li>
-                      <a href="#">Programming</a>
-                    </li>
-                    <li>
-                      <a href="#">Techique</a>
-                    </li>
-                    <li>
-                      <a href="#">Cars</a>
-=======
                       <a href="#">Web开发</a>
                     </li>
                     <li>
@@ -517,7 +491,6 @@
                     </li>
                     <li>
                       <a href="#">汽车</a>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                     </li>
                   </ul>
                 </div>
@@ -530,49 +503,29 @@
               <div class="content">
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-<<<<<<< HEAD
-                    <img src="/Home/images/pic_big_drop_1.jpg" alt="" />
-                  </a>
-                  <p>
-                    <a href="blog_post.html">Many desktop packages and web page editors.</a>
-=======
                     <img src="{{asset('/Home/images/pic_big_drop_1.jpg')}}" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">许多桌面软件包和网页编辑器.</a>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </p>
                 </div>
                 <div class="line"></div>
 
                 <div class="image">
                   <a href="blog_post.html" class="pic">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
-                  </a>
-                  <p>
-                    <a href="blog_post.html">There are many variations passages</a>
-=======
                     <img src="{{asset('Home/images/pic_big_drop_2.jpg')}}" alt="" />
-=======
                     <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
->>>>>>> 7e81e7ce604fe08c2b6743c60b7aea9954d41794
+                    <img src="/Home/images/pic_big_drop_2.jpg" alt="" />
                   </a>
                   <p>
                     <a href="blog_post.html">有很多变化的段落</a>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </p>
                 </div>
                 <div class="line"></div>
 
                 <div class="popular_posts">
                   <div class="title">
-<<<<<<< HEAD
-                    <p>Popular Posts</p>
-=======
                     <p>热门帖子</p>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                   </div>
                   <ul>
                     <li>
@@ -597,35 +550,20 @@
 
                 <div class="more">
                   <div class="title">
-<<<<<<< HEAD
-                    <p>More In Education</p>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="#">High school</a>
-=======
                     <p>更多教育</p>
                   </div>
                   <ul>
                     <li>
                       <a href="#">中学</a>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                     </li>
                     <li>
                       <a href="#">Univercity</a>
                     </li>
                     <li>
-<<<<<<< HEAD
-                      <a href="#">College</a>
-                    </li>
-                    <li>
-                      <a href="#">Students</a>
-=======
                       <a href="#">学院</a>
                     </li>
                     <li>
                       <a href="#">学生们</a>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                     </li>
                   </ul>
                 </div>
@@ -641,27 +579,6 @@
             <nav class="secondary_menu">
               <ul>
                 <li>
-<<<<<<< HEAD
-                  <a href="main_news_europe.html">Europe</a>
-                </li>
-                <li>
-                  <a href="main_news_usa.html">USA</a>
-                </li>
-                <li>
-                  <a href="main_news_m_east.html">Middle East</a>
-                </li>
-                <li>
-                  <a href="main_news_money.html">Money</a>
-                </li>
-                <li>
-                  <a href="main_news_science.html">Science and IT</a>
-                </li>
-                <li>
-                  <a href="main_news_culture.html">Culture</a>
-                </li>
-                <li>
-                  <a href="main_news_top.html">Top News</a>
-=======
                   <a href="main_news_europe.html">欧洲</a>
                 </li>
                 <li>
@@ -681,7 +598,6 @@
                 </li>
                 <li>
                   <a href="main_news_top.html">热门新闻</a>
->>>>>>> 5dca02dab90c59c1a96086a81b7bb1b1f04df8c6
                 </li>
               </ul>
             </nav>

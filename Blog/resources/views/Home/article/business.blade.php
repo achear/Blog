@@ -8,18 +8,18 @@
             	<div class="general_content">
                 	<div class="main_content">
                     	<div class="block_breadcrumbs">
-                        	<div class="text"><p>You are here:</p></div>
+                        	<div class="text"><p>你在这里:</p></div>
                             
                             <ul>
-                            	<li><a href="index.html">首页</a></li>
-                                <li>商业</li>
+                            	<li><a href="/">首页</a></li>
+                                <li>{{$cate['cate_name']}}</li>
                             </ul>
                         </div>
                         <div class="separator" style="height:30px;"></div>
                         
-                        <h2>商业</h2>
+                        <h2>{{$cate['cate_name']}}</h2>
                         
-                        <p class="general_subtitle">Eestablished fact that a reader will be distracted by the readable content of a page when looking at its layout are many variations of passages have suffered alteration.</p>
+                        <p class="general_subtitle">{{$cate['cate_title']}}</p>
                         
                         <div class="line_4" style="margin:0px 0px 18px;"></div>
                         
@@ -27,18 +27,18 @@
                         	<div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="images/pic_business_big.jpg" alt="" /></a></div>
                             
                             <div class="content">
-                            	<p class="title"><a href="news_post.html">Publishing packages and web page editors now use.</a></p>
+                            	<p class="title"><a href="news_post.html">{{$cate['cate_keywords']}}</a></p>
                                 
                                 <div class="info">
-                                	<div class="date"><p>11 July, 2012</p></div>
+                                	<div class="date"><p>2012年11月</p></div>
                                     
                                     <div class="r_part">
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">220</a>
+                                    	<div class="category"><p><a href="#">查看次数</a></p></div>
+                                        <a href="#" class="views">{{$cate['cate_view']}}</a>
                                     </div>
                                 </div>
                                     
-                                <p class="text">Many variations of passages of available, but the majority have suffered alteration in some form. Humour, or randomised words which don't look even slightly believable. If you are going to use a passage of you need to be sure.</p>
+                                <p class="text">{{$cate['cate_description']}}</p>
                             </div>
                             
                             <div class="clearboth"></div>
@@ -56,8 +56,13 @@
                                 	<div class="date"><p>11 July, 2012</p></div>
                                     
                                     <div class="r_part">
+<<<<<<< HEAD
                                     	<div class="category"><p><a href="#">Business</a></p></div>
                                         <a href="#" class="views">183</a>
+=======
+                                    	<div class="category"><p><a href="#">查看次数</a></p></div>
+                                        <a href="#" class="views">{{$v->art_view}}</a>
+>>>>>>> 5aa322bd6ccdde864135fc8adb2543edef1d8a86
                                     </div>
                                 </div>
                             </article>

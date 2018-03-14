@@ -7332,37 +7332,37 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                 return  node.tagName == 'DIV' && node.getAttribute('cdata_tag');
             }
             //给文本或者inline节点套p标签
-            if (me.options.enterTag == 'p') {
+            // if (me.options.enterTag == 'p') {
 
-                var child = this.body.firstChild, tmpNode;
-                if (!child || child.nodeType == 1 &&
-                    (dtd.$cdata[child.tagName] || isCdataDiv(child) ||
-                        domUtils.isCustomeNode(child)
-                        )
-                    && child === this.body.lastChild) {
-                    this.body.innerHTML = '<p>' + (browser.ie ? '&nbsp;' : '<br/>') + '</p>' + this.body.innerHTML;
+            //     var child = this.body.firstChild, tmpNode;
+            //     if (!child || child.nodeType == 1 &&
+            //         (dtd.$cdata[child.tagName] || isCdataDiv(child) ||
+            //             domUtils.isCustomeNode(child)
+            //             )
+            //         && child === this.body.lastChild) {
+            //         this.body.innerHTML = (browser.ie ? '&nbsp;' : '<br/>') + this.body.innerHTML;
 
-                } else {
-                    var p = me.document.createElement('p');
-                    while (child) {
-                        while (child && (child.nodeType == 3 || child.nodeType == 1 && dtd.p[child.tagName] && !dtd.$cdata[child.tagName])) {
-                            tmpNode = child.nextSibling;
-                            p.appendChild(child);
-                            child = tmpNode;
-                        }
-                        if (p.firstChild) {
-                            if (!child) {
-                                me.body.appendChild(p);
-                                break;
-                            } else {
-                                child.parentNode.insertBefore(p, child);
-                                p = me.document.createElement('p');
-                            }
-                        }
-                        child = child.nextSibling;
-                    }
-                }
-            }
+            //     } else {
+            //         var p = me.document.createElement('p');
+            //         while (child) {
+            //             while (child && (child.nodeType == 3 || child.nodeType == 1 && dtd.p[child.tagName] && !dtd.$cdata[child.tagName])) {
+            //                 tmpNode = child.nextSibling;
+            //                 p.appendChild(child);
+            //                 child = tmpNode;
+            //             }
+            //             if (p.firstChild) {
+            //                 if (!child) {
+            //                     me.body.appendChild(p);
+            //                     break;
+            //                 } else {
+            //                     child.parentNode.insertBefore(p, child);
+            //                     p = me.document.createElement('p');
+            //                 }
+            //             }
+            //             child = child.nextSibling;
+            //         }
+            //     }
+            // }
             me.fireEvent('aftersetcontent');
             me.fireEvent('contentchange');
 
