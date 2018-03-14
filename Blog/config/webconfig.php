@@ -1,8 +1,11 @@
 <?php return array (
-  ' web_title ' => ' 项目 ',
+  '  web_title  ' => ' 博客 ',
+  ' web_count ' => ' 百度统计 ',
+  'web_status' => '',
+  'seo_title' => '',
+  'keywords' => '',
+  'description' => '',
+  'copyright' => '',
+  'AAAA' => '',
   'a' => 'a',
-  'ssss' => 'ssss',
-  '   cccccccccc   ' => ' a ',
-  '' => NULL,
-  'qwqw' => 'qwqw',
 );

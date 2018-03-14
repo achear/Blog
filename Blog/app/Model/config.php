@@ -18,14 +18,14 @@ class config extends Model
      *
      * @var string
      */
-    protected $table = 'config';
+    protected $table = 'blog_config';
 
     /**
      * 表的主键
      * 
      * @var string
      */
-    public $primaryKey = 'config_id';
+    public $primaryKey = 'conf_id';
 
     /**
      * 不允许被批量复制的字段

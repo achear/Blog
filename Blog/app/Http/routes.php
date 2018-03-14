@@ -70,7 +70,6 @@ Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
 Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
 Route::post('/admin/config/upload','Admin\ConfigController@upload');
-Route::get('/','Home\IndexController@index');
 // // 前台注册页
 Route::resource('/home/index','Home\IndexController');
 Route::resource('/home/login/registration','Home\LoginController');
@@ -143,6 +142,9 @@ Route::resource('/admin/article','Admin\ArticleController');
 Route::get('/admin/{id}/article','Admin\ArticleController@show');
 //文件上传
 Route::post('/admin/article/uploads','Admin\ArticleController@upload');
+
+//配置模块
+Route::resource('/admin/config','Admin\ConfigController');
 
 //访问的update方法的路由
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');

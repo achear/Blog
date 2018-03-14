@@ -18,7 +18,7 @@ class ConfigController extends Controller
     public function putContent()
     {
         //1. 从数据库中读取相关内容数据
-        $content = Config::lists('config_content','config_name')->all();
+        $content = Config::lists('conf_content','conf_name')->all();
 
 
         //数组不能直接写入文件，向文件中只能写字符（数组格式的字符串）
@@ -62,25 +62,25 @@ class ConfigController extends Controller
     public function store(Request $request)
     {
         $input = $request->except('_token');
-        if( !empty( trim($input['config_name'])  )   and  !empty( trim($input['config_content'])  ) ){
+        if( !empty( trim($input['conf_name'])  )   and  !empty( trim($input['conf_content'])  ) ){
             $res = config::create($input);        
             if($res){
                 //如果网站配置项添加成功，调用putContent（）将数据同步到webconfig.php文件
                 $this->putContent();
                 // return redirect('admin/config');
-                return back();
+                return back()->with('msg','添加成功');
             }else{
-                return back();
+                return back()->with('msg','添加失败');
             }
         }else{
-            return back();
+            return back()->with('msg','名称和内容不能为空');
         }
 
 
     }
 
     /**
-     * Display the specified resource.
+     * 删除
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -95,20 +95,20 @@ class ConfigController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 修改页
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data = config::where('config_id',$id)->first();
-        // dd($data);
+        $data = config::where('conf_id',$id)->first();
+        // dd($data->conf_content);
         return view('Admin/config/edit',['id'=>$id,'data'=>$data]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * 修改操作
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -117,19 +117,25 @@ class ConfigController extends Controller
     public function update(Request $request, $id)
     {
         // $config = config::where('config_id',$id)->get();
+        //开发中$id传过来是｛  num  ｝形式，用正则把他取出来
         preg_match('/\d{1,11}/',$id,$config_id);
-        $config = config::find($config_id)[0];
-        //dd($config[0]);
+        //当前数据库的内容
+        $config = config::find($config_id[0]);
+        //传过来的内容
         $input = $request->except(['_token','_method']);
+
+        // var_dump($config->conf_content);
+        // die;
         // dd($input);
-        if( !empty( trim($input['config_name'])  )   and  !empty( trim($input['config_content'])  ) ){
+        if( !empty( trim($input['conf_name'])  )   and  !empty( trim($input['conf_content'])  ) ){
              //到数据库执行修改
-            $config->config_title = $input['config_title'];
-            $config->config_name = $input['config_name'];
-            $config->config_content = $input['config_content'];
-            $config->config_order = $input['config_order'];
-            $config->config_tips = $input['config_tips'];
-            $config->config_type = $input['config_type'];
+            $config->conf_title = $input['conf_title'];
+            $config->conf_name = $input['conf_name'];
+            $config->conf_content = $input['conf_content'];
+            $config->conf_order = $input['conf_order'];
+            $config->conf_tips = $input['conf_tips'];
+            $config->field_type = $input['field_type'];
+            $config->field_value = $input['field_value'];
             
             //  dd($config);
             $res = $config->save();
@@ -157,6 +163,8 @@ class ConfigController extends Controller
     {
         //
     }
+
+
     public function CaroEdit(Request $request)
     {
         

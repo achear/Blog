@@ -21,20 +21,7 @@
   </head>
   
   <body>
-    <div class="x-nav">
-      <span class="layui-breadcrumb">
-        <a href="">首页</a>
-        <a href="">演示</a>
-        <a>
-          <cite>导航元素</cite></a>
-      </span>
-      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
-        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
-    </div>
-    
-      <xblock>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-      </xblock>
+
       
           <table class="layui-table">
             <colgroup>
@@ -51,7 +38,9 @@
                 <th>类型</th>
                 <th>排序</th>
                 <th>说明</th>
+                <th>是否开启</th>
                 <th>操作</th>
+
 
               </tr> 
             </thead>
@@ -59,13 +48,14 @@
             <tbody>
               @foreach($config as $v)
               <tr>
-                <td>{{ $v->config_title }}</td>
-                <td>{{ $v->config_name }}</td>
-                <td>{{ $v->config_content }}</td>
-                <td>{{ $v->config_type }}</td>
-                <td>{{ $v->config_order }}</td>
-                <td>{{ $v->config_tips }}</td>
-                <td><a href="/admin/config/{{ $v->config_id }}/edit">修改</a>  <a href="/admin/config/{{ $v->config_id }}">删除</a></td>
+                <td>{{ $v->conf_title }}</td>
+                <td>{{ $v->conf_name }}</td>
+                <td>{{ $v->conf_content }}</td>
+                <td>{{ $v->field_type }}</td>
+                <td>{{ $v->conf_order }}</td>
+                <td>{{ $v->conf_tips }}</td>
+                <td>{{ $v->field_value }}</td>
+                <td><a href="/admin/config/{{ $v->conf_id }}/edit">修改</a>  <a href="/admin/config/{{ $v->conf_id }}">删除</a></td>
               </tr>
               @endforeach
             </tbody>

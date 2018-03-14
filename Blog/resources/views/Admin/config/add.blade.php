@@ -22,12 +22,12 @@
   </head>
   
   <body>
-    <!-- <div>
+    <div>
         {{--判断是否添加错误的提示信息--}}
         @if(!empty(session('msg')))
-        <p>{{ session('msg') }}</p>
+        <p style="color:red;">{{ session('msg') }}</p>
         @endif
-    </div> -->
+    </div>
     <div class="x-body">
         <form class="layui-form" action="/admin/config" method="post">
         {{csrf_field()}}
@@ -36,7 +36,7 @@
                     <span class="x-red">*</span>标题
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_username" name="config_title" required="" lay-verify="nikename"
+                    <input type="text" id="L_username" name="conf_title" required="" lay-verify="nikename"
                     autocomplete="off" class="layui-input" value="">
                 </div>
                 <div><p>例如：网页标题</p></div>
@@ -46,7 +46,7 @@
                   <span class="x-red">*</span>名称
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="L_configName" name="config_name" required="" lay-verify=""
+                  <input type="text" id="L_configName" name="conf_name" required="" lay-verify=""
                   autocomplete="off" class="layui-input">
               </div>
               <div><p>例如：web_title</p></div>
@@ -56,7 +56,7 @@
                     <span class="x-red">*</span>内容
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_configContent" name="config_content" required="" 
+                    <input type="text" id="L_configContent" name="conf_content" required="" 
                     autocomplete="off" class="layui-input">
                 </div>
                 <div><p>例如：简书</p></div>
@@ -66,9 +66,18 @@
                 <span class="x-red">*</span>类型
               </label>
               <div class="layui-input-block">
-                  <input type="radio" name="config_type" value="1" title="input" checked="">
-                  <input type="radio" name="config_type" value="1" title="textarea">
-                  <input type="radio" name="config_type" value="0" title="redio">
+                  <input type="radio" name="field_type" value="input" title="input" checked="">
+                  <input type="radio" name="field_type" value="textarea" title="textarea">
+                  <input type="radio" name="field_type" value="redio" title="redio">
+                </div>
+            </div>
+            <div class="layui-form-item" pane="">
+              <label class="layui-form-label">
+                <span class="x-red">*</span>是否开启
+              </label>
+              <div class="layui-input-block">
+                  <input type="radio" name="field_value" value="0" title="关闭" checked="">
+                  <input type="radio" name="field_value" value="1" title="开启">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -76,7 +85,7 @@
                     <span class="x-red">*</span>排序
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_configContent" name="config_order" required="" 
+                    <input type="text" id="L_configContent" name="conf_order" required="" 
                     autocomplete="off" class="layui-input">
                 </div>
                 <div><p>例如：1</p></div>
@@ -86,7 +95,7 @@
                     <span class="x-red">*</span>说明
                 </label>
                 <div class="layui-input-block">
-                <textarea placeholder="请输入内容" class="layui-textarea" name="config_tips"></textarea>
+                <textarea placeholder="请输入内容" class="layui-textarea" name="conf_tips"></textarea>
                 </div>
             </div>
         </div>
@@ -101,58 +110,6 @@
       </form>
     </div>
 
-    <script>
-
-        //引入layer和jquery
-        layui.use(['form','layer'], function(){
-            $ = layui.jquery;
-          var form = layui.form
-          ,layer = layui.layer;
-        });   
-            //判断，排序为2位数字
-        //     form.on('submit(add)',function(){
-
-        //         var config_order = $("input[name='config_order']").val();
-        //         var m_isNum = /^[0-9]{0,2}$/;
-        //         if($.isEmptyObject(config_order) || !m_isNum.test(config_order)){
-        //             layer.open({
-        //                 title: '错误'
-        //                 ,content: '排序不能为空且只能是数字'+m_isNum.test(config_order) + $.isEmptyObject(config_order)
-        //             });       
-        //         }else{
-        //             //条件允许，ajax传值
-        //             $.ajax({
-        //                 url: "/admin/config",
-        //                 type:'post',
-        //                 date:{
-        //                     config_content : $("input[name='config_content']").val(),
-        //                     config_name : $("input[name='config_name']").val(),
-        //                     config_title : $("input[name='config_title']").val(),
-        //                     config_tips : $("input[name='config_tips']").val(),
-        //                     config_order : config_order,
-        //                     config_type : $("input[name='config_type']").val(),
-        //                 },
-        //                 headers: {
-        //                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //                 },
-        //                 success: function(){
-        //                     layer.msg('添加成功');
-        //                 },
-        //                 error: function(){
-        //                     console.log(config_order);
-        //                     layer.msg('添加失败');
-        //                 },
-        //                 dataType:'JSON',
-        //                 async:false
-        //             });
-
-        //         }
-        //          return false;
-        //     });
-
-
-        // });
-    </script>
 
 
 
