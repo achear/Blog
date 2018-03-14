@@ -52,8 +52,8 @@
                             	<p class="title"><span>评分</span></p>
                                 
                                 <ul>
-                                	<li><span>1024</span>视图</li>
-                                    <li><span>4</span>评论</li>
+                                	<li><span>1024</span>查看</li>
+                                    <li><span>{{$num}}</span>评论</li>
                                 </ul>
                             </section>
                             
@@ -83,52 +83,26 @@
                             
                             <div class="block_main_news">
                             	<article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_9.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">photography</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
+                                <p class="title">
+                                        @if($prev)
+                                            <a href="{{url('/home/article/'.$prev->art_id.'/info')}}">上一篇：{{$prev->art_title}}</a>
+                                        @else   
+                                            <a href="javascript:;">没有上一篇了。</a>
+                                        @endif
+                                    </p>
                                 </article>
                                 
                                 <article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_4.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">sport</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
+                                    <p class="title">
+                                        @if($next)
+                                            <a href="{{url('/home/article/'.$next->art_id.'/info')}}">下一篇：{{$next->art_title}}</a>
+                                        @else   
+                                            <a href="return false;">没有下一篇了。</a>
+                                        @endif
+                                    </p>
                                 </article>
                                 
-                                <article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_6.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">business</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
-                                </article>
                                 
-                                <article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_13.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">video</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
-                                </article>
                                 
                             	<div class="clearboth"></div>
                             </div>

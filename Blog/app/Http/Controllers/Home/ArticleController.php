@@ -40,7 +40,7 @@ class ArticleController extends Controller
     {
         // $data = Cate::first();
         // // return $data;
-        // $data->c_article;
+        
         // $v = json_decode($data,true);
         $data = Article::where('cate_id',$id)->paginate(2);
         $cate = Cate::find($id);
@@ -85,12 +85,20 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
+        //文章详情
         $data = Article::find($id);
+        //上一篇文章
+        $prev = Article::where('art_id','<',$id)->orderBy('art_id','desc')->first();
+        //dd($prev);
+        //下一篇文章
+        $next = Article::where('art_id','>',$id)->orderBy('art_id','asc')->first();
+        //评论
         $commit = Comment::where('commit_id',$id)->get();
+        //评论数量
         $num = count(Comment::where('commit_id',$id)->get());
         //dd($num);
         //$v = json_decode($data,true);
-        return view('home.article.info',['data'=>$data,'commit'=>$commit,'num'=>$num]);
+        return view('home.article.info',['data'=>$data,'commit'=>$commit,'num'=>$num,'prev'=>$prev,'next'=>$next]);
     }
 
     /**

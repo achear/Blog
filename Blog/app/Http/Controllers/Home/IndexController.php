@@ -25,9 +25,54 @@ class IndexController extends Controller
         //$text = Article::take(3)->get();
         $article = Article::paginate(4);
         //dd($article);
+        // $cate = Cate::get();
+        // //获取所有的子分类
+        // $zcate = [];
+        // //获取所有的父类
+        // foreach($cate as $v) {
+        //     if ($v['cate_pid'] == 0) {
+        //         //$arr['cate_id'] = $v['cate_id'];
+        //         //array_push($arr,$v['cate_id']);
+        //         //dump($arr['cate_id']);
+        //         foreach($cate as $m) {
+        //             if ($m['cate_pid'] == $v['cate_id']) {
+        //                 $zcate[] = $m;
+        //                 //dump($m);
+        //             }
+        //         }
+        //     }
+        // }
+        //获取父分类
         $cate = Cate::where('cate_pid','0')->get();
-        //dd($cate);
+        //dd($zcate);
+        //return $arr;
+        //dd($arr);
         return View('home/index/index',['data'=>$data,'article'=>$article,'cate'=>$cate]);
+    }
+
+    public function header()
+    {
+        $cate = Cate::get();
+        //获取所有的子分类
+        $zcate = [];
+        //获取所有的父类
+        foreach($cate as $v) {
+            if ($v['cate_pid'] == 0) {
+                //$arr['cate_id'] = $v['cate_id'];
+                //array_push($arr,$v['cate_id']);
+                //dump($arr['cate_id']);
+                foreach($cate as $m) {
+                    if ($m['cate_pid'] == $v['cate_id']) {
+                        $zcate[] = $m;
+                        //dump($m);
+                    }
+                }
+            }
+        }
+        //获取父分类
+        $cate = Cate::where('cate_pid','0')->get();
+
+        return view('home/public/header',['cate'=>$cate,'zcate'=>$zcate]);
     }
 
     public function store(Request $request)
