@@ -146,3 +146,7 @@ Route::post('/admin/article/uploads','Admin\ArticleController@upload');
 
 //访问的update方法的路由
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
+
+//友情链接
+Route::resource('admin/links','Admin\LinksController');
+Route::post('/admin/links/changeorder','Admin\LinksController@changeOrder');
