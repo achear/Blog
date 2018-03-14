@@ -3,7 +3,7 @@
   
   <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.0</title>
+    <title>添加分类</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -29,7 +29,7 @@
         @endif
     </div>
     <div class="x-body">
-        <form class="layui-form" action="{{ url('admin/cate') }}" method="post">  
+        <form id="cate_form" class="layui-form" action="{{ url('admin/cate') }}" method="post" enctype="multipart/form-data">  
           <div class="layui-form-item">
               <label for="L_cate_name" class="layui-form-label">
                   <span class="x-red">*</span>父级分类
@@ -62,6 +62,76 @@
                   autocomplete="off" class="layui-input"> 
               </div>
           </div>
+          <div class="layui-form-item">
+                <label for="L_cate_editor" class="layui-form-label">
+                    <span class="x-red">*</span>缩略图
+                </label>
+                <div class="layui-input-inline">
+                    <input type="file" id="file_upload" name="file_upload" value="">
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $("#file_upload").change(function () {
+                            uploadImage();
+                        })
+                    })
+                    function uploadImage() {
+                        //  判断是否有选择上传文件
+                        var imgPath = $("#file_upload").val();
+                        if (imgPath == "") {
+                            alert("请选择上传图片！");
+                            return;
+                        }
+                        //判断上传文件的后缀名
+                        var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+                        if (strExtension != 'jpg' && strExtension != 'gif'
+                            && strExtension != 'png' && strExtension != 'bmp') {
+                            alert("请选择图片文件");
+                            return;
+                        }
+                        //将整个表单打包进formData
+                        var formData = new FormData($('#cate_form')[0]);
+                        //只将上传文件打包进formData
+                        // var formData = new FormData();
+                        // formData.append('fileupload',$('#file_upload')[0].file[0]);
+
+                        $.ajax({
+                            type: "POST",
+                            url: "/admin/cate/uploads",
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            async:true,
+                            cache:false,
+                            success: function(data) {
+
+                                $('#thumb').attr('src',data);
+                                //显示上传到OSS上的图片
+                                // $('#thumb').attr('src','oss的域名'+data);
+                                // $('#thumb').attr('src','{{ env('ALIOSS_DOMAIN') }}'+data);
+                                $('#cate_thumb').val(data);
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                alert("上传失败，请检查网络后重试");
+                            }
+                        });
+                    }
+                </script>
+
+            </div>
+            <div class="layui-form-item">
+                <label for="L_art_tag" class="layui-form-label">
+                    <span class="x-red">*</span>
+                </label>
+                <div class="layui-input-block">
+                    <input type="hidden" name="cate_thumb" id="cate_thumb" value="">
+                    <!-- 上传成功后显示上传图片 -->
+                    <img src="" id="thumb" alt="" style="width:100px;">
+                </div>
+            </div>
           <div class="layui-form-item">
               <label for="L_cate_title" class="layui-form-label">
                   <span class="x-red">*</span>关键词 

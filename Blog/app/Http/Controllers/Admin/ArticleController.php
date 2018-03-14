@@ -33,8 +33,6 @@ class ArticleController extends Controller
             //将文件上传的位置返回给客户端
             return '/upload/'.$newfilename;
         }
-
-
     }
 
     /**

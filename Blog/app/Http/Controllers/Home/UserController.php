@@ -18,13 +18,23 @@ class UserController extends Controller
     public function postIndex(Request $request)
     {
         $data = $request->all();
+        //return $data;
+        //$name = json_decode($data);
         $res = home_user::where('username',$data)->first();
-        if ($res) {
-            return 0;
-        } else {
-            return 1;
-        }
+        
         //return $res;
+        if (!empty($res)) {
+            $data = [
+                'status'=>0,
+                'msg'=>'用户名已存在'
+            ];
+        } else {
+            $data = [
+                'status'=>1,
+                'msg'=>'可以使用这个用户名'
+            ];
+        }
+        return $data;
     }
 
     /**

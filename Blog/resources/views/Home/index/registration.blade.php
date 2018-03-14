@@ -637,7 +637,7 @@
                         <div class="separator" style="height:39px;"></div>
 
                         <div class="block_registration">
-                            <form action="{{url('/home/index')}}" method="post" class="w_validation" id="myform">
+                            <form action="{{url('/home/user')}}" method="post" class="w_validation" id="myform">
                                 {{ csrf_field() }}
                                 <div class="col_1">
                                     <div class="label">
@@ -645,17 +645,17 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="text" name="username" id="username" value="" class="req" />
+                                        <input type="text" name="username" id="uname" style="height: 29px;" />
                                     </div>
                                     <div class="clearboth"></div>
-                                    <div class="separator" style="height:14px;"></div>
+                                    <div class="separator" style="height:12px;"></div>
 
                                     <div class="label">
                                         <p>邮箱
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="text" name="email" class="req" />
+                                        <input type="text" name="email" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
@@ -665,7 +665,7 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="password" name="password" class="req" />
+                                        <input type="password" name="password" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
@@ -675,16 +675,16 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="password" name="repassword" class="req" />
+                                        <input type="password" name="repassword" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                 </div>
 
                                 <div class="col_2">
                                     <div class="label">
-                                        <p>名字:</p>
+                                        <p>错误提示：</p>
                                     </div>
-                                    <div class="field" id="yanzheng"></div>
+                                    <div class="field" id="yanzheng" style="height: 29px;"></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:14px;"></div>
 
@@ -704,8 +704,8 @@
                                         <input class="sliding_checkbox" type="checkbox" />
                                     </div>
                                     <script type="text/javascript">
-                                        $('#username').blur(function () {
-                                            var username = $('#username').val();
+                                        $('#uname').blur(function () {
+                                            var username = $('#uname').val();
                                             $.ajax({
                                                 type: "POST",
                                                 headers: {
@@ -713,12 +713,17 @@
                                                         'content')
                                                 },
                                                 url: '/home/user/index',
-                                                data: username,
-                                                dataType: "text",
-                                                success: function (result) {
-                                                    if (result) {
-                                                        $('#yanzheng').html('<span>用户名已存在</span>');
-                                                        console.log(11);
+                                                data: {'username':username},
+                                                dataType: "JSON",
+                                                success: function (data) {
+                                                    if (data.status == 0) {
+                                                        $('#yanzheng').html('<span style="height: 29px; display: block; line-height: 29px; color: red;">用户名已存在</span>');
+                                                        //console.log(result);
+                                                        console.log(data.status);
+                                                    } else {
+                                                        $('#yanzheng').html('<span style="color: green; height: 29px; display: block; line-height: 29px;">该用户名可以使用</span>');
+                                                        //console.log(result);
+                                                        console.log(data.status);
                                                     }
                                                 }
                                             });

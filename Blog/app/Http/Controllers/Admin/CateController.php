@@ -9,6 +9,31 @@ use App\Http\Controllers\Controller;
 use App\Model\Cate;
 class CateController extends Controller
 {
+    /*
+     *文件上传处理   
+    */
+    public function upload(Request $request)
+    {
+        // 1、获取上传文件
+        $file = $request->file('file_upload');
+        // return $file;
+        // 2、判断上传文件的有效性
+        if($file->isValid()){
+            //获取文件的后缀名
+            $ext = $file->getClientOriginalExtension();
+            // return $ext;
+            //生成新的文件名
+            $newfilename = md5(date('YmdHis').rand(1000,9999).uniqid()).'.'.$ext;
+            // 移动文件到指定位置
+            // return $newfilename;
+            $res = $file->move(public_path().'/upload',$newfilename);
+            //将文件上传的位置返回给客户端
+            return '/upload/'.$newfilename;
+        }
+    }
+    
+    
+    
     /**
      * 修改排序
      */
@@ -71,8 +96,9 @@ class CateController extends Controller
     public function store(Request $request)
     {
     //        1 获取提交的分类数据
-        $input = $request->except('_token');
+        $input = $request->except('_token','file_upload');
     //        2. 添加到数据库
+        //dd($input);
         $res =  Cate::create($input);
     //        3.判断添加是否成功
         if($res){

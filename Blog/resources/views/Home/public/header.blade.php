@@ -97,16 +97,16 @@
               <div class="block_top_menu">
                 <ul>
                   <li class="current">
-                    <a href="index.html">首页</a>
+                    <a href="/">首页</a>
                   </li>
                   <li>
-                    <a href="#">Site Map</a>
+                    <a href="#">网站地图</a>
                   </li>
                   <li>
-                    <a href="typography.html">Typography</a>
+                    <a href="typography.html">活版印刷</a>
                   </li>
                   <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html">接触</a>
                   </li>
                 </ul>
               </div>
@@ -206,7 +206,7 @@
               <div class="block_search_top">
                 <form action="{{url('/home/article/search')}}" method="get">
                 <div class="field">
-                  <input type="text" name="search" value="" class="w_def_text" title="Enter Your Email Addres" />
+                  <input type="text" name="search" value="" class="w_def_text" title="在这里搜索文章" />
                 </div>
                 <input type="submit" class="button" value="Search" />
 
@@ -224,7 +224,7 @@
             <nav class="main_menu">
               <ul>
                 <li class="current_page_item">
-                  <a href="index.html">首页</a>
+                  <a href="/">首页</a>
 
                   <ul>
                     <li>

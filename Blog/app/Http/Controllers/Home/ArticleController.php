@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Redis;
 use App\Model\Cate;
+use App\Model\Comment;
 use App\Model\Article;
 use Illuminate\Support\Facades\Session;
 
@@ -43,16 +44,16 @@ class ArticleController extends Controller
         // $data->c_article;
         // $v = json_decode($data,true);
         $data = Article::where('cate_id',$id)->paginate(2);
-        //dd($data);
-
-        return View('home.article.business',['data'=>$data]);
+        $cate = Cate::find($id);
+        //dd($cate);
+        return View('home.article.business',['data'=>$data,'cate'=>$cate]);
 
     }
 
     public function search(Request $request)
     {
         // $input = implode('',$request->only('search'));
-        // dd($input);
+        
         $data = Article::where(function($query) use($request){
             //将传过来的数组转换成字符串
             $search = implode('',$request->only('search'));
@@ -61,6 +62,7 @@ class ArticleController extends Controller
                 $query->where('art_title','like','%'.$search.'%');
             }
         })->paginate(2);
+
 
         return view('home.article.business',['data'=>$data]);
     }
@@ -76,9 +78,11 @@ class ArticleController extends Controller
     public function show($id)
     {
         $data = Article::find($id);
-        //dd($data);
+        $commit = Comment::where('commit_id',$id)->get();
+        $num = count(Comment::where('commit_id',$id)->get());
+        //dd($num);
         //$v = json_decode($data,true);
-        return view('home.article.info',['data'=>$data]);
+        return view('home.article.info',['data'=>$data,'commit'=>$commit,'num'=>$num]);
     }
 
     /**
