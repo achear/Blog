@@ -45,7 +45,8 @@ Route::get('home/article/index','Home\ArticleController@index');
 Route::get('home/article/{id}/info','Home\ArticleController@show');
 Route::get('home/article/{id}/list','Home\ArticleController@list');
 Route::get('home/article/search','Home\ArticleController@search');
-
+//前台评论
+Route::post('home/comment','Home\CommentController@create');
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
 //用户模块路由
