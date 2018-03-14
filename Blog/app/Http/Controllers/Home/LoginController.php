@@ -7,6 +7,7 @@ use \Symfony\Component\HttpFoundation\Cookie;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\home_user;
+use \Illuminate\Support\Facades\Crypt;
 class LoginController extends Controller
 {
     /**
@@ -17,6 +18,7 @@ class LoginController extends Controller
     public function index()
     {
         //
+        
         // return 111;
         return View('home.index.registration');
     }
@@ -30,10 +32,13 @@ class LoginController extends Controller
     {
         //
 
+        
         // return 11;
         $input = $request->except('_token');
+        //return $input;
+        $name =  $input['username'];
+
         // 错误显示信息
-        // dd($input);
         $rule = [
             'username'=>'required',
             'password'=>'required|between:5,20|alpha_dash'
@@ -46,20 +51,19 @@ class LoginController extends Controller
             'password.between'=>'密码应该在5到20位之间',
             'password.alpha_dash'=>'密码必须是数字字母下划线',
         ];
-        $user = home_user::where('username',$input['username'])->first();
+        $user = home_user::where('username',$name)->first();
         // dd($user);
-        if(empty($user)){
-            return redirect('/')->with('errors','用户名不存在');
+        // return Crypt::decrypt($user->password);
+        if($input['password'] ==  Crypt::decrypt($user->password)){
+            //如果登录成功，将登录用户信息保存到session中
+            session()->put('users',$user);
+            return 1;
+            
+            // return redirect('/')->with('errors','用户名不存在');
+        }else{
+            return 2;
+  
         }
-
-//        4. 密码是否正确
-        if($input['password'] !=  $user->password ){
-            return redirect('/#login')->with('errors','密码不对');
-        }
-
-        //如果登录成功，将登录用户信息保存到session中
-        session()->put('users',$user);
-        // return View('home.index.index',['data'=>$user]);
     }
 
     /**

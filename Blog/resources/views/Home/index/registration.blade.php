@@ -637,7 +637,7 @@
                         <div class="separator" style="height:39px;"></div>
 
                         <div class="block_registration">
-                            <form action="{{url('/home/index')}}" method="post" class="w_validation" id="myform">
+                            <form action="{{url('/home/user')}}" method="post" class="w_validation" id="myform">
                                 {{ csrf_field() }}
                                 <div class="col_1">
                                     <div class="label">
@@ -645,17 +645,17 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="text" name="username" id="username" value="" class="req" />
+                                        <input type="text" name="username" id="uname" style="height: 29px;" />
                                     </div>
                                     <div class="clearboth"></div>
-                                    <div class="separator" style="height:14px;"></div>
+                                    <div class="separator" style="height:12px;"></div>
 
                                     <div class="label">
                                         <p>邮箱
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="text" name="email" class="req" />
+                                        <input type="text" name="email" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
@@ -665,7 +665,7 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="password" name="password" class="req" />
+                                        <input type="password" name="password" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
@@ -675,16 +675,16 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="password" name="repassword" class="req" />
+                                        <input type="password" name="repassword" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                 </div>
 
                                 <div class="col_2">
                                     <div class="label">
-                                        <p>名字:</p>
+                                        <p>错误提示：</p>
                                     </div>
-                                    <div class="field" id="yanzheng"></div>
+                                    <div class="field" id="yanzheng" style="height: 29px;"></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:14px;"></div>
 
@@ -704,8 +704,8 @@
                                         <input class="sliding_checkbox" type="checkbox" />
                                     </div>
                                     <script type="text/javascript">
-                                        $('#username').blur(function () {
-                                            var username = $('#username').val();
+                                        $('#uname').blur(function () {
+                                            var username = $('#uname').val();
                                             $.ajax({
                                                 type: "POST",
                                                 headers: {
@@ -713,12 +713,17 @@
                                                         'content')
                                                 },
                                                 url: '/home/user/index',
-                                                data: username,
-                                                dataType: "text",
-                                                success: function (result) {
-                                                    if (result) {
-                                                        $('#yanzheng').html('<span>用户名已存在</span>');
-                                                        console.log(11);
+                                                data: {'username':username},
+                                                dataType: "JSON",
+                                                success: function (data) {
+                                                    if (data.status == 0) {
+                                                        $('#yanzheng').html('<span style="height: 29px; display: block; line-height: 29px; color: red;">用户名已存在</span>');
+                                                        //console.log(result);
+                                                        console.log(data.status);
+                                                    } else {
+                                                        $('#yanzheng').html('<span style="color: green; height: 29px; display: block; line-height: 29px;">该用户名可以使用</span>');
+                                                        //console.log(result);
+                                                        console.log(data.status);
                                                     }
                                                 }
                                             });
@@ -1050,113 +1055,6 @@
         </footer>
         <!-- FOOTER END -->
         </div>
-
-
-{{--  登录开始  --}}
-
-<!-- POPUP BEGIN -->
-<div id="overlay"></div>
-<div id="login" class="block_popup">
-<div class="popup">
-  <a href="#" class="close">关闭</a>
-
-  <div class="content">
-    <div class="title">
-      <p>进入网站</p>
-    </div>
-
-
-    <div class="form">
-      <form action="/home/index/DoLogin" id="addForm" method="POST">
-        {{csrf_field()}}
-      <div class="column">
-        <p class="label">账号：<span><font color="red"></font></span></p>
-        <div class="field">
-          <input type="text" name="username" value=""/>
-        </div>
-      </div>
-
-      <div class="column">
-        <p class="label">密码：<span><font color="red"></font></span></p>
-        <div class="field">
-          <input type="password" name="password"/>
-        </div>
-      </div>
-
-      <div class="column_2">
-        <div class="remember">
-          <div class="checkbox">
-            <input type="checkbox" value="1"/>
-          </div>
-          <div class="remember_label">
-            <p>记住我</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column_2">
-        <p class="forgot_pass">
-          <a href="#">忘记密码？</a>
-        </p>
-      </div>
-
-      <div class="column button">
-          <button type="button" id="submitAdd">确认</button>
-  
-      </div>
-
-      <div class="clearboth"></div>
-      </form>
-    </div>
-
-    <div class="subtitle">
-      <p>以用户身份登录</p>
-    </div>
-
-    <div class="fb_button">
-      <a href="javscript:;" style="pointer-events: none;">
-        <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
-      </a>
-    </div>
-    <div class="text">
-      <p>在社交网络Facebook上使用您的帐户，在Blog上创建个人资料</p>
-    </div>
-  </div>
-</div>
-</div>
-<script>
-   $("#submitAdd").click(function(){
-    
-    var targetUrl = $("#addForm").attr("action");    
-    var data = new FormData($( "#addForm" )[0]);     
-     $.ajax({ 
-    headers: {
-                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                  },
-      type:'post',  
-      url:'/home/index/DoLogin', 
-      cache: false,    //上传文件不需缓存
-      processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
-      contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
-      data:data,
-      dataType:'json', 
-      success:function(data){      
-        alert('登录成功');
-        location.reload();
-      },
-      error:function(){ 
-       alert("账号或密码有误")
-       return false;
-      
-       
-      }
-     })
-     
-  })
- 
-   </script>
-
-<!-- POPUP END -->
 
 
 
