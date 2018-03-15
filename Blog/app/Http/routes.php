@@ -168,3 +168,8 @@ Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
 //友情链接
 Route::resource('admin/links','Admin\LinksController');
 Route::post('/admin/links/changeorder','Admin\LinksController@changeOrder');
+
+//广告模块
+Route::resource('admin/advert','Admin\AdvertController');
+//广告模块文件上传
+Route::post('/admin/advert/uploads','Admin\AdvertController@upload');

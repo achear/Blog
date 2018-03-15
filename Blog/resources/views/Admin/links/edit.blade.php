@@ -49,7 +49,7 @@
               <div class="layui-input-block">
                   <input type="text" id="L_link_title" name="link_title" required="" 
                   autocomplete="off" class="layui-input" value="{{ $field->link_title }}"> 
-              </div>{{ $field->link_name }}
+              </div>
           </div>
           <div class="layui-form-item">
               <label for="L_link_url" class="layui-form-label">
