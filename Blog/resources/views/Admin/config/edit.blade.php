@@ -29,7 +29,7 @@
         @endif
     </div>
     <div class="x-body">
-        <form class="layui-form" action="/admin/config/{   {{$id}}   } " method="post">
+        <form class="layui-form" action="/admin/config/{{{$id}}} " method="post">
         {{csrf_field()}}
         <input type="hidden" name="_method" value="PUT">
             <div class="layui-form-item">
@@ -38,7 +38,7 @@
                 </label>
                 <div class="layui-input-inline">
                     <input type="text" id="L_username" name="conf_title" required="" lay-verify="nikename"
-                    autocomplete="off" class="layui-input" value=" {{ $data->conf_title }} ">
+                    autocomplete="off" class="layui-input" value="{{ $data->conf_title }}">
                 </div>
                 <div><p>例如：网页标题</p></div>
           </div>
@@ -48,7 +48,7 @@
               </label>
               <div class="layui-input-inline">
                   <input type="text" id="L_configName" name="conf_name" required="" lay-verify=""
-                  autocomplete="off" class="layui-input" value=" {{ $data->conf_name }} ">
+                  autocomplete="off" class="layui-input" value="{{ $data->conf_name }}">
               </div>
               <div><p>例如：web_title</p></div>
             </div>
@@ -58,7 +58,7 @@
                 </label>
                 <div class="layui-input-inline">
                     <input type="text" id="L_configContent" name="conf_content" required="" 
-                    autocomplete="off" class="layui-input" value=" {{ $data->conf_content }} ">
+                    autocomplete="off" class="layui-input" value="{{ $data->conf_content}} ">
                 </div>
                 <div><p>例如：简书</p></div>
             </div>
@@ -87,7 +87,7 @@
                 </label>
                 <div class="layui-input-inline">
                     <input type="text" id="L_configContent" name="conf_order" required="" 
-                    autocomplete="off" class="layui-input" value=" {{ $data->conf_order }} " >
+                    autocomplete="off" class="layui-input" value="{{ $data->conf_order }}" >
                 </div>
                 <div><p>例如：1</p></div>
             </div>
@@ -96,7 +96,7 @@
                     <span class="x-red">*</span>说明
                 </label>
                 <div class="layui-input-block">
-                <textarea class="layui-textarea" name="conf_tips"  > <?php if( !empty($data->conf_tips)  ){echo   $data->conf_tips ;} ?> </textarea>
+                <textarea class="layui-textarea" name="conf_tips"  ><?php if( !empty($data->conf_tips)  ){echo   $data->conf_tips ;} ?></textarea>
                 </div>
             </div>
         </div>

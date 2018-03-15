@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\DB;
 use App\Model\config;
+use App\Model\Carousel;
 
 class ConfigController extends Controller
 {
@@ -19,6 +20,7 @@ class ConfigController extends Controller
     {
         //1. 从数据库中读取相关内容数据
         $content = Config::lists('conf_content','conf_name')->all();
+        dd($content);
 
 
         //数组不能直接写入文件，向文件中只能写字符（数组格式的字符串）
@@ -165,6 +167,12 @@ class ConfigController extends Controller
     }
 
 
+    /**
+     * 后台显示轮播图
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function CaroEdit(Request $request)
     {
         

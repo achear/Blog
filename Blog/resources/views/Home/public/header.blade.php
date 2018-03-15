@@ -3,21 +3,68 @@
 
 
 <head>
-  <title>博客首页</title>
+  <title><?php 
+    $a = require '../config/webconfig.php';
+    if(isset($a['title'])){
+      echo $a['title'];
+    }else{
+      echo '';
+    }
+
+    if(isset($a['title_fujia'])){
+      echo $a['title_fujia'];
+    }else{
+      echo '';
+    }
+
+  ?> </title>
+
+<!-- 关键字 -->
+  <meta name="keywords" content="  <?php 
+    $a = require '../config/webconfig.php';
+    if(isset($a['keywords'])){
+      echo $a['keywords'];
+    }else{
+      echo '';
+    }
+  ?> " />
 
 
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
+  <!-- 描述 -->
+  <meta name="description" content="  <?php 
+    if(isset($a['description'])){
+      echo $a['description'];
+    }else{
+      echo '';
+    }
+  ?> " />
+
+ <!-- laravel token -->
   <meta name="csrf-token" content="{{csrf_token()}}"/>
+   <!-- 字符集 -->
+   <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <!-- 爬虫的索引方式 -->
+  <meta name="robots" content="all">
+  <!-- 爬虫的重访时间 -->
+  <meta name="revisit-after" content="7 days" >
+  <!-- 作者 -->
+  <meta name="author" content="兄弟连198期某小组二期项目作品">
+  <!-- 多核浏览器默认渲染方式 -->
+  <meta name="renderer" content="chrome">
+  <!-- 浏览器采取何种版本渲染当前页面 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <!-- 指定请求和响应遵循的缓存机制 -->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-  <meta charset="utf-8" />
-  {{--  <meta name="viewport" content="width=device-width" />  --}}
+
 
 
   <!--[if lt IE 9]>
 <script type="text/javascript" src="layout/plugins/html5.js"></script>
 <![endif]-->
 
+  <!-- 图标 -->
+  <link rel="Shortcut Icon" href="https://www.easyicon.net/api/resizeApi.php?id=1176042&size=16" type="image/ico" />
 
   <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
   <link rel="stylesheet" href="{{ asset('layout/style.css') }}">

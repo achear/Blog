@@ -81,7 +81,6 @@ Route::post('/home/index/changepass','Home\IndexController@changepass');
 
 
 // 轮播图配置
-Route::get('/admin/config','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
 Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
@@ -159,8 +158,9 @@ Route::get('/admin/{id}/article','Admin\ArticleController@show');
 //文件上传
 Route::post('/admin/article/uploads','Admin\ArticleController@upload');
 
-//配置模块
-Route::resource('/admin/config','Admin\ConfigController');
+//广告模块
+Route::resource('/admin/advert','Admin\AdvertController');
+Route::get('/admin/advert/uploads','Admin\AdvertController@upload');
 
 //访问的update方法的路由
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
