@@ -74,7 +74,7 @@
 
 
   <script type="text/javascript" src="/Home/layout/js/jquery.js"></script>
-
+  <script type="text/javascript" src="/Admin/lib/layui/layui.js" charset="utf-8"></script>
 
   <!-- PrettyPhoto start -->
   <link rel="stylesheet" href="/Home/layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
@@ -145,15 +145,8 @@
                   <li class="current">
                     <a href="/">首页</a>
                   </li>
-                  <li>
-                    <a href="#">网站地图</a>
-                  </li>
-                  <li>
-                    <a href="typography.html">活版印刷</a>
-                  </li>
-                  <li>
-                    <a href="contact.html">接触</a>
-                  </li>
+                
+                 
                 </ul>
               </div>
             </div>
@@ -177,7 +170,7 @@
                   <div class="block_top_menu">
                     <ul>
                       <li class="current">
-                        <a href="#login" class="open_popup">{{session('users')['username']}}</a>
+                        <a href="JavaScript:;">{{session('users')['username']}}</a>
                       </li>
                       <li>
                         <a href="{{url('home/index/personal')}}">个人中心</a>
@@ -274,39 +267,10 @@
                 <li class="current_page_item">
                   <a href="/">首页</a>
 
-                  <ul>
-                    <li>
-                      <a href="index.html">主页样式-1</a>
-                    </li>
-                    <li>
-                      <a href="home_style_2.html">主页样式-2</a>
-                    </li>
-                  </ul>
+                 
                 </li>
-                <li class="big_dropdown" data-content="business">
-                  <a href="business.html">业务</a>
-                </li>
-                <li class="big_dropdown" data-content="technology">
-                  <a href="technology.html">科技</a>
-                </li>
-                <li class="big_dropdown" data-content="education">
-                  <a href="education.html">教育</a>
-                </li>
-                <li>
-                  <a href="media.html">媒体</a>
-
-                  <ul>
-                    <li>
-                      <a href="media.html">媒体</a>
-                    </li>
-                    <li>
-                      <a href="media_item.html">媒体项目页面</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">页</a>
-
+              @foreach($cates as $v)
+                <li class="big_dropdown"><a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                   <ul>
                     <li>
                       <a href="about.html">关于我们</a>
@@ -397,6 +361,12 @@
                     </li>
                   </ul>
                 </li>
+              @endforeach
+              <li class="current_page_item">
+                <a href="{{url('home/article/publish')}}">发帖</a>
+
+               
+              </li>
               </ul>
             </nav>
           </div>
@@ -455,20 +425,7 @@
                   <div class="title">
                     <p>更多商业</p>
                   </div>
-                  <ul>
-                    <li>
-                      <a href="#">商业</a>
-                    </li>
-                    <li>
-                      <a href="#">钱</a>
-                    </li>
-                    <li>
-                      <a href="#">投资者计划</a>
-                    </li>
-                    <li>
-                      <a href="#">银行</a>
-                    </li>
-                  </ul>
+                
                 </div>
 
                 <div class="clearboth"></div>
@@ -524,23 +481,7 @@
 
                 <div class="more">
                   <div class="title">
-                    <p>更多技术</p>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="#">Web开发</a>
-                    </li>
-                    <li>
-                      <a href="#">程序设计</a>
-                    </li>
-                    <li>
-                      <a href="#">技术</a>
-                    </li>
-                    <li>
-                      <a href="#">汽车</a>
-                    </li>
-                  </ul>
-                </div>
+                
 
                 <div class="clearboth"></div>
               </div>
@@ -597,24 +538,7 @@
 
                 <div class="more">
                   <div class="title">
-                    <p>更多教育</p>
-                  </div>
-                  <ul>
-                    <li>
-                      <a href="#">中学</a>
-                    </li>
-                    <li>
-                      <a href="#">Univercity</a>
-                    </li>
-                    <li>
-                      <a href="#">学院</a>
-                    </li>
-                    <li>
-                      <a href="#">学生们</a>
-                    </li>
-                  </ul>
-                </div>
-
+                
                 <div class="clearboth"></div>
               </div>
             </div>
@@ -624,29 +548,7 @@
         <section class="section_secondary_menu">
           <div class="inner">
             <nav class="secondary_menu">
-              <ul>
-                <li>
-                  <a href="main_news_europe.html">欧洲</a>
-                </li>
-                <li>
-                  <a href="main_news_usa.html">美国</a>
-                </li>
-                <li>
-                  <a href="main_news_m_east.html">中东</a>
-                </li>
-                <li>
-                  <a href="main_news_money.html">钱</a>
-                </li>
-                <li>
-                  <a href="main_news_science.html">科学和IT</a>
-                </li>
-                <li>
-                  <a href="main_news_culture.html">文化</a>
-                </li>
-                <li>
-                  <a href="main_news_top.html">热门新闻</a>
-                </li>
-              </ul>
+           
             </nav>
 
             <div class="block_clock">

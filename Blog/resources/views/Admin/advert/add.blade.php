@@ -41,87 +41,52 @@
                   autocomplete="off" class="layui-input"> 
               </div>
           </div>
-          <div class="layui-form-item">
-                <label for="L_advert_editor" class="layui-form-label">
-                    <span class="x-red">*</span>缩略图
-                </label>
-                <div class="layui-input-inline">
-                    <input type="file" id="file_upload" name="file_upload" value="">
-                    <!-- <button class="layui-btn test" lay-data="{url: '/a/'}">上传图片</button> -->
-                </div>
 
-                <!-- <script>
-                    layui.use('upload', function(){
-                    var upload = layui.upload;
-
-                    upload.render({
-                        elem: '.test'
-                        ,done: function(res, index, upload){
-                            //获取当前触发上传的元素，一般用于 elem 绑定 class 的情况，注意：此乃 layui 2.1.0 新增
-                            var item = this.item;
-                        }
-                    })
-                </script> -->
-
-                <script type="text/javascript">
-                    $(function () {
-                        $("#file_upload").change(function () {
-                            uploadImage();
-                        })
-                    })
-                    function uploadImage() {
-                        //  判断是否有选择上传文件
-                        var imgPath = $("#file_upload").val();
-                        if (imgPath == "") {
-                            alert("请选择上传图片！");
-                            return;
-                        }
-                        //判断上传文件的后缀名
-                        var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
-                        if (strExtension != 'jpg' && strExtension != 'gif'
-                            && strExtension != 'png' && strExtension != 'bmp') {
-                            alert("请选择图片文件");
-                            return;
-                        }
-                        //将整个表单打包进formData
-                        var formData = new FormData($('#advert_form')[0]);
-                        //只将上传文件打包进formData
-                        // var formData = new FormData();
-                        // formData.append('fileupload',$('#file_upload')[0].file[0]);
-
-                        $.ajax({
-                            type: "POST",
-                            url: "/admin/advert/uploads",
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            data: formData,
-                            contentType: false,
-                            processData: false,
-                            async:true,
-                            cache:false,
-                            success: function(data) {
-
-                                $('#thumb').attr('src',data);
-                                //显示上传到OSS上的图片
-                                // $('#thumb').attr('src','oss的域名'+data);
-                                // $('#thumb').attr('src','{{ env('ALIOSS_DOMAIN') }}'+data);
-                                $('#advert_thumb').val(data);
-                            },
-                            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                                alert(XMLHttpRequest, textStatus, errorThrown);
-                            }
+         <div class="layui-form-item">
+                      <label for="L_art_editor" class="layui-form-label">
+                          <span class="x-red">*</span>缩略图
+                          <input type="hidden" name="advert_file" id="advert_file">
+                      </label>
+                      <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="test1">上传图片</button>
+                            <div class="layui-upload-list">
+                              <img class="layui-upload-img" id="demo1">
+                              <p id="demoText"></p>
+                            </div>
+                          </div> 
+                      <script type="text/javascript">
+                        layui.use('upload', function(){
+                            var $ = layui.jquery
+                            ,upload = layui.upload;
+                            
+                            
+                            //普通图片上传
+                            var uploadInst = upload.render({
+                                elem: '#test1'
+                                ,url: '/admin/config/upload'
+                             
+                                ,before: function(obj){
+                                //预读本地文件示例，不支持ie8
+                                obj.preview(function(index, file, result){
+                                    
+                                    $('#demo1').attr('src', result); //图片链接（base64）
+                                });
+                                }
+                                ,done: function(res){
+                                //如果上传失败
+                                if(res.code > 0){
+                                    return layer.msg('上传失败');
+                                }
+                                $('#advert_file').val(res);
+                                // demoText.html();
+                                
+                                //上传成功
+                                }
+                           
+                            });
                         });
-                    }
-                </script>
-
-            </div>
-            <div class="layui-form-item">
-                      <label class="layui-form-label">预览</label>
-                      <div class="layui-input-block">
-                          <img src="/admin/advert/" alt="" width="200px">
-                      </div>
-                  </div>
+                    </script>
+         </div>
           <div class="layui-form-item">
               <label for="L_advert_url" class="layui-form-label">
                   <span class="x-red">*</span>广告URL
@@ -141,7 +106,7 @@
       </form>
     </div>
     <script>
-        layui.use(['form','layer'], function(){
+        layui.advert(['form','layer'], function(){
             $ = layui.jquery;
           var form = layui.form
           ,layer = layui.layer;

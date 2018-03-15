@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Redis;
 use App\Model\Cate;
 use App\Model\Article;
+use App\Model\home_user;
+use Illuminate\Support\Facades\Session;
 
 
 class ArticleController extends Controller
@@ -60,8 +62,9 @@ class ArticleController extends Controller
                 $query->where('art_title','like','%'.$search.'%');
             }
         })->paginate(2);
+        
 
-        return view('home.article.business',['data'=>$data]);
+        return view('home.article.search',['data'=>$data]);
     }
 
 
@@ -151,5 +154,21 @@ class ArticleController extends Controller
     public function style2()
     {
         return view('home.article.style2');
+    }
+
+        /**
+     * 个人中心文章列表
+     */
+
+    public function youart($id)
+    {
+
+       // home_user::where()
+  
+       $data = Article::where('user_id',$id)->get();
+    
+
+       return view('home.index.youart',['data'=>$data]);
+   
     }
 }

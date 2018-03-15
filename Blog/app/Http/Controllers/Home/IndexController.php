@@ -30,6 +30,8 @@ class IndexController extends Controller
         return View('home/index/index',['data'=>$data,'article'=>$article,'cate'=>$cate]);
     }
 
+    
+
     public function store(Request $request)
     {
 
@@ -38,7 +40,7 @@ class IndexController extends Controller
         $user = new home_user;
         $user->username = $data['username'];
         $user->password = Crypt::encrypt($data['password']);
-
+        
         $res = $user->save();
         if ($res) {
             return redirect('/')->with('success','注册成功');

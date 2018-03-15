@@ -85,6 +85,33 @@
                             <cite>订单列表</cite>
                         </a>
                     </li >
+                    <li>
+                        <a _href="{{url('admin/links/create')}}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加友情链接</cite>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>广告管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="{{url('admin/advert')}}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>广告列表</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="{{url('admin/advert/create')}}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加广告</cite>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li>

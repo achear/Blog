@@ -113,7 +113,7 @@
                       <div class="layui-input-block">
                           <img src="/Home/img/{{$data[0]->carousel_photo}}" alt="" width="200px">
                       </div>
-                    </div> 
+                  </div> 
                  
                  
                   {{--  @endforeach  --}}

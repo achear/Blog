@@ -55,7 +55,7 @@ Route::post('home/article/update','Home\ArticleController@update');
 Route::post('home/article/addarti','Home\ArticleController@addarti');
 
 //前台评论
-Route::post('home/comment','Home\CommentController@create');
+Route::post('/home/comment','Home\CommentController@create');
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
 //用户模块路由
@@ -75,6 +75,8 @@ Route::resource('/home/index/loginout','Home\LoginController@loginout');
 // 个人中心页
 Route::get('/home/index/personal','Home\ChangeController@personal');
 Route::post('/home/index/modify_password','Home\ChangeController@modify_password');
+// 个人中心的用户文章列表
+Route::get('home/article/{id}/youart','Home\ArticleController@youart');
 // Route::post('/home/index/changepass','Home\IndexController@changepass');
 // 修改密码
 Route::post('/home/index/changepass','Home\IndexController@changepass');
@@ -158,9 +160,16 @@ Route::get('/admin/{id}/article','Admin\ArticleController@show');
 //文件上传
 Route::post('/admin/article/uploads','Admin\ArticleController@upload');
 
-//广告模块
-Route::resource('/admin/advert','Admin\AdvertController');
-Route::get('/admin/advert/uploads','Admin\AdvertController@upload');
+
 
 //访问的update方法的路由
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
+
+//友情链接
+Route::resource('admin/links','Admin\LinksController');
+Route::post('/admin/links/changeorder','Admin\LinksController@changeOrder');
+
+//广告模块
+Route::resource('admin/advert','Admin\AdvertController');
+//广告模块文件上传
+Route::post('/admin/advert/uploads','Admin\AdvertController@upload');

@@ -11,15 +11,15 @@
                         	<div class="text"><p>你在这里:</p></div>
                             
                             <ul>
-                            	<li><a href="index.html">首页</a></li>
-                                <li><a href="business.html">文章列表</a></li>
+                            	<li><a href="/">首页</a></li>
+                                <li><a href="{{url('home/article/'.$data->cate_id.'/list')}}">文章列表</a></li>
                                 <li>文章详情</li>
                             </ul>
                         </div>
                         <div class="separator" style="height:30px;"></div>
                         
                         <article class="block_single_news">
-                        	<div class="f_pic"><a href="#"><img src="images/pic_news_post_1.jpg" alt="" /></a></div>
+                        	
                         <p class="title"><a href="#">{{$data['art_title']}}</a></p>
                             <p class="subtitle">{{$data['art_description']}}</p>
                             
@@ -35,7 +35,7 @@
                             </div>
                             
                             <div class="content">
-                            	<p>{!!$data['art_content']!!} 
+                            	<p style="word-wrap:break-word;">{!!$data['art_content']!!}</p>
                             </div>
                         </article>
                         
@@ -52,27 +52,35 @@
                             	<p class="title"><span>评分</span></p>
                                 
                                 <ul>
-                                	<li><span>1024</span>视图</li>
-                                    <li><span>4</span>评论</li>
+                                	<li><span>1024</span>查看</li>
+                                    <li>
+                                        <span>{{$num}}</span>评论
+                                    </li>
                                 </ul>
                             </section>
                             
                             <section class="subscribe">
                             	<p class="title"><span>订阅</span></p>
-                                <a href="#">订阅评论</a>
+                                <a href="#"><p>点击订阅</p></a>
                             </section>
                             
                             <section class="recommend">
                             	<p class="title"><span>推荐给朋友</span></p>
-                                
-                                <ul>
-                                	<li><a href="http://www.facebook.com/share.php?u=http://google.com" target="_blank"><img src="images/button_social_1.png" alt="" /></a></li>
-                                    <li><a href="https://twitter.com/share?text=I like BusinessNews Template and You?" target="_blank"><img src="images/button_social_2.png" alt="" /></a></li>
-                                    <li><a href="https://plusone.google.com/_/+1/confirm?url=http://google.com" target="_blank"><img src="images/button_social_3.png" alt="" /></a></li>
-                                    <li><a href="http://pinterest.com/pin/create/button/?url=http://google.com" target="_blank"><img src="images/button_social_4.png" alt="" /></a></li>
-                                </ul>
+                                <!-- JiaThis Button BEGIN -->
+                                <div style="padding: 20px; box-sizing: border-box; padding-left: 40px;">
+                                    <div class="jiathis_style_24x24">
+                                        <a class="jiathis_button_qzone"></a>
+                                        <a class="jiathis_button_tsina"></a>
+                                        <a class="jiathis_button_tqq"></a>
+                                        <a class="jiathis_button_weixin"></a>
+                                        <a class="jiathis_button_renren"></a>
+                                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                                        <a class="jiathis_counter_style"></a>
+                                    </div>
+                                </div>
+                                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                                <!-- JiaThis Button END -->
                             </section>
-                            
                             <div class="clearboth"></div>
                         </div>
                         
@@ -137,20 +145,26 @@
                         <div class="line_2" style="margin:5px 0px 30px;"></div>
                         
                         <div class="block_comments_type_2">
-                        	<h3>{{$num}} 评论</h3>
+                        	<h3>
+                                @if($num == 0)
+                                    现在还没有人评论，快来抢一波沙发吧!
+                                @else
+                                    {{$num}} 评论
+                                @endif
+                            </h3>
                             <a href="#" class="add_new">添加新评论</a>
                             @foreach($commit as $v)
                             <div class="comment">
-                            	<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>
+                            	<div class="userpic"><a href="#"><img src="" alt="" /></a></div>
                                 
                                 <div class="comment_wrap">
-                                    <div class="name"><p><a href="#">{{$v->user_name}}</a></p></div>
-                                    <div class="date"><p>{{$v->commit_time}}</p></div>
-                                    <div class="content">
-                                        <p>{{$v->commit_content}}</p>
+                                    <div class="name"><p><a href="#" style="color: #3E73B5;">{{$v->user_name}}</a></p></div>
+                                    <div class="content" style="width: 620px;">
+                                        <p style="margin-top:20px;">{{$v->commit_content}}</p>
                                     </div>
+                                    <div class="date" style="width: 620px; margin-top:20px;"><p>{{$v->commit_time}}</p></div>
                                 </div>
-                                <div class="clearboth"></div>
+                                
                                 <div class="line_3"></div>
                             </div>
                             @endforeach
@@ -162,23 +176,22 @@
                         @if(session('users'))
                         <div class="block_leave_reply">
                         	<h3>发布评论</h3>
-                        	<p class="text">您的电子邮件地址不会被公开。必填项已标记<span>*</span></p>
+                        	<p class="text">您的个人信息不会被公开。必填项已标记<span>*</span></p>
                             
-                            <form class="w_validation" action="{{url('home/comment')}}" method="post"/>
+                            <form  class="layui-form">
                             <!-- {{csrf_field()}} -->
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <input type="hidden" name="user_id" value="{{session('users')->id}}">
                                 <input type="hidden" name="commit_id" value="{{$data['art_id']}}">
                             	<p>姓名<span>*</span></p>
-                            	<div class="field"><input type="text" name="username" class="req" /></div>
-                                
-                                <p>电子邮件<span>*</span></p>
-                            	<div class="field"><input type="text" name="email" class="req" /></div>
+                                <div class="field"><input type="text" name="username" class="req" /></div>
                                 
                                 <p>评论内容</p>
                                 <div class="textarea"><textarea cols="1" rows="1" name="commit_content"></textarea></div>
                                 
-                                <input type="submit" class="general_button" value="发布评论" />
+                                <button  class="layui-btn" lay-filter="add" lay-submit="">
+                                    发布评论
+                                </button>
                             </form>
                         </div>
                         @else
@@ -188,4 +201,36 @@
                         </div>
                         @endif
                     </div>
+                    <script>
+                        layui.use(['form','layer'],function(){
+                            $ = layui.jquery;
+                            var form = layui.form
+                            ,layer = layui.layer;
+
+                            //监听提交
+                            form.on('submit(add)',function(data){
+                                $.ajax({
+                                    type:"POST",
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    },
+                                    url:'/home/comment',
+                                    data:data.field,
+                                    dataType:"JSON",
+                                    success:function (result) {
+                                         //console.log(result);
+                                        
+                                        if (result.status == 0) {
+                                            layer.msg('评论成功');
+                                            location.reload();
+                                        } else {
+                                            layer.msg('评论失败');
+                                        }
+                                    }
+                                });
+                                return false;
+                                
+                            });
+                        });
+                    </script>
 @endsection

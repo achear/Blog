@@ -83,7 +83,7 @@ class AdvertController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo 1;
+     
 
     }
 
