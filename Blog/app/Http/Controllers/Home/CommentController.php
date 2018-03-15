@@ -12,8 +12,11 @@ class CommentController extends Controller
 {
     public function create(Request $request)
     {
+        //return 123;
         $data = $request->except('_token','email');
-        //dd($data);
+        //return $data;
+        //$data = json_decode($data,true);
+        //return $data;
         $commit = new Comment;
         $commit->user_id = $data['user_id'];
         $commit->user_name = $data['username'];
@@ -23,9 +26,11 @@ class CommentController extends Controller
         $res = $commit->save();
 
         if ($res) {
-            return 1;
+            //0代表评论成功，1代表失败
+            $data['status'] = 0;
         } else {
-            return 0;
+            $data['status'] = 1;
         }
+        return $data;
     }
 }

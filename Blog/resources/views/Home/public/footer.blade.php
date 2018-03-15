@@ -69,70 +69,15 @@
           </div>
 
           <div class="column">
-            <h3>标签</h3>
+            <h3>友情链接</h3>
 
             <div class="block_tags">
               <ul>
+                @foreach($links as $l)
                 <li>
-                  <a href="#">商业</a>
+                  <a href="{{$l->link_url}}">{{$l->link_name}}</a>
                 </li>
-                <li>
-                  <a href="#">科学</a>
-                </li>
-                <li>
-                  <a href="#">会议</a>
-                </li>
-                <li>
-                  <a href="#">图片</a>
-                </li>
-                <li>
-                  <a href="#">教育</a>
-                </li>
-                <li>
-                  <a href="#">AI</a>
-                </li>
-                <li>
-                  <a href="#">运动</a>
-                </li>
-                <li>
-                  <a href="#">移动</a>
-                </li>
-                <li>
-                  <a href="#">技术</a>
-                </li>
-                <li>
-                  <a href="#">电脑</a>
-                </li>
-                <li>
-                  <a href="#">视频</a>
-                </li>
-                <li>
-                  <a href="#">apple</a>
-                </li>
-                <li>
-                  <a href="#">新闻</a>
-                </li>
-                <li>
-                  <a href="#">欧元</a>
-                </li>
-                <li>
-                  <a href="#">文化</a>
-                </li>
-                <li>
-                  <a href="#">室内</a>
-                </li>
-                <li>
-                  <a href="#">中东</a>
-                </li>
-                <li>
-                  <a href="#">设计</a>
-                </li>
-                <li>
-                  <a href="#">euro 2018</a>
-                </li>
-                <li>
-                  <a href="#">花卉</a>
-                </li>
+                @endforeach
               </ul>
             </div>
           </div>

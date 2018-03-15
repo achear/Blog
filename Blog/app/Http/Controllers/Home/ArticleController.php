@@ -62,9 +62,9 @@ class ArticleController extends Controller
                 $query->where('art_title','like','%'.$search.'%');
             }
         })->paginate(2);
+        
 
-
-        return view('home.article.business',['data'=>$data]);
+        return view('home.article.search',['data'=>$data]);
     }
 
 

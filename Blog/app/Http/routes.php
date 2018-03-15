@@ -55,7 +55,7 @@ Route::post('home/article/update','Home\ArticleController@update');
 Route::post('home/article/addarti','Home\ArticleController@addarti');
 
 //前台评论
-Route::post('home/comment','Home\CommentController@create');
+Route::post('/home/comment','Home\CommentController@create');
 //后台欢迎页
 Route::get('/admin/welcome','Admin\LoginController@welcome');
 //用户模块路由
