@@ -37,15 +37,15 @@
             <!-- <th>
               排序
             </th> -->
-            <th style="width:100px;">ID</th>
-            <th style="width:100px;">Title</th>
-            <th style="width:100px;">Tag</th>
-            <th style="width:500px;">Description</th>
-            <!-- <th style="width:100px;">Thumb</th> -->
-            <!-- <th>Content</th> -->
+            <th style="width:80px;text-align:center;">ID</th>
+            <th style="width:100px;text-align:center;">标 题</th>
+            <th style="width:100px;text-align:center;">关键字</th>
+            <th style="width:100px;text-align:center;">描 述</th>
+            <th style="width:100px;text-align:center;">文 件</th>
+            <th style="width:400px;text-align:center;">内 容</th>
             <!-- <th>Time</th> -->
-            <th style="width:100px;">Editor</th>
-            <th>操作</th>
+            <th style="width:80px;text-align:center;">作 者</th>
+            <th style="text-align:center;">操作</th>
           </tr>
         </thead>
         <tbody>
@@ -56,20 +56,20 @@
                 <input onchange="changeOrder(this,{{ $v->cate_id }})" style="width: 40px;" type="text" id="L_cate_name" name="cate_order" value="{{ $v->cate_order }}" class="layui-input">
               </div> -->
             <!-- </td> -->
-            <td>{{ $v->art_id }}</td>
-            <td>{{ $v->art_title }}</td>
-            <td style>{{ $v->art_tag }}</td>
-            <td>{{ $v->art_description }}</td>
-            <!-- <td>{{ $v->art_thumb }}</td> -->
-            <!-- <td>{{ $v->art_content }}</td> -->
+            <td style="text-align:center;">{{ $v->art_id }}</td>
+            <td style="text-align:center;"><div  style="width:100px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $v->art_title }}</div></td>
+            <td style="text-align:center;"><div style="width:100px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $v->art_tag }}</div></td>
+            <td style="text-align:center;"><div style="width:100px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $v->art_description }}</div></td>
+            <td><center><img src="{{ $v->art_thumb }}" width="50px"></center></td>
+            <td style="text-align:center;"><div  style="width:400px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $v->art_content }}</div></td>
             <!-- <td>{{ $v->art_time }}</td> -->
-            <td>{{ $v->art_editor }}</td>
+            <td style="text-align:center;"><div  style="width:80px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">{{ $v->art_editor }}</div></td>
 
-            <td class="td-manage">
+            <td class="td-manage" style="text-align:center;">
 
-              <!-- <a title="编辑"  onclick="x_admin_show('编辑','{{url('admin/cate/'.$v->cate_id.'/edit')}}',600,400)" href="javascript:;">
+              <a title="编辑"  onclick="x_admin_show('编辑','{{url('admin/article/'.$v->art_id.'/edit')}}',600,400)" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
-              </a> -->
+              </a>
 
               <a title="删除" onclick="delArt({{ $v->art_id }})" href="javascript:;">
                 <i class="layui-icon">&#xe640;</i>

@@ -17,23 +17,27 @@ class ArticleController extends Controller
     */
     public function upload(Request $request)
     {
-        // 1、获取上传文件
-        $file = $request->file('file_upload');
-        // return $file;
-        // 2、判断上传文件的有效性
-        if($file->isValid()){
-            //获取文件的后缀名
-            $ext = $file->getClientOriginalExtension();
-            // return $ext;
-            //生成新的文件名
-            $newfilename = md5(date('YmdHis').rand(1000,9999).uniqid()).'.'.$ext;
-            // 移动文件到指定位置
-            // return $newfilename;
-            $res = $file->move(public_path().'/upload',$newfilename);
-            //将文件上传的位置返回给客户端
-            return '/upload/'.$newfilename;
+       
+         // 1.获取上传文件
+         $file = $request->file('file_upload');
+         //        return $file;
+         //        2.判断文件有效性
+                 if($file->isValid()){
+         //            获取后缀名
+                     $ext = $file->getClientOriginalExtension();
+         //            生成文件名
+                     $newfilename = md5(date('YmdHis').rand(1000,9999).uniqid()).'.'.$ext;
+         //            return $newfilename;
+         //        移动文件到指定位置
+                $res = $file->move(public_path().'/upload',$newfilename);
+         //        上传到阿里云
+                 // OSS::upload($newfilename,$file->getRealPath());
+         
+         
+         //        本地
+                return '/upload/'.$newfilename;
+             }
         }
-    }
 
     /**
      *返回文章分类
@@ -107,7 +111,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        //加载修改页面
+        $article = Article::findOrFail($id);
+        return view('admin.article.edit')->with('article',$article);
     }
 
     /**
@@ -117,9 +123,37 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+
+        $article = Article::find($id);
+        //获取提交的数据
+        $input = $request->except('_token','file_upload');
+       
+        // return $input;
+        //到数据库执行修改
+        $article->art_title = $input['art_title'];
+        $article->art_tag = $input['art_tag'];
+        $article->art_thumb = $input['art_thumb'];
+        //return($input['file_upload']);        
+        $article->art_description = $input['art_description'];
+        $article->art_content = $input['art_content'];
+       
+        $res = $article->save();
+
+        if ($res) {
+            $data = [
+                'status'=>0,
+                'msg'=>'修改成功'
+            ];
+        } else {
+            $data = [
+                'status'=>1,
+                'msg'=>'修改失败'
+            ];
+        }
+
+        return $data;
     }
 
     /**
