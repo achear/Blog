@@ -27,7 +27,7 @@
 
 
   <script type="text/javascript" src="/Home/layout/js/jquery.js"></script>
-
+  <script type="text/javascript" src="/Admin/lib/layui/layui.js" charset="utf-8"></script>
 
   <!-- PrettyPhoto start -->
   <link rel="stylesheet" href="/Home/layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css" />
@@ -240,7 +240,7 @@
                   </ul>
                 </li>
               @foreach($cates as $v)
-                <li class="big_dropdown"><a href="">{{$v->cate_name}}</a>
+                <li class="big_dropdown"><a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                   <ul>
                     @foreach($zcate as $z)
                       @if ($z->cate_pid == $v->cate_id)

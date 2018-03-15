@@ -14,6 +14,7 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         '/admin/config/upload',
         '/home/index/DoLogin',
-        '/home/article/addarti'
+        '/home/article/addarti',
+        '/home/comment'
     ];
 }

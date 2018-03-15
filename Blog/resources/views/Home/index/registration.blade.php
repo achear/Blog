@@ -637,7 +637,7 @@
                         <div class="separator" style="height:39px;"></div>
 
                         <div class="block_registration">
-                            <form action="{{url('/home/user')}}" method="post" class="w_validation" id="myform">
+                            <form action="{{url('/home/index')}}" method="post" class="w_validation">
                                 {{ csrf_field() }}
                                 <div class="col_1">
                                     <div class="label">
@@ -719,11 +719,11 @@
                                                     if (data.status == 0) {
                                                         $('#yanzheng').html('<span style="height: 29px; display: block; line-height: 29px; color: red;">用户名已存在</span>');
                                                         //console.log(result);
-                                                        console.log(data.status);
+                                                        //console.log(data.status);
                                                     } else {
                                                         $('#yanzheng').html('<span style="color: green; height: 29px; display: block; line-height: 29px;">该用户名可以使用</span>');
                                                         //console.log(result);
-                                                        console.log(data.status);
+                                                        //console.log(data.status);
                                                     }
                                                 }
                                             });
