@@ -1,84 +1,81 @@
-
-
-
 <head>
-  <title>博客首页</title>
+    <title>博客首页</title>
 
 
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
 
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="csrf-token" content="{{csrf_token()}}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="csrf-token" content="{{csrf_token()}}" />
 
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 <script type="text/javascript" src="layout/plugins/html5.js"></script>
 <![endif]-->
 
 
-  <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
-  <link rel="stylesheet" href="{{ asset('layout/style.css') }}">
-  {{--  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />
-  <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />  --}}
+    <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
+    <link rel="stylesheet" href="{{ asset('layout/style.css') }}"> {{--
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" /> --}}
 
 
-  <script type="text/javascript" src="{{asset('layout/js/jquery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('layout/js/jquery.js')}}"></script>
 
 
-  <!-- PrettyPhoto 图片 start -->
-  <link rel="stylesheet" href="{{asset('layout/plugins/prettyphoto/css/prettyPhoto.css')}}" type="text/css" />
-  <script type="text/javascript" src="{{asset('layout/plugins/prettyphoto/jquery.prettyPhoto.js')}}"></script>
-  <!-- PrettyPhoto end -->
+    <!-- PrettyPhoto 图片 start -->
+    <link rel="stylesheet" href="{{asset('layout/plugins/prettyphoto/css/prettyPhoto.css')}}" type="text/css" />
+    <script type="text/javascript" src="{{asset('layout/plugins/prettyphoto/jquery.prettyPhoto.js')}}"></script>
+    <!-- PrettyPhoto end -->
 
 
-  <!-- jQuery 工具 start -->
-  <script type="text/javascript" src="{{asset('layout/plugins/tools/jquery.tools.min.js')}}"></script>
-  <!-- jQuery 工具 end -->
+    <!-- jQuery 工具 start -->
+    <script type="text/javascript" src="{{asset('layout/plugins/tools/jquery.tools.min.js')}}"></script>
+    <!-- jQuery 工具 end -->
 
 
-  <!-- 日历 start -->
-  <link rel="stylesheet" href="{{asset('layout/plugins/calendar/calendar.css')}}" type="text/css" />
-  <script type="text/javascript" src="{{asset('layout/plugins/calendar/calendar.js')}}"></script>
-  <!--  日历 end -->
+    <!-- 日历 start -->
+    <link rel="stylesheet" href="{{asset('layout/plugins/calendar/calendar.css')}}" type="text/css" />
+    <script type="text/javascript" src="{{asset('layout/plugins/calendar/calendar.js')}}"></script>
+    <!--  日历 end -->
 
 
-  <!-- ScrollTo start -->
-  <script type="text/javascript" src="{{asset("layout/plugins/scrollto/jquery.scroll.to.min.js")}}"></script>
-  <!-- ScrollTo end -->
+    <!-- ScrollTo start -->
+    <script type="text/javascript" src="{{asset(" layout/plugins/scrollto/jquery.scroll.to.min.js ")}}"></script>
+    <!-- ScrollTo end -->
 
 
-  <!-- MediaElements start -->
-  <link rel="stylesheet" href="{{asset('layout/plugins/video-audio/mediaelementplayer.css')}}" />
-  <script src="{{asset('layout/plugins/video-audio/mediaelement-and-player.js')}}"></script>
-  <!-- MediaElements end -->
+    <!-- MediaElements start -->
+    <link rel="stylesheet" href="{{asset('layout/plugins/video-audio/mediaelementplayer.css')}}" />
+    <script src="{{asset('layout/plugins/video-audio/mediaelement-and-player.js')}}"></script>
+    <!-- MediaElements end -->
 
 
-  <!-- FlexSlider start -->
-  <link rel="stylesheet" href="{{asset('layout/plugins/flexslider/flexslider.css')}}" type="text/css" />
-  <script type="text/javascript" src="{{asset('layout/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
-  <!-- FlexSlider end -->
+    <!-- FlexSlider start -->
+    <link rel="stylesheet" href="{{asset('layout/plugins/flexslider/flexslider.css')}}" type="text/css" />
+    <script type="text/javascript" src="{{asset('layout/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
+    <!-- FlexSlider end -->
 
 
-  <!-- iButtons start -->
-  <link rel="stylesheet" href="{{asset('layout/plugins/ibuttons/css/jquery.ibutton.css')}}" type="text/css" />
-  <script type="text/javascript" src="{{asset('layout/plugins/ibuttons/lib/jquery.ibutton.min.js')}}"></script>
-  <!-- iButtons end -->
+    <!-- iButtons start -->
+    <link rel="stylesheet" href="{{asset('layout/plugins/ibuttons/css/jquery.ibutton.css')}}" type="text/css" />
+    <script type="text/javascript" src="{{asset('layout/plugins/ibuttons/lib/jquery.ibutton.min.js')}}"></script>
+    <!-- iButtons end -->
 
 
-  <!-- jQuery 表单插件开始  -->
-  <script type="text/javascript" src="{{asset('layout/plugins/ajaxform/jquery.form.js')}}"></script>
-  <!-- jQuery表单插件结束 -->
+    <!-- jQuery 表单插件开始  -->
+    <script type="text/javascript" src="{{asset('layout/plugins/ajaxform/jquery.form.js')}}"></script>
+    <!-- jQuery表单插件结束 -->
 
 
-  <script type="text/javascript" src="{{asset('layout/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('layout/js/main.js')}}"></script>
 
 
-  <script type="text/javascript">
-    jQuery(function () {});
-  </script>
+    <script type="text/javascript">
+        jQuery(function () { });
+    </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -226,7 +223,7 @@
                         <nav class="main_menu">
                             <ul>
                                 <li class="current_page_item">
-                                    <a href="index.html">首页</a>
+                                    <a href="/">首页</a>
 
                                     <ul>
                                         <li>
@@ -237,120 +234,18 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="big_dropdown" data-content="business">
-                                    <a href="business.html">业务</a>
-                                </li>
-                                <li class="big_dropdown" data-content="technology">
-                                    <a href="technology.html">科技</a>
-                                </li>
-                                <li class="big_dropdown" data-content="education">
-                                    <a href="education.html">教育</a>
-                                </li>
-                                <li>
-                                    <a href="media.html">媒体</a>
-
+                                @foreach($cates as $v)
+                                <li class="big_dropdown">
+                                    <a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                                     <ul>
+                                        @foreach($zcate as $z) @if ($z->cate_pid == $v->cate_id)
                                         <li>
-                                            <a href="media.html">媒体</a>
+                                            <a href="{{url('home/article/'.$z->cate_id.'/list')}}">{{$z->cate_name}}</a>
                                         </li>
-                                        <li>
-                                            <a href="media_item.html">媒体项目页面</a>
-                                        </li>
+                                        @endif @endforeach
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#">页</a>
-
-                                    <ul>
-                                        <li>
-                                            <a href="about.html">关于我们</a>
-                                        </li>
-                                        <li>
-                                            <a href="about_author.html">作者页面</a>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">联系我们</a>
-                                        </li>
-                                        <li>
-                                            <a href="registration.html">注册页面</a>
-                                        </li>
-                                        <li>
-                                            <a href="main_news.html">新闻页面</a>
-                                        </li>
-                                        <li>
-                                            <a href="news_post_w_slider.html">带滑动条的新闻稿</a>
-                                        </li>
-                                        <li>
-                                            <a href="news_post_w_video.html">视频新闻发布</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="blog.html">博客</a>
-
-                                    <ul>
-                                        <li>
-                                            <a href="blog.html">我们的博客1</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_style_2.html">我们的博客2</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_post.html">博客页面</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_post_w_slider.html">新闻滑块</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog_post_w_video.html">视频滑块</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="typography.html">短码</a>
-
-                                    <ul>
-                                        <li>
-                                            <a href="accordion.html">手风琴</a>
-                                        </li>
-                                        <li>
-                                            <a href="blockquote.html">块引用</a>
-                                        </li>
-                                        <li>
-                                            <a href="table.html">表</a>
-                                        </li>
-                                        <li>
-                                            <a href="columns.html">纵列</a>
-                                        </li>
-                                        <li>
-                                            <a href="pricing_table.html">定价表</a>
-                                        </li>
-                                        <li>
-                                            <a href="testimonials.html">推荐</a>
-                                        </li>
-                                        <li>
-                                            <a href="boxes.html">信息框</a>
-                                        </li>
-                                        <li>
-                                            <a href="dropcaps.html">Dropcaps</a>
-                                        </li>
-                                        <li>
-                                            <a href="tabs.html">标签</a>
-                                        </li>
-                                        <li>
-                                            <a href="lists.html">样式列表</a>
-                                        </li>
-                                        <li>
-                                            <a href="buttons.html">按钮</a>
-                                        </li>
-                                        <li>
-                                            <a href="video.html">视频</a>
-                                        </li>
-                                        <li>
-                                            <a href="typography.html">排版</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                @endforeach
                             </ul>
                         </nav>
                     </div>
@@ -634,6 +529,25 @@
                         <p class="general_title">
                             <span>加入对话</span>
                         </p>
+                        @if (count($errors) > 0) @if(is_object($errors)) @foreach ($errors->all() as $error)
+                        <div class="general_info_box error" style="width: 315px; margin: auto;">
+                            <a href="" class="close">Close</a>
+                            <p>
+                                <b>错误</b>{{ $error }}</p>
+                        </div>
+                        @endforeach @else
+                        <div class="general_info_box error" style="width: 315px; margin: auto;">
+                            <a href="" class="close">Close</a>
+                            <p>
+                                <b>提醒：</b>{{ $errors }}</p>
+                        </div>
+                        @endif @endif @if (!empty(session('msg')))
+                        <div class="general_info_box warning">
+                            <a href="#" class="close">Close</a>
+                            <p>
+                                <b>提醒:</b>{{ session('msg') }}</p>
+                        </div>
+                        @endif
                         <div class="separator" style="height:39px;"></div>
 
                         <div class="block_registration">
@@ -655,7 +569,7 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="text" name="email" style="height: 29px;" class="req" />
+                                        <input type="text" name="email" id="email" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
@@ -665,7 +579,7 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="password" name="password" style="height: 29px;" class="req" />
+                                        <input type="password" name="password" id="pass" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
@@ -675,7 +589,7 @@
                                             <span>*</span>:</p>
                                     </div>
                                     <div class="field">
-                                        <input type="password" name="repassword" style="height: 29px;" class="req" />
+                                        <input type="password" name="repassword" id="repass" style="height: 29px;" class="req" />
                                     </div>
                                     <div class="clearboth"></div>
                                 </div>
@@ -691,17 +605,17 @@
                                     <div class="label">
                                         <p>姓氏:</p>
                                     </div>
-                                    <div class="field">
+                                    <div class="field" id="error_email" style="height: 29px;">
                                         <input type="text" />
                                     </div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
 
                                     <div class="label">
-                                        <p>性别:</p>
+                                        <p>姓氏:</p>
                                     </div>
-                                    <div class="checkbox">
-                                        <input class="sliding_checkbox" type="checkbox" />
+                                    <div class="field" id="error_pass" style="height: 29px;">
+                                        <input type="text" />
                                     </div>
                                     <script type="text/javascript">
                                         $('#uname').blur(function () {
@@ -713,7 +627,7 @@
                                                         'content')
                                                 },
                                                 url: '/home/user/index',
-                                                data: {'username':username},
+                                                data: { 'username': username },
                                                 dataType: "JSON",
                                                 success: function (data) {
                                                     if (data.status == 0) {
@@ -728,30 +642,61 @@
                                                 }
                                             });
                                         });
-                                        $(document).ready(function () {
-                                            $('.sliding_checkbox').iButton({
-                                                labelOn: '女',
-                                                labelOff: '男',
-                                                resizeHandle: false,
-                                                resizeContainer: false
-                                            });
+                                        // $(document).ready(function () {
+                                        //     $('.sliding_checkbox').iButton({
+                                        //         labelOn: '女',
+                                        //         labelOff: '男',
+                                        //         resizeHandle: false,
+                                        //         resizeContainer: false
+                                        //     });
+                                        // });
+                                        $('#email').blur(function () {
+                                            //alert(1);
+                                            var email_val = $('#email').val();
+                                            var email_preg = /^[a-zA-Z0-9_]+@(qq|126|163|baidu|lampbrother)\.(com|cn|net)$/;
+
+                                            if (email_preg.test(email_val)) {
+                                                $('#error_email').html('<font style="color: green; height: 29px; display: block; line-height: 29px;">该邮箱可用</font>');
+                                            } else {
+                                                $('#error_email').html('<font style="height: 29px; display: block; line-height: 29px; color: red;">邮箱格式不正确</font>')
+                                            }
+                                        });
+
+                                        $('#pass').blur(function () {
+                                            var pass_val = $('#pass').val();
+                                            if (pass_val.length < 6) {
+                                                $('#error_pass').html('<font style="height: 29px; display: block; line-height: 29px; color: red;">密码过短！</span>');
+                                                return;
+                                            } else if (pwd_val.length > 16) {
+                                                $('#error_pass').html('<font style="height: 29px; display: block; line-height: 29px; color: red;">密码过长！</span>');
+                                                return;
+                                            } else {
+                                                $('#error_pass').html('<font style="height: 29px; display: block; line-height: 29px; color: green;">密码可用</span>');
+                                            }
+                                        });
+
+                                        $('#repass').keyup(function () {
+                                            var repass_val = $('#repass').val();
+                                            var pass_val = $('#pass').val();
+
+                                            if (repass_val != pass_val) {
+                                                $('#error_repass').html('<font style="height: 29px; display: block; line-height: 29px; color: red;">两次输入密码不一致！</span>');
+                                            } else {
+                                                $('#error_repass').html('<font style="height: 29px; display: block; line-height: 29px; color: green;">格式正确</span>');
+                                            }
                                         });
                                     </script>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:12px;"></div>
 
                                     <div class="label">
-                                        <p>职业:</p>
+                                        <p>姓氏:</p>
                                     </div>
-                                    <div class="select">
-                                        <select class="custom_select">
-                                            <option />&nbsp;
-                                            <option />设计师
-                                            <option />前端开发人员
-                                            <option />经理
-                                        </select>
+                                    <div class="field" id="error_repass" style="height: 29px;">
+                                        <input type="text" />
                                     </div>
                                     <div class="clearboth"></div>
+
                                 </div>
 
                                 <div class="clearboth"></div>
