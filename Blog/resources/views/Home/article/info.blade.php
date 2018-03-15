@@ -8,18 +8,18 @@
             	<div class="general_content">
                 	<div class="main_content">
                     	<div class="block_breadcrumbs">
-                        	<div class="text"><p>You are here:</p></div>
+                        	<div class="text"><p>你在这里:</p></div>
                             
                             <ul>
-                            	<li><a href="index.html">首页</a></li>
-                                <li><a href="business.html">文章列表</a></li>
+                            	<li><a href="/">首页</a></li>
+                                <li><a href="{{url('home/article/'.$data->cate_id.'/list')}}">文章列表</a></li>
                                 <li>文章详情</li>
                             </ul>
                         </div>
                         <div class="separator" style="height:30px;"></div>
                         
                         <article class="block_single_news">
-                        	<div class="f_pic"><a href="#"><img src="images/pic_news_post_1.jpg" alt="" /></a></div>
+                        	
                         <p class="title"><a href="#">{{$data['art_title']}}</a></p>
                             <p class="subtitle">{{$data['art_description']}}</p>
                             
@@ -35,7 +35,7 @@
                             </div>
                             
                             <div class="content">
-                            	<p>{!!$data['art_content']!!} 
+                            	<p style="word-wrap:break-word;">{!!$data['art_content']!!}</p>
                             </div>
                         </article>
                         
@@ -49,86 +49,68 @@
                         	<h4><span>B</span></h4>
                             
                             <section class="rating">
-                            	<p class="title"><span>Rating</span></p>
+                            	<p class="title"><span>评分</span></p>
                                 
                                 <ul>
-                                	<li><span>1024</span>views</li>
-                                    <li><span>4</span>comments</li>
+                                	<li><span>1024</span>查看</li>
+                                    <li>
+                                        <span>{{$num}}</span>评论
+                                    </li>
                                 </ul>
                             </section>
                             
                             <section class="subscribe">
-                            	<p class="title"><span>Subscribe</span></p>
-                                <a href="#">Subscribe to comments</a>
+                            	<p class="title"><span>订阅</span></p>
+                                <a href="#"><p>点击订阅</p></a>
                             </section>
                             
                             <section class="recommend">
-                            	<p class="title"><span>recommend to friends</span></p>
-                                
-                                <ul>
-                                	<li><a href="http://www.facebook.com/share.php?u=http://google.com" target="_blank"><img src="images/button_social_1.png" alt="" /></a></li>
-                                    <li><a href="https://twitter.com/share?text=I like BusinessNews Template and You?" target="_blank"><img src="images/button_social_2.png" alt="" /></a></li>
-                                    <li><a href="https://plusone.google.com/_/+1/confirm?url=http://google.com" target="_blank"><img src="images/button_social_3.png" alt="" /></a></li>
-                                    <li><a href="http://pinterest.com/pin/create/button/?url=http://google.com" target="_blank"><img src="images/button_social_4.png" alt="" /></a></li>
-                                </ul>
+                            	<p class="title"><span>推荐给朋友</span></p>
+                                <!-- JiaThis Button BEGIN -->
+                                <div style="padding: 20px; box-sizing: border-box; padding-left: 40px;">
+                                    <div class="jiathis_style_24x24">
+                                        <a class="jiathis_button_qzone"></a>
+                                        <a class="jiathis_button_tsina"></a>
+                                        <a class="jiathis_button_tqq"></a>
+                                        <a class="jiathis_button_weixin"></a>
+                                        <a class="jiathis_button_renren"></a>
+                                        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                                        <a class="jiathis_counter_style"></a>
+                                    </div>
+                                </div>
+                                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                                <!-- JiaThis Button END -->
                             </section>
-                            
                             <div class="clearboth"></div>
                         </div>
                         
                         <div class="line_2" style="margin:22px 0px 29px;"></div>
                         
                         <div class="block_related_posts">
-                        	<h3>Related Posts</h3>
+                        	<h3>相关文章</h3>
                             
                             <div class="block_main_news">
                             	<article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_9.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">photography</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
+                                <p class="title">
+                                        @if($prev)
+                                            <a href="{{url('/home/article/'.$prev->art_id.'/info')}}">上一篇：{{$prev->art_title}}</a>
+                                        @else   
+                                            <a href="javascript:;">没有上一篇了。</a>
+                                        @endif
+                                    </p>
                                 </article>
                                 
                                 <article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_4.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">sport</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
+                                    <p class="title">
+                                        @if($next)
+                                            <a href="{{url('/home/article/'.$next->art_id.'/info')}}">下一篇：{{$next->art_title}}</a>
+                                        @else   
+                                            <a href="return false;">没有下一篇了。</a>
+                                        @endif
+                                    </p>
                                 </article>
                                 
-                                <article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_6.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">business</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
-                                </article>
                                 
-                                <article class="block_news_post">
-                                    <div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_13.jpg" alt="" /></a></div>
-                                  <p class="category"><a href="#">video</a></p>
-                                    <p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>
-                                    <div class="info">
-                                        <div class="date"><p>11 July, 2012</p></div>
-                                        <a href="#" class="views">183</a>
-                                        
-                                        <div class="clearboth"></div>
-                                    </div>
-                                </article>
                                 
                             	<div class="clearboth"></div>
                             </div>
@@ -137,72 +119,95 @@
                         <div class="line_2" style="margin:5px 0px 30px;"></div>
                         
                         <div class="block_comments_type_2">
-                        	<h3>3 Comments</h3>
-                            <a href="#" class="add_new">Add new comment</a>
-                            
+                        	<h3>
+                                @if($num == 0)
+                                    现在还没有人评论，快来抢一波沙发吧!
+                                @else
+                                    {{$num}} 评论
+                                @endif
+                            </h3>
+                            <a href="#" class="add_new">添加新评论</a>
+                            @foreach($commit as $v)
                             <div class="comment">
                             	<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>
                                 
                                 <div class="comment_wrap">
-                                    <div class="name"><p><a href="#">John Doe</a></p></div>
-                                    <div class="date"><p>Febr 16, 2012 at 4:43 pm</p></div>
+                                    <div class="name"><p><a href="#">{{$v->user_name}}</a></p></div>
+                                    <div class="date"><p>{{$v->commit_time}}</p></div>
                                     <div class="content">
-                                        <p>Established fact that a reader will be distracted by the readable content of a page.</p>
+                                        <p>{{$v->commit_content}}</p>
                                     </div>
                                 </div>
                                 <div class="clearboth"></div>
                                 <div class="line_3"></div>
                             </div>
+                            @endforeach
                             
-                            <div class="comment">
-                            	<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>
-                                
-                                <div class="comment_wrap">
-                                    <div class="name"><p><a href="#">Sara Jonson</a></p></div>
-                                    <div class="date"><p>Febr 16, 2012 at 4:43 pm</p></div>
-                                    <div class="content">
-                                        <p>Established fact that a reader will be distracted by the readable content of a page. When looking at its layout. The point of using is that it has a more-or-less normal distribution of letters.</p>
-                                    </div>
-                                </div>
-                                <div class="clearboth"></div>
-                                <div class="line_3"></div>
-                            </div>
-                            
-                            <div class="comment">
-                            	<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>
-                                
-                                <div class="comment_wrap">
-                                    <div class="name"><p><a href="#">Mark Defo</a></p></div>
-                                    <div class="date"><p>Febr 16, 2012 at 4:43 pm</p></div>
-                                    <div class="content">
-                                        <p>Page when looking at its layout. The point of usinghas a more-or-less normal distribution.</p>
-                                    </div>
-                                </div>
-                                <div class="clearboth"></div>
-                                <div class="line_3"></div>
-                            </div>
                             
                         </div>
                         
                         <div class="separator" style="height:30px;"></div>
-                        
+                        @if(session('users'))
                         <div class="block_leave_reply">
-                        	<h3>Leave a Reply</h3>
-                        	<p class="text">Your email address will not be published. Required fields are marked <span>*</span></p>
+                        	<h3>发布评论</h3>
+                        	<p class="text">您的电子邮件地址不会被公开。必填项已标记<span>*</span></p>
                             
-                        	<form class="w_validation" action="#" />
-                            	<p>Name<span>*</span></p>
-                            	<div class="field"><input type="text" class="req" /></div>
+                            <form  class="layui-form">
+                            <!-- {{csrf_field()}} -->
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <input type="hidden" name="user_id" value="{{session('users')->id}}">
+                                <input type="hidden" name="commit_id" value="{{$data['art_id']}}">
+                            	<p>姓名<span>*</span></p>
+                            	<div class="field"><input type="text" name="username" class="req" /></div>
                                 
-                                <p>E-mail<span>*</span></p>
-                            	<div class="field"><input type="text" class="req" /></div>
+                                <p>电子邮件<span>*</span></p>
+                            	<div class="field"><input type="text" name="email" class="req" /></div>
                                 
-                                <p>Comment</p>
-                                <div class="textarea"><textarea cols="1" rows="1"></textarea></div>
+                                <p>评论内容</p>
+                                <div class="textarea"><textarea cols="1" rows="1" name="commit_content"></textarea></div>
                                 
-                                <input type="submit" class="general_button" value="Post comment" />
+                                <button  class="layui-btn" lay-filter="add" lay-submit="">
+                                    发布评论
+                                </button>
                             </form>
                         </div>
-                        
+                        @else
+                        <div class="general_info_box error">
+                        	<a href="" class="close">Close</a>
+                            <p><b>提醒：</b> 请登录后，再进行评论</p>
+                        </div>
+                        @endif
                     </div>
+                    <script>
+                        layui.use(['form','layer'],function(){
+                            $ = layui.jquery;
+                            var form = layui.form
+                            ,layer = layui.layer;
+
+                            //监听提交
+                            form.on('submit(add)',function(data){
+                                $.ajax({
+                                    type:"POST",
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    },
+                                    url:'/home/comment',
+                                    data:data.field,
+                                    dataType:"JSON",
+                                    success:function (result) {
+                                         //console.log(result);
+                                        
+                                        if (result.status == 0) {
+                                            layer.msg('评论成功');
+                                            location.reload();
+                                        } else {
+                                            layer.msg('评论失败');
+                                        }
+                                    }
+                                });
+                                return false;
+                                
+                            });
+                        });
+                    </script>
 @endsection

@@ -61,8 +61,8 @@
           
             <div class="block_home_post">
               <div class="pic">
-                <a href="{{asset('home/article/index')}}" class="w_hover">
-                  <img src="/Home/images/pic_home_news_1.jpg" alt="" />
+                <a href="{{url('home/article/'.$v->cate_id.'/list')}}" class="w_hover">
+                  <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                   <span></span>
                 </a>
               </div>
@@ -72,12 +72,12 @@
                   <a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                 </p>
                 <div class="date">
-                  <p>11 July, 2012</p>
+                  <p>2012年11月</p>
                 </div>
                 <div class="icons">
                   <ul>
                     <li>
-                      <a href="#" class="views">56</a>
+                      <a href="#" class="views">{{$v->cate_view}}</a>
                     </li>
                   </ul>
                 </div>
@@ -91,8 +91,8 @@
             
               <div class="block_home_post">
                 <div class="pic">
-                  <a href="{{asset('home/article/index')}}" class="w_hover">
-                    <img src="/Home/images/pic_home_news_1.jpg" alt="" />
+                  <a href="{{url('home/article/'.$v->cate_id.'/list')}}" class="w_hover">
+                    <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                     <span></span>
                   </a>
                 </div>
@@ -102,12 +102,12 @@
                     <a href="{{url('home/article/'.$v->cate_id.'/list')}}">{{$v->cate_name}}</a>
                   </p>
                   <div class="date">
-                    <p>11 July, 2012</p>
+                    <p>2012年11月</p>
                   </div>
                   <div class="icons">
                     <ul>
                       <li>
-                        <a href="#" class="views">56</a>
+                        <a href="#" class="views">{{$v->cate_view}}</a>
                       </li>
                     </ul>
                   </div>
@@ -135,8 +135,8 @@
           @foreach($article as $v)
           <article class="block_topic_post">
             <p class="title"><a href="{{url('/home/article/'.$v->art_id.'/info')}}">{{$v->art_title}}</a></p>
-              <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 256px; height: 121.86px;" alt="" /></a></div>
-              <p class="text" style="height: 30px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{$v->art_content}}</p>
+              <div class="f_pic"><a href="{{url('/home/article/'.$v->art_id.'/info')}}" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 266px; height: 121.86px;" alt="" /></a></div>
+              
               <div class="info">
                 <div class="date"><p>2012年7月11日</p></div>
                   
@@ -344,165 +344,4 @@
 
 
       <!-- CONTENT END -->
-      @endsection {{-- 登录开始 --}} @section('popup')
-      <!-- POPUP BEGIN -->
-      <div id="overlay"></div>
-      <div id="login" class="block_popup">
-        <div class="popup">
-          <a href="#" class="close">关闭</a>
-
-          <div class="content">
-            <div class="title">
-              <p>进入网站</p>
-            </div>
-            {{-- @if(count($errors)>0) @foreach($errors->all() as $value {{$value}} @endforeach @endif --}}
-
-            <div class="form">
-              <form action="/home/index/DoLogin" id="addForm" method="POST">
-                {{csrf_field()}}
-                <div class="column">
-                  <p class="label">账号：
-                    <span>
-                      <font color="red"></font>
-                    </span>
-                  </p>
-                  <div class="field">
-                    <input type="text" name="username" value="" />
-                  </div>
-                </div>
-
-                <div class="column">
-                  <p class="label">密码：
-                    <span>
-                      <font color="red"></font>
-                    </span>
-                  </p>
-                  <div class="field">
-                    <input type="password" name="password" />
-                  </div>
-                </div>
-
-                <div class="column_2">
-                  <div class="remember">
-                    <div class="checkbox">
-                      <input type="checkbox" value="1" />
-                    </div>
-                    <div class="remember_label">
-                      <p>记住我</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="column_2">
-                  <p class="forgot_pass">
-                    <a href="#">忘记密码？</a>
-                  </p>
-                </div>
-
-                <div class="column button">
-                  <button type="button" id="submitAdd">确认</button>
-                  {{--
-                  <a href="#" class="enter"> --}} {{--
-                    <input type="submit" value="登录"> --}} {{--
-                    <input type="button" value="登录"> --}} {{--
-                    <span>登录</span> --}} {{-- </a> --}}
-                </div>
-
-                <div class="clearboth"></div>
-              </form>
-            </div>
-
-            <div class="subtitle">
-              <p>以用户身份登录</p>
-            </div>
-
-            <div class="fb_button">
-              <a href="javscript:;" style="pointer-events: none;">
-                <img src="{{ asset('Home/layout/images/button_fb_login.png') }}" alt="" />
-              </a>
-            </div>
-            <div class="text">
-              <p>在社交网络Facebook上使用您的帐户，在Blog上创建个人资料</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $("#submitAdd").click(function () {
-
-          var targetUrl = $("#addForm").attr("action");
-          var data = new FormData($("#addForm")[0]);
-          $.ajax({
-            headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            type: 'post',
-            url: '/home/index/DoLogin',
-            cache: false,    //上传文件不需缓存
-            processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
-            contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
-            data: data,
-            dataType: 'json',
-            success: function (data) {
-              alert('登录成功');
-              location.reload();
-            },
-            error: function () {
-              alert("账号或密码有误")
-              return false;
-
-
-            }
-          })
-
-        })
-          // $.ajax({
-          //         type : "POST", //提交方式
-          //         headers: {
-          //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          //         },
-          //         url : '/home/index/DoLogin',//路径
-          //         data : data.field,//数据，这里使用的是Json格式进行传输
-          //         dataType : "Json",
-          //         success : function(result) {//返回数据根据结果进行相应的处理
-          //            console.log(result);
-                      // 如果ajax的返回数据对象的status属性值是0，表示用户添加成功；弹添加成功的提示信息
-          //            if(result.status == 0){
-          //                layer.alert(result.msg, {icon: 6},function () {
-                              // 获得frame索引
-                              // var index = parent.layer.getFrameIndex(window.name);
-                              //关闭当前frame
-                              // parent.layer.close(index);
-
-                              //刷新父页面
-          //                    parent.location.reload();
-          //                });
-          //            }else{
-          //                layer.alert(result.msg, {icon: 6},function () {
-                             // 获得frame索引
-                             // var index = parent.layer.getFrameIndex(window.name);
-                              //关闭当前frame
-                             // parent.layer.close(index);
-
-          //                    parent.location.reload();
-          //                });
-          //            }
-          //         }
-          //     });
-
-
-
-          //     console.log(data);
-          //   //发异步，把数据提交给php
-
-          //   return false;
-          // });
-      </script> 
-      <script>
-        // 登录验证
- 
-
-      </script> 
-      <!-- POPUP END -->
-
-      @endsection
+@endsection 
