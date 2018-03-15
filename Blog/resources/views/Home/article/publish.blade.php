@@ -626,7 +626,7 @@
   <h3>编写你的文章</h3>
   <p class="text"></p>
     
-  <form id="art_form" class="w_validation" action="{{url('/home/article/addarti')}}" method="POST" />
+  <form id="art_form" class="w_validation" action="{{url('/home/article/addarti')}}" method="POST" enctype="multipart/form-data"/>
 <input type="hidden" name="_token" value="{{csrf_token()}}">
 {{--  {{ csrf_field() }}  --}}
       <p>标题</p>
@@ -640,9 +640,11 @@
 
    
         <div class="layui-form-item">
-        
+          <input type="hidden" name="art_thumb" id="art_thumb" value="">
           <p>图片</p>
           <div class="file"><input type="file" id="file_upload" name="file_upload" value=""></div>
+            {{--  显示上传图片  --}}
+            <img id="img" src="" width="200">
           <script type="text/javascript">
               $(function () {
                   $("#file_upload").change(function () {
@@ -663,8 +665,12 @@
                       alert("请选择图片文件");
                       return;
                   }
+              
+
                   //将整个表单打包进formData
-                  var formData = new FormData($('#art_form')[0]);
+                  // var formData = new FormData($('#art_form')[0]);
+                  var formData = new FormData();
+                  formData.append('file_upload',$('#file_upload')[0].files[0]);
            
                   $.ajax({
                       type: "POST",
@@ -678,11 +684,12 @@
                       async: true,
                       cache: false,
                       success: function (data) {
-
-                          $('#thumb').attr('src', data);
+                        
+                          $('#img').attr('src',data);
                           //显示上传到OSS上的图片
                           // $('#thumb').attr('src','oss的域名'+data);
                           // $('#thumb').attr('src','{{ env('ALIOSS_DOMAIN') }}'+data);
+                          // console.log(data);
                           $('#art_thumb').val(data);
                       },
                       error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -691,6 +698,7 @@
                   });
               }
           </script>
+      
           <div class="" style="height:20px;width:40px;"></div>
         <p>内容</p>
         <div class="" style="height:20px;width:40px;"></div>

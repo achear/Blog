@@ -73,6 +73,8 @@ Route::resource('/home/index/loginout','Home\LoginController@loginout');
 // 个人中心页
 Route::get('/home/index/personal','Home\ChangeController@personal');
 Route::post('/home/index/modify_password','Home\ChangeController@modify_password');
+// 个人中心的用户文章列表
+Route::get('home/article/{id}/youart','Home\ArticleController@youart');
 // Route::post('/home/index/changepass','Home\IndexController@changepass');
 // 修改密码
 Route::post('/home/index/changepass','Home\IndexController@changepass');
