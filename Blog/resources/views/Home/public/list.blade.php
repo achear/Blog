@@ -26,21 +26,21 @@
 
   <div class="block_popular_posts">
     <h4>热门帖子</h4>
-
+    @foreach($Popular as $v)
     <div class="article">
       <div class="pic">
-        <a href="#" class="w_hover">
-          <img src="/Home/images/pic_popular_post_1.jpg" alt="" />
+        <a href="{{url('/home/article/'.$v->art_id.'/info')}}" class="w_hover">
+          <img src="{{$v->art_thumb}}" style="width: 48px; height: 48px;" alt="" />
           <span></span>
         </a>
       </div>
 
       <div class="text">
         <p class="title">
-          <a href="#">网页编辑他们的默认模型文本，并进行搜索.</a>
+          <a href="{{url('/home/article/'.$v->art_id.'/info')}}">{{$v->art_title}}</a>
         </p>
         <div class="date">
-          <p>xxxx</p>
+          <p>{{$v->art_description}}</p>
         </div>
         <div class="icons">
           <ul>
@@ -55,63 +55,8 @@
       </div>
     </div>
     <div class="line_3"></div>
-
-    <div class="article">
-      <div class="pic">
-        <a href="#" class="w_hover">
-          <img src="/Home/images/pic_popular_post_2.jpg" alt="" />
-          <span></span>
-        </a>
-      </div>
-
-      <div class="text">
-        <p class="title">
-          <a href="#">网页编辑他们的默认模型文本，并进行搜索.</a>
-        </p>
-        <div class="date">
-          <p>07 July, 2012</p>
-        </div>
-        <div class="icons">
-          <ul>
-            <li>
-              <a href="#" class="views">24</a>
-            </li>
-            <li>
-              <a href="#" class="comments">16</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="line_3"></div>
-
-    <div class="article">
-      <div class="pic">
-        <a href="#" class="w_hover">
-          <img src="/Home/images/pic_popular_post_3.jpg" alt="" />
-          <span></span>
-        </a>
-      </div>
-
-      <div class="text">
-        <p class="title">
-          <a href="#">Editors their default model text, and a search uncover.</a>
-        </p>
-        <div class="date">
-          <p>05 July, 2012</p>
-        </div>
-        <div class="icons">
-          <ul>
-            <li>
-              <a href="#" class="views">33</a>
-            </li>
-            <li>
-              <a href="#" class="comments">25</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    @endforeach
+    
     <div class="line_2"></div>
   </div>
 

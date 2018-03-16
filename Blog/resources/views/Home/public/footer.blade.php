@@ -75,7 +75,7 @@
               <ul>
                 @foreach($links as $l)
                 <li>
-                  <a href="{{$l->link_url}}">{{$l->link_name}}</a>
+                  <a href="{{$l->link_url}}" target="_blank">{{$l->link_name}}</a>
                 </li>
                 @endforeach
               </ul>

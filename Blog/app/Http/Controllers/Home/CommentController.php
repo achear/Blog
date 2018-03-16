@@ -19,7 +19,9 @@ class CommentController extends Controller
         //return $data;
         $commit = new Comment;
         $commit->user_id = $data['user_id'];
-        $commit->user_name = $data['username'];
+        if ($data['username']) {
+            $commit->user_name = $data['username'];
+        }
         $commit->commit_id = $data['commit_id'];
         $commit->commit_content = $data['commit_content'];
 

@@ -129,16 +129,16 @@
                             <a href="#" class="add_new">添加新评论</a>
                             @foreach($commit as $v)
                             <div class="comment">
-                            	<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>
+                            	<div class="userpic"><a href="#"><img src="" alt="" /></a></div>
                                 
                                 <div class="comment_wrap">
-                                    <div class="name"><p><a href="#">{{$v->user_name}}</a></p></div>
-                                    <div class="date"><p>{{$v->commit_time}}</p></div>
-                                    <div class="content">
-                                        <p>{{$v->commit_content}}</p>
+                                    <div class="name"><p><a href="#" style="color: #3E73B5;">{{$v->user_name}}</a></p></div>
+                                    <div class="content" style="width: 620px;">
+                                        <p style="margin-top:20px;">{{$v->commit_content}}</p>
                                     </div>
+                                    <div class="date" style="width: 620px; margin-top:20px;"><p>{{$v->commit_time}}</p></div>
                                 </div>
-                                <div class="clearboth"></div>
+                                
                                 <div class="line_3"></div>
                             </div>
                             @endforeach
@@ -150,7 +150,7 @@
                         @if(session('users'))
                         <div class="block_leave_reply">
                         	<h3>发布评论</h3>
-                        	<p class="text">您的电子邮件地址不会被公开。必填项已标记<span>*</span></p>
+                        	<p class="text">您的个人信息不会被公开。必填项已标记<span>*</span></p>
                             
                             <form  class="layui-form">
                             <!-- {{csrf_field()}} -->
@@ -158,10 +158,7 @@
                                 <input type="hidden" name="user_id" value="{{session('users')->id}}">
                                 <input type="hidden" name="commit_id" value="{{$data['art_id']}}">
                             	<p>姓名<span>*</span></p>
-                            	<div class="field"><input type="text" name="username" class="req" /></div>
-                                
-                                <p>电子邮件<span>*</span></p>
-                            	<div class="field"><input type="text" name="email" class="req" /></div>
+                                <div class="field"><input type="text" name="username" class="req" /></div>
                                 
                                 <p>评论内容</p>
                                 <div class="textarea"><textarea cols="1" rows="1" name="commit_content"></textarea></div>

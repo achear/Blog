@@ -10,6 +10,7 @@ use Redis;
 use App\Model\Cate;
 use App\Model\Comment;
 use App\Model\Article;
+use App\Model\home_user;
 use Illuminate\Support\Facades\Session;
 
 
@@ -164,5 +165,21 @@ class ArticleController extends Controller
     public function style2()
     {
         return view('home.article.style2');
+    }
+
+        /**
+     * 个人中心文章列表
+     */
+
+    public function youart($id)
+    {
+
+       // home_user::where()
+  
+       $data = Article::where('user_id',$id)->get();
+    
+
+       return view('home.index.youart',['data'=>$data]);
+   
     }
 }

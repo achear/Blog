@@ -73,13 +73,15 @@ Route::resource('/home/index/loginout','Home\LoginController@loginout');
 // 个人中心页
 Route::get('/home/index/personal','Home\ChangeController@personal');
 Route::post('/home/index/modify_password','Home\ChangeController@modify_password');
+// 个人中心的用户文章列表
+Route::get('home/article/{id}/youart','Home\ArticleController@youart');
 // Route::post('/home/index/changepass','Home\IndexController@changepass');
 // 修改密码
 Route::post('/home/index/changepass','Home\IndexController@changepass');
 
 
 // 轮播图配置
-Route::get('/admin/config','Admin\ConfigController@CaroEdit');
+// Route::get('/admin/config','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarUpdata','Admin\ConfigController@CarUpdata');
 Route::get('/admin/config/CaroEdit','Admin\ConfigController@CaroEdit');
 Route::get('/admin/config/CarChange','Admin\ConfigController@CarChange');
@@ -145,6 +147,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
     Route::resource('/user','UserController');
     //后台退出登录
     Route::get('logout','LoginController@logout');
+    //后台评论模块
+    Route::resource('/comment','CommentController');
  });
 
 //分类模块
@@ -170,3 +174,7 @@ Route::post('/admin/links/changeorder','Admin\LinksController@changeOrder');
 Route::resource('admin/advert','Admin\AdvertController');
 //广告模块文件上传
 Route::post('/admin/advert/uploads','Admin\AdvertController@upload');
+//后台配置
+Route::resource('admin/config','Admin\ConfigController');
+// //图标
+// Route::get('/favicon.ico','Admin\ConfigController@');

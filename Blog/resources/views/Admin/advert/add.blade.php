@@ -50,7 +50,7 @@
                       <div class="layui-upload">
                             <button type="button" class="layui-btn" id="test1">上传图片</button>
                             <div class="layui-upload-list">
-                              <img class="layui-upload-img" id="demo1">
+                              <div style="width:100px;margin-left:100px;"><img class="layui-upload-img" id="demo1" width="100px"></div>
                               <p id="demoText"></p>
                             </div>
                           </div> 
