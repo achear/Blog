@@ -20,6 +20,7 @@
 
 
   <!-- <link rel="stylesheet" href="layout/style.css" type="text/css" /> -->
+  
   <link rel="stylesheet" href="{{ asset('layout/style.css') }}"> {{--
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />

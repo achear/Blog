@@ -152,7 +152,7 @@
 
         <div class="line_3" style="margin:20px 0px 24px;"></div>
 
-        <div class="block_pager">
+         {{--<div class="block_pager">
           <a href="#" class="prev">Previous</a>
           <a href="#" class="next">Next</a>
 
@@ -161,7 +161,7 @@
           </div>
 
           <div class="clearboth"></div>
-        </div>
+        </div> --}}
 
         <div class="line_2" style="margin:24px 0px 35px;"></div>
 

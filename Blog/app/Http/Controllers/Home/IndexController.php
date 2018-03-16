@@ -23,7 +23,7 @@ class IndexController extends Controller
         //
         $data = Carousel::get();
         //$text = Article::take(3)->get();
-        $article = Article::paginate(4);
+        $article = Article::get();
         //dd($article);
         // $cate = Cate::get();
         // //获取所有的子分类

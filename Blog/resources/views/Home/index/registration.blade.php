@@ -89,14 +89,14 @@
 
                                 <div class="col_2">
                                     <div class="label">
-                                        <p>错误提示：</p>
+                                        <p>Tips:</p>
                                     </div>
                                     <div class="field" id="yanzheng" style="height: 17px;"></div>
                                     <div class="clearboth"></div>
                                     <div class="separator" style="height:14px;"></div>
 
                                     <div class="label">
-                                        <p>姓氏:</p>
+                                        <p>Tips:</p>
                                     </div>
                                     <div class="field" id="error_email" style="height: 17px;">
                                         <input type="text" />
@@ -105,7 +105,7 @@
                                     <div class="separator" style="height:12px;"></div>
 
                                     <div class="label">
-                                        <p>姓氏:</p>
+                                        <p>Tips:</p>
                                     </div>
                                     <div class="field" id="error_pass" style="height: 17px;">
                                         <input type="text" />
@@ -175,7 +175,7 @@
                                             if (repass_val != pass_val) {
                                                 $('#error_repass').html('<font style="height: 17px; display: block; line-height: 17px; color: red;">两次输入密码不一致！</span>');
                                             } else {
-                                                $('#error_repass').html('<font style="height: 17px; display: block; line-height: 17px; color: green;">格式正确</span>');
+                                                $('#error_repass').html('<font style="height: 17px; display: block; line-height: 17px; color: green;">密码一致</span>');
                                             }
                                         });
                                     </script>
@@ -183,7 +183,7 @@
                                     <div class="separator" style="height:12px;"></div>
 
                                     <div class="label">
-                                        <p>姓氏:</p>
+                                        <p>Tips:</p>
                                     </div>
                                     <div class="field" id="error_repass" style="height: 17px;">
                                         <input type="text" />

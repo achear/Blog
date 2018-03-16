@@ -116,6 +116,27 @@
             </li>
             <li>
                 <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>网站配置</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="{{url('admin/config')}}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>配置列表</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="{{url('admin/config/create')}}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加配置</cite>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
                     <i class="iconfont">&#xe726;</i>
                     <cite>评论管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
@@ -145,13 +166,7 @@
                                 
                             </a>
                         </li >
-                        <li>
-                            <a _href="{{url('admin/user/create')}}">
-                                <i class="iconfont">&#xe6a7;</i>
-                                <cite>前台配置</cite>
-                                
-                            </a>
-                        </li>
+                       
                     </ul>
                 </li>
                 <li>
