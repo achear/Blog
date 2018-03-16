@@ -33,7 +33,6 @@ class ArticleController extends Controller
          //        上传到阿里云
                  // OSS::upload($newfilename,$file->getRealPath());
          
-         
          //        本地
                 return '/upload/'.$newfilename;
              }
