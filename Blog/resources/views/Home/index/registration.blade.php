@@ -146,7 +146,7 @@
                                         $('#email').blur(function () {
                                             //alert(1);
                                             var email_val = $('#email').val();
-                                            var email_preg = /^[a-zA-Z0-9_]+@(qq|126|163|baidu|lampbrother)\.(com|cn|net)$/;
+                                            var email_preg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
                                             if (email_preg.test(email_val)) {
                                                 $('#error_email').html('<font style="color: green; height: 17px; display: block; line-height: 17px;">该邮箱可用</font>');
