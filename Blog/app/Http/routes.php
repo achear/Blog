@@ -162,7 +162,7 @@ Route::resource('/admin/article','Admin\ArticleController');
 Route::get('/admin/{id}/article','Admin\ArticleController@show');
 //文件上传
 Route::post('/admin/article/uploads','Admin\ArticleController@upload');
-
+Route::post('/admin/article/update','Admin\ArticleController@update');
 //访问的update方法的路由
 Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
 

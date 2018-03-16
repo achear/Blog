@@ -71,59 +71,55 @@
                 <div class="layui-input-inline">
                     <input type="file" id="file_upload" name="file_upload" value="">
                 </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $("#file_upload").change(function () {
-                            uploadImage();
-                        })
-                    })
-                    function uploadImage() {
-                        //  判断是否有选择上传文件
-                        var imgPath = $("#file_upload").val();
-                        if (imgPath == "") {
-                            alert("请选择上传图片！");
-                            return;
-                        }
-                        //判断上传文件的后缀名
-                        var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
-                        if (strExtension != 'jpg' && strExtension != 'gif'
-                            && strExtension != 'png' && strExtension != 'bmp') {
-                            alert("请选择图片文件");
-                            return;
-                        }
-                        //将整个表单打包进formData
-                        var formData = new FormData($('#art_form')[0]);
-                        //只将上传文件打包进formData
-                        // var formData = new FormData();
-                        // formData.append('fileupload',$('#file_upload')[0].file[0]);
+              </div>  
+<script type="text/javascript">
+    $(function () {
+        $("#file_upload").change(function () {
+            uploadImage();
+        })
+    })
+    function uploadImage() {
+//  判断是否有选择上传文件
+        var imgPath = $("#file_upload").val();
+        if (imgPath == "") {
+            alert("请选择上传图片！");
+            return;
+        }
+        //判断上传文件的后缀名
+        var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+        if (strExtension != 'jpg' && strExtension != 'gif'
+            && strExtension != 'png' && strExtension != 'bmp') {
+            alert("请选择图片文件");
+            return;
+        }
+        var formData = new FormData($('#art_form')[0]);
+        // var formData = new FormData();
+        // formData.append('file_upload',$('#file_upload')[0].file[0]);
 
-                        $.ajax({
-                            type: "POST",
-                            url: "/admin/article/uploads",
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            data: formData,
-                            contentType: false,
-                            processData: false,
-                            async: true,
-                            cache: false,
-                            success: function (data) {
+        $.ajax({
+            type: "POST",
+            url: "/admin/article/uploads",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: formData,
+            contentType: false,
+            processData: false,
+            async:true,
+            cache:false,
+            success: function(data) {
+                $('#thumb').attr('src',data);
+                $('#art_thumb').val(data);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("上传失败，请检查网络后重试");
+            }
+        });
+    }
+</script>
+              
 
-                                $('#thumb').attr('src', data);
-                                //显示上传到OSS上的图片
-                                // $('#thumb').attr('src','oss的域名'+data);
-                                // $('#thumb').attr('src','{{ env('ALIOSS_DOMAIN') }}'+data);
-                                $('#art_thumb').val(data);
-                            },
-                            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                                alert("上传失败，请检查网络后重试");
-                            }
-                        });
-                    }
-                </script>
-
-            </div>
+           
             <div class="layui-form-item">
                 <label for="L_art_tag" class="layui-form-label">
                     <span class="x-red">*</span>
