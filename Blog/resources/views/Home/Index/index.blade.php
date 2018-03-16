@@ -61,7 +61,7 @@
           
             <div class="block_home_post">
               <div class="pic">
-                <a href="{{asset('home/article/index')}}" class="w_hover">
+                <a href="{{url('home/article/'.$v->cate_id.'/list')}}" class="w_hover">
                   <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                   <span></span>
                 </a>
@@ -77,9 +77,11 @@
                 <div class="icons">
                   <ul>
                     <li>
-                      <a href="#" class="views">56</a>
                       <a href="#" class="views">{{$v->cate_view}}</a>
+                    </li>
+                  </ul>
                 </div>
+              </div>
             </div>
             <div class="line_3" style="margin:14px 0px 17px;"></div>
           </div>
@@ -89,7 +91,7 @@
             
               <div class="block_home_post">
                 <div class="pic">
-                  <a href="{{asset('home/article/index')}}" class="w_hover">
+                  <a href="{{url('home/article/'.$v->cate_id.'/list')}}" class="w_hover">
                     <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                     <span></span>
                   </a>
@@ -133,8 +135,8 @@
           @foreach($article as $v)
           <article class="block_topic_post">
             <p class="title"><a href="{{url('/home/article/'.$v->art_id.'/info')}}">{{$v->art_title}}</a></p>
-              <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 256px; height: 121.86px;" alt="" /></a></div>
-              <p class="text" style="height: 30px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{$v->art_content}}</p>
+              <div class="f_pic"><a href="{{url('/home/article/'.$v->art_id.'/info')}}" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 266px; height: 121.86px;" alt="" /></a></div>
+              
               <div class="info">
                 <div class="date"><p>2012年7月11日</p></div>
                   

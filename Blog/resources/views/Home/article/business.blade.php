@@ -50,19 +50,14 @@
                             @foreach($data as $v)
                         	<article class="block_topic_post">
                             	<p class="title"><a href="{{url('/home/article/'.$v->art_id.'/info')}}">{{$v->art_title}}</a></p>
-                                <div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 256px; height: 121.86px;"/></a></div>
-                                <p class="text" style="height: 30px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{$v->art_content}}</p>
+                                <div class="f_pic"><a href="{{url('/home/article/'.$v->art_id.'/info')}}" class="general_pic_hover scale"><img src="{{$v->art_thumb}}" style="width: 266px; height: 121.86px;"/></a></div>
+                                
                                 <div class="info">
                                 	<div class="date"><p>11 July, 2012</p></div>
                                     
                                     <div class="r_part">
-<<<<<<< HEAD
-                                    	<div class="category"><p><a href="#">Business</a></p></div>
-                                        <a href="#" class="views">183</a>
-=======
                                     	<div class="category"><p><a href="#">查看次数</a></p></div>
                                         <a href="#" class="views">{{$v->art_view}}</a>
->>>>>>> 5aa322bd6ccdde864135fc8adb2543edef1d8a86
                                     </div>
                                 </div>
                             </article>

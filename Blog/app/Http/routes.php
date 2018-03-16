@@ -133,7 +133,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
     // Route::get('/config/CaroEdit','ConfigController@CaroEdit');
     // Route::get('/config/CarChange','ConfigController@CarChange');
     // Route::get('/config/upload','Controller@upload');
-    
+  
     //修改用户状态路由
     Route::get('/user/changestate','UserController@changeState');
     //修改用户密码
@@ -147,7 +147,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
     Route::resource('/user','UserController');
     //后台退出登录
     Route::get('logout','LoginController@logout');
-    
+
  });
 
 //分类模块
@@ -168,8 +168,12 @@ Route::post('/admin/article/modify/{id}','Admin\ArticleController@update1');
 //友情链接
 Route::resource('admin/links','Admin\LinksController');
 Route::post('/admin/links/changeorder','Admin\LinksController@changeOrder');
-
+//视频后台
+Route::resource('admin/video','Admin\VideoController');
 //广告模块
 Route::resource('admin/advert','Admin\AdvertController');
 //广告模块文件上传
 Route::post('/admin/advert/uploads','Admin\AdvertController@upload');
+
+
+// Route::resource('video','Admin\VideoController');

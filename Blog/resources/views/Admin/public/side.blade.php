@@ -253,20 +253,20 @@
             <li>
                     <a href="javascript:;">
                         <i class="iconfont">&#xe6b8;</i>
-                        <cite>广告模块</cite>
+                        <cite>视频模块</cite>
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a _href="{{url('/admin/advert')}}">
+                            <a _href="{{url('/admin/video')}}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                <cite>广告列表</cite>
+                                <cite>视频列表</cite>
                             </a>
                         </li >
                         <li>
-                            <a _href="{{url('admin/advert/create')}}">
+                            <a _href="{{url('admin/video/create')}}">
                                 <i class="iconfont">&#xe6a7;</i>
-                                <cite>广告添加</cite>
+                                <cite>视频添加</cite>
                                 
                             </a>
                         </li>

@@ -20,7 +20,6 @@ class ConfigController extends Controller
     {
         //1. 从数据库中读取相关内容数据
         $content = Config::lists('conf_content','conf_name')->all();
-        dd($content);
 
 
         //数组不能直接写入文件，向文件中只能写字符（数组格式的字符串）

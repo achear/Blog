@@ -18,10 +18,7 @@
 @section('personal')
 
 @show
-{{--  个人文章页  --}}
-@section('youart')
 
-@show
 {{--  发表文章  --}}
 @section('publish')
 
