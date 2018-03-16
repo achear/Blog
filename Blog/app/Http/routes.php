@@ -147,7 +147,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['login']],fu
     Route::resource('/user','UserController');
     //后台退出登录
     Route::get('logout','LoginController@logout');
-    
+    //后台评论模块
+    Route::resource('/comment','CommentController');
  });
 
 //分类模块

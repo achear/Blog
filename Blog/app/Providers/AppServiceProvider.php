@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Model\Cate;
 use App\Model\Links;
+use App\Model\Advert;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,10 +37,12 @@ class AppServiceProvider extends ServiceProvider
         $cates = Cate::where('cate_pid','0')->get();
         //获取友情链接
         $links = Links::get();
-
+        //获取广告
+        $advert = Advert::get();
         view()->share('zcate',$zcate); 
         view()->share('cates',$cates);
-        view()->share('links',$links);  
+        view()->share('links',$links);
+        view()->share('advert',$advert);  
     }
 
     /**

@@ -165,23 +165,24 @@
 
         <div class="line_2" style="margin:24px 0px 35px;"></div>
 
-        <h3 style="font-size:16px;">最好的材料</h3>
+        <h3 style="font-size:16px;">广告</h3>
         <div class="line_4" style="margin:-4px 0px 18px;"></div>
 
         <div class="block_best_materials">
           <div class="slider">
             <div id="best_materials_slider" class="flexslider">
               <ul class="slides">
+                @foreach($advert as $v)
                 <li>
                   <div class="block_best_material_post">
                     <div class="f_pic">
-                      <a href="news_post.html" class="w_hover">
-                        <img src="/Home/images/pic_home_best_materials_1.jpg" alt="" />
+                      <a href="{{$v->advert_url}}" target="_blank" class="w_hover">
+                        <img src="/Home/img/{{$v->advert_file}}" alt="" style="width:180px;height:120px;"/>
                         <span></span>
                       </a>
                     </div>
                     <p class="title">
-                      <a href="news_post.html">发布软件包和网页编辑器。</a>
+                      <a href="{{$v->advert_url}}" target="_blank">{{$v->advert_name}}</a>
                     </p>
                     <div class="info">
                       <div class="date">
@@ -195,126 +196,8 @@
                     </div>
                   </div>
                 </li>
-
-                <li>
-                  <div class="block_best_material_post">
-                    <div class="f_pic">
-                      <a href="news_post.html" class="w_hover">
-                        <img src="/Home/images/pic_home_best_materials_2.jpg" alt="" />
-                        <span></span>
-                      </a>
-                    </div>
-                    <p class="title">
-                      <a href="news_post.html">发布软件包和网页编辑器。</a>
-                    </p>
-                    <div class="info">
-                      <div class="date">
-                        <p>2012年7月8日</p>
-                      </div>
-                      <div class="category">
-                        <p>
-                          <a href="#">People</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="block_best_material_post">
-                    <div class="f_pic">
-                      <a href="news_post.html" class="w_hover">
-                        <img src="/Home/images/pic_home_best_materials_3.jpg" alt="" />
-                        <span></span>
-                      </a>
-                    </div>
-                    <p class="title">
-                      <a href="news_post.html">发布软件包和网页编辑器。</a>
-                    </p>
-                    <div class="info">
-                      <div class="date">
-                        <p>2012年7月8日</p>
-                      </div>
-                      <div class="category">
-                        <p>
-                          <a href="#">Technology</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="block_best_material_post">
-                    <div class="f_pic">
-                      <a href="news_post.html" class="w_hover">
-                        <img src="/Home/images/pic_home_best_materials_4.jpg" alt="" />
-                        <span></span>
-                      </a>
-                    </div>
-                    <p class="title">
-                      <a href="news_post.html">Publishing packages and web page editors their.</a>
-                    </p>
-                    <div class="info">
-                      <div class="date">
-                        <p>08 July, 2012</p>
-                      </div>
-                      <div class="category">
-                        <p>
-                          <a href="#">业务</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="block_best_material_post">
-                    <div class="f_pic">
-                      <a href="news_post.html" class="w_hover">
-                        <img src="/Home/images/pic_home_best_materials_5.jpg" alt="" />
-                        <span></span>
-                      </a>
-                    </div>
-                    <p class="title">
-                      <a href="news_post.html">Publishing packages and web page editors their.</a>
-                    </p>
-                    <div class="info">
-                      <div class="date">
-                        <p>08 July, 2012</p>
-                      </div>
-                      <div class="category">
-                        <p>
-                          <a href="#">人</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="block_best_material_post">
-                    <div class="f_pic">
-                      <a href="news_post.html" class="w_hover">
-                        <img src="/Home/images/pic_home_best_materials_6.jpg" alt="" />
-                        <span></span>
-                      </a>
-                    </div>
-                    <p class="title">
-                      <a href="news_post.html">Publishing packages and web page editors their.</a>
-                    </p>
-                    <div class="info">
-                      <div class="date">
-                        <p>08 July, 2012</p>
-                      </div>
-                      <div class="category">
-                        <p>
-                          <a href="#">业务</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+                @endforeach
+                
               </ul>
             </div>
           </div>

@@ -3,7 +3,7 @@
 
 
 <head>
-  <title>博客首页</title>
+  <title>博客</title>
 
 
   <meta name="keywords" content="" />
@@ -238,11 +238,12 @@
                   </ul>
                 </li>
               @endforeach
-              <li class="current_page_item">
-                <a href="{{url('home/article/publish')}}">发帖</a>
 
-               
-              </li>
+              @if (session('users'))
+                <li class="current_page_item">
+                  <a href="{{url('home/article/publish')}}">发帖</a>
+                </li>
+              @endif
               </ul>
             </nav>
           </div>
