@@ -26,6 +26,14 @@
         <form class="layui-form">
         {{csrf_field()}}
     {{ method_field('PUT')}}
+            <div class="layui-form-item">
+                <label for="L_art_editor" class="layui-form-label">
+                    <span class="x-red">*</span>文章作者
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_art_editor" name="art_editor" required="" autocomplete="off" class="layui-input" value="{{ $article->art_editor }}" style="cursor: not-allowed" disabled >
+                </div>
+            </div>
              <div class="layui-form-item">
                 <label for="L_art_title" class="layui-form-label">
                     <span class="x-red">*</span>文章标题
