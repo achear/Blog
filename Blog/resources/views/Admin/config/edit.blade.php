@@ -38,7 +38,7 @@
                 </label>
                 <div class="layui-input-inline">
                     <input type="text" id="L_username" name="conf_title" required="" lay-verify="nikename"
-                    autocomplete="off" class="layui-input" value="{{ $data->conf_title }}">
+                    autocomplete="off" class="layui-input" value="{{ $data->conf_title }}" >
                 </div>
                 <div><p>例如：网页标题</p></div>
           </div>

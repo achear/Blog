@@ -71,7 +71,7 @@
                       <div class="layui-upload">
                             <button type="button" class="layui-btn" id="test1">上传图片</button>
                             <div class="layui-upload-list">
-                              <img class="layui-upload-img" id="demo1">
+                              <img class="layui-upload-img" id="demo1" width="200">
                               <p id="demoText"></p>
                             </div>
                           </div> 
@@ -133,7 +133,7 @@
           var val =  $("#selec").val()
           $.ajax({
                   type : "get", //提交方式
-                  url : '/admin/config/CarUpdata',//路径
+             //路径
                   data : {"id":val},//数据，这里使用的是Json格式进行传输
                   dataType : "Json",
                   success : function(result) {//返回数据根据结果进行相应的处理

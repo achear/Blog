@@ -215,7 +215,12 @@
         </div>
 
         <div class="block_copyrights">
-          <p>&copy; 2018年商业新闻。 版权所有.</p>
+          <p>&copy; <?php 
+          $a = require '../config/webconfig.php';
+    if(isset($a['copyright'])){
+      echo $a['copyright'];
+    }
+  ?></p>
         </div>
       </div>
     </section>

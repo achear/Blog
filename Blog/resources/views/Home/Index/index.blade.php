@@ -42,7 +42,7 @@
                 directionNav: true,
                 animationLoop: true,
                 slideshow: true,
-                useCSS: false
+                useCSS: true
               });
 
             });

@@ -211,7 +211,7 @@ class ConfigController extends Controller
         $car->carousel_content = $data['carousel_content'];
         $car->carousel_photo = $data['carousel_photo'];
         $res = $car->save();
-        return redirect('/admin/config')->with('msg','添加成功');
+        return redirect('/admin/config/CaroEdit')->with('msg','添加成功');
         
     }
     

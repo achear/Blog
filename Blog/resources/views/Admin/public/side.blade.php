@@ -160,7 +160,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a _href="{{url('admin/config')}}">
+                            <a _href="{{url('admin/config/CaroEdit')}}">
                                 <i class="iconfont">&#xe6a7;</i>
                                 <cite>轮播图</cite>
                                 

@@ -35,11 +35,11 @@
                 <th>标题</th>
                 <th>名称</th>
                 <th>内容</th>
-                <th>类型</th>
+                <!-- <th>类型</th>
                 <th>排序</th>
                 <th>说明</th>
                 <th>是否开启</th>
-                <th>操作</th>
+                <th>操作</th> -->
 
 
               </tr> 
@@ -51,10 +51,10 @@
                 <td>{{ $v->conf_title }}</td>
                 <td>{{ $v->conf_name }}</td>
                 <td>{{ $v->conf_content }}</td>
-                <td>{{ $v->field_type }}</td>
+                <!-- <td>{{ $v->field_type }}</td>
                 <td>{{ $v->conf_order }}</td>
                 <td>{{ $v->conf_tips }}</td>
-                <td>{{ $v->field_value }}</td>
+                <td>{{ $v->field_value }}</td> -->
                 <td><a href="/admin/config/{{ $v->conf_id }}/edit">修改</a>  <a href="/admin/config/{{ $v->conf_id }}">删除</a></td>
               </tr>
               @endforeach

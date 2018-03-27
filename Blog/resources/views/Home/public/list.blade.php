@@ -63,10 +63,10 @@
   <div class="separator" style="height:31px;"></div>
 
   <div class="block_popular_stuff">
-    <h4>流行视频</h4>
+    <h4>流行</h4>
 
     <div class="content">
-      <a href="#" class="view_all">显示所有视频</a>
+      <a href="#" class="view_all">显示所有</a>
       <div class="media">
         <a href="http://www.youtube.com/watch?v=ySIvism2af8" class="general_pic_hover play no_fx" data-rel="prettyPhoto"
           title="Popular Video">
