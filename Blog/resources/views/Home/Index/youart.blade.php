@@ -1,4 +1,4 @@
-@extends('home.layouts.index')
+@extends('Home.Layouts.index')
 
 @section('youart')
     <!-- CONTENT BEGIN -->

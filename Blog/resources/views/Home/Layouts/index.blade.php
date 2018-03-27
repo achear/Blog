@@ -1,5 +1,5 @@
 {{--  头部开始  --}}
-@include('home.public.header')
+@include('Home.public.header')
 {{--  头部结束  --}}
 
 {{--  内容开始  --}}
@@ -39,12 +39,12 @@
 
 @show
 {{--  详情结束  --}}
-@include('home.public.list')
+@include('Home.public.list')
 
 
 
 {{-- 开始底部  --}}
-@include('home.public.footer')
+@include('Home.public.footer')
 {{--  底部结束  --}}
 
 

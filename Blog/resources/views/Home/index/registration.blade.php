@@ -1,4 +1,4 @@
-@include('home.public.header')
+@include('Home.public.header')
 
         <!-- CONTENT BEGIN -->
         <div id="content" class="">

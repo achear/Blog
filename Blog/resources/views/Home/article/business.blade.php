@@ -1,4 +1,4 @@
-@extends('home.layouts.index')
+@extends('Home.Layouts.index')
 {{--  文章列表  --}}
 @section('business')
 

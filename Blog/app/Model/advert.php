@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class advert extends Model
+class Advert extends Model
 {
     //关联的表名
     public $table = 'blog_advert';

@@ -1,4 +1,4 @@
-@extends('home.layouts.index') @section('content')
+@extends('Home.Layouts.index') @section('content')
 <!-- CONTENT BEGIN -->
 <div id="content" class="right_sidebar">
   <div class="inner">
@@ -61,7 +61,7 @@
           
             <div class="block_home_post">
               <div class="pic">
-                <a href="{{url('home/article/'.$v->cate_id.'/list')}}" class="w_hover">
+                <a href="{{url('Home/article/'.$v->cate_id.'/list')}}" class="w_hover">
                   <img src="{{$v->cate_thumb}}" style="width: 67px; height: 45px;" alt="" />
                   <span></span>
                 </a>

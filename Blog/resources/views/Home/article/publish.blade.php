@@ -1,4 +1,4 @@
-@include('home.public.header')
+@include('Home.public.header')
 
 
 <div id="content" class="right_sidebar">
