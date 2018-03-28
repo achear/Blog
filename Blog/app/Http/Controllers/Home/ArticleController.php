@@ -30,7 +30,7 @@ class ArticleController extends Controller
         $v = json_decode($data,true);
         //dd($v);
   
-        return View('home.article.article',['data'=>$v]);
+        return View('Home.article.article',['data'=>$v]);
     }
 
     /**
@@ -47,7 +47,7 @@ class ArticleController extends Controller
         $data = Article::where('cate_id',$id)->paginate(2);
         $cate = Cate::find($id);
         //dd($cate);
-        return View('home.article.business',['data'=>$data,'cate'=>$cate]);
+        return View('Home.article.business',['data'=>$data,'cate'=>$cate]);
 
     }
 
@@ -65,7 +65,7 @@ class ArticleController extends Controller
         })->paginate(2);
         
 
-        return view('home.article.search',['data'=>$data]);
+        return view('Home.article.search',['data'=>$data]);
     }
 
 
@@ -91,7 +91,7 @@ class ArticleController extends Controller
         $num = count(Comment::where('commit_id',$id)->get());
         //dd($num);
         //$v = json_decode($data,true);
-        return view('home.article.info',['data'=>$data,'commit'=>$commit,'num'=>$num,'prev'=>$prev,'next'=>$next]);
+        return view('Home.article.info',['data'=>$data,'commit'=>$commit,'num'=>$num,'prev'=>$prev,'next'=>$next]);
     }
 
     /**
@@ -103,7 +103,7 @@ class ArticleController extends Controller
     public function publish(Request $request)
     {
         //
-        return view('home.article.publish');
+        return view('Home.article.publish');
     }
 
     /**
@@ -164,7 +164,7 @@ class ArticleController extends Controller
     // 文章发表2
     public function style2()
     {
-        return view('home.article.style2');
+        return view('Home.article.style2');
     }
 
         /**
@@ -179,7 +179,7 @@ class ArticleController extends Controller
        $data = Article::where('user_id',$id)->get();
     
 
-       return view('home.index.youart',['data'=>$data]);
+       return view('Home.Index.youart',['data'=>$data]);
    
     }
 }

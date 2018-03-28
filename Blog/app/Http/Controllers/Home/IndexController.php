@@ -47,7 +47,7 @@ class IndexController extends Controller
         //dd($zcate);
         //return $arr;
         //dd($arr);
-        return View('home/index/index',['data'=>$data,'article'=>$article,'cate'=>$cate]);
+        return View('Home/Index/index',['data'=>$data,'article'=>$article,'cate'=>$cate]);
     }
 
     
@@ -72,7 +72,7 @@ class IndexController extends Controller
     public function show()
     {
         
-        return view('home.index.personal');
+        return view('Home.Index.personal');
     }
 
     /**
@@ -81,7 +81,7 @@ class IndexController extends Controller
     public function personal()
     {
       
-        return view('home.index.personal');
+        return view('Home.Index.personal');
     }    
 
 

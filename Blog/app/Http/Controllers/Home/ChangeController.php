@@ -21,7 +21,7 @@ class ChangeController extends Controller
      */
     public function personal()
     {
-        return view('home.index.personal');
+        return view('Home.Index.personal');
     } 
 
     /**
@@ -75,7 +75,7 @@ class ChangeController extends Controller
                 }
             }
         }
-        return view('home.index.personal');
+        return view('Home.Index.personal');
     }
     // }
 

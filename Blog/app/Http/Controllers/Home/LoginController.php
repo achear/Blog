@@ -20,7 +20,7 @@ class LoginController extends Controller
         //
         
         // return 111;
-        return View('home.index.registration');
+        return View('Home.Index.registration');
     }
 
     /**
